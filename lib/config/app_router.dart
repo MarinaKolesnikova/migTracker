@@ -1,0 +1,38 @@
+import 'package:auto_route/auto_route.dart';
+import 'package:diplom_proj/presentation/additional/screen_in_develop.dart';
+import 'package:diplom_proj/presentation/additional/splash_screen.dart';
+import 'package:diplom_proj/presentation/authorization/authorization_screen.dart';
+
+import 'package:diplom_proj/presentation/home/home_screen.dart';
+import 'package:diplom_proj/resources/app_routes.dart';
+
+@MaterialAutoRouter(
+  routes: <AutoRoute>[
+    AutoRoute(
+      page: SplashScreen,
+      initial: true,
+      path: AppRoutes.splashScreen,
+    ),
+    AutoRoute(
+      page: AuthorizationScreen,
+      path: AppRoutes.authScreen,
+    ),
+    AutoRoute(
+      page: ScreenInDevelop,
+      path: AppRoutes.screenInDevelop,
+    ),
+    AutoRoute(
+      page: HomePageScreen,
+      path: AppRoutes.homeScreen,
+      children: [
+        CustomRoute(
+          page: ScreenInDevelop,
+          path: AppRoutes.screenInDevelop,
+          durationInMilliseconds: 300,
+          transitionsBuilder: TransitionsBuilders.fadeIn,
+        ),
+      ],
+    ),
+  ],
+)
+class $AppRouter {}
