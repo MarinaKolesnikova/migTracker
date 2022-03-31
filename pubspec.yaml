@@ -69,6 +69,7 @@ dependencies:
   flutter_facebook_auth: 3.5.0+1
   lottie: ^1.2.2
   firebase_core: ^1.13.1
+  firebase_auth: ^3.3.11
 
 dev_dependencies:
   flutter_test:
