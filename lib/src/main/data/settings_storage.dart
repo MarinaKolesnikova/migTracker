@@ -25,6 +25,7 @@ class SettingStorage {
     } catch (e) {
       return null;
     }
+    return null;
   }
 
   Future<void> delete() => _storage.delete<String>(key);

@@ -21,6 +21,7 @@ class TextFieldValidators {
         }
         return errorDictionary.emailValidationError;
       }
+      return null;
     };
   }
 }

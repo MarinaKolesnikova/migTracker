@@ -13,18 +13,22 @@ class TextValidationUtil {
 
   static String? errorCyrrilicOnly(String text) {
     if (!cyrrilicExp.hasMatch(text)) return dict.cyrillicOnly;
+    return null;
   }
 
   static String? errorNumbersOnly(String text) {
     if (!numbersExp.hasMatch(text)) return dict.numbersOnly;
+    return null;
   }
 
   static String? phoneNumberFormat(String text) {
     if (text.length != 10) return dict.wrongPhoneFormat;
+    return null;
   }
 
   static String? passwordFormat(String text) {
     if (!passwordReg.hasMatch(text)) return dict.wrongPasswordFormat;
+    return null;
   }
 
   static bool isCyrrilicOnly(String text) => cyrrilicExp.hasMatch(text);

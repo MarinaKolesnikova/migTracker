@@ -1,8 +1,6 @@
 import 'package:diplom_proj/resources/resources.dart';
 import 'package:flutter/material.dart';
 import 'package:diplom_proj/presentation/shared/widgets/text_field/light_text_field_builder.dart';
-import 'package:diplom_proj/resources/colors/light_colors.dart';
-import 'package:diplom_proj/resources/light_text_styles/light_text_styles.dart';
 
 class LoginFields extends StatelessWidget {
   const LoginFields({

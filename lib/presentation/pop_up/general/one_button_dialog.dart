@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:diplom_proj/presentation/pop_up/dialog_builder.dart';
@@ -9,7 +7,6 @@ import 'package:diplom_proj/presentation/shared/widgets/buttons/outlined_button.
 
 import 'package:diplom_proj/resources/resources.dart';
 import 'package:diplom_proj/src/shared/interfaces/i_dialog.dart';
-import 'package:provider/src/provider.dart';
 
 class OneButtonDialog implements IDialog {
   final String? title;

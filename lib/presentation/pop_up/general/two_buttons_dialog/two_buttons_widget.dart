@@ -1,6 +1,6 @@
 import 'package:diplom_proj/resources/colors/light_colors.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+
 import 'package:diplom_proj/presentation/pop_up/dialog_builder.dart';
 import 'package:diplom_proj/presentation/pop_up/mixins/button_dialog_mixin.dart';
 import 'package:diplom_proj/presentation/pop_up/pop_up_layout.dart';

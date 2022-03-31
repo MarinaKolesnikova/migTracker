@@ -6,7 +6,7 @@ import 'package:injectable/injectable.dart';
 import 'package:diplom_proj/config/app_config.dart';
 import 'package:diplom_proj/config/modules/dio_module_config.dart';
 import 'package:diplom_proj/src/auth/data/api/auth_api.dart';
-import 'package:diplom_proj/src/auth/entity/dto/auth_dto/auth_dto.dart';
+
 import 'package:diplom_proj/src/auth/entity/dto/email_dto/email_dto.dart';
 import 'package:diplom_proj/src/auth/entity/dto/login_dto/login_dto.dart';
 import 'package:diplom_proj/src/shared/interfaces/i_base_repository.dart';

@@ -6,7 +6,6 @@ import 'package:diplom_proj/src/auth/data/storages/token_storage.dart';
 import 'package:diplom_proj/src/auth/data/services/auth_service.dart';
 import 'package:diplom_proj/src/auth/entity/models/token/token.dart';
 import 'package:diplom_proj/src/shared/interfaces/i_bloc.dart';
-import 'package:diplom_proj/src/shared/interfaces/i_bloc_event.dart';
 
 export './events/all.dart';
 export 'package:provider/src/provider.dart';

@@ -1,5 +1,3 @@
-import 'package:hive/hive.dart';
-
 import 'package:logging/logging.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:diplom_proj/src/shared/interfaces/i_storage.dart';

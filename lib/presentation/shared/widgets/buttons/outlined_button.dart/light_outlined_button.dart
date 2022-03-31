@@ -1,7 +1,6 @@
 import 'package:diplom_proj/resources/resources.dart';
 import 'package:flutter/material.dart';
 import 'package:diplom_proj/presentation/shared/widgets/buttons/outlined_button.dart/outline_button_mixin.dart';
-import 'package:diplom_proj/resources/light_text_styles/light_text_styles.dart';
 
 class LightOutlineButton extends StatelessWidget with OutlineButtonMixin {
   const LightOutlineButton({

@@ -5,9 +5,7 @@ import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:diplom_proj/presentation/shared/widgets/text_field/field_validator_builders/form_field_validator_builder.dart';
 import 'package:diplom_proj/presentation/shared/widgets/text_field/input_formaters/white_space_trimming.dart';
 import 'package:diplom_proj/presentation/shared/widgets/text_field/light_text_field.dart';
-import 'package:diplom_proj/resources/dictionary/all.dart';
 
-import 'package:diplom_proj/resources/light_text_styles/light_text_styles.dart';
 import 'package:diplom_proj/resources/resources.dart';
 
 enum LightTextFieldType {

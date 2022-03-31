@@ -4,15 +4,12 @@ import 'package:diplom_proj/presentation/shared/scroll_component/scroll_clean_be
 import 'package:diplom_proj/presentation/shared/widgets/buttons/outlined_button.dart/light_outlined_button.dart';
 import 'package:diplom_proj/presentation/shared/widgets/sign_with_buttons/builders/sign_with_builder.dart';
 import 'package:diplom_proj/src/auth/domain/bloc/auth_bloc.dart';
-import 'package:diplom_proj/src/auth/domain/bloc/events/all.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:auto_route/src/router/auto_router_x.dart';
 import 'package:diplom_proj/config/modules/injection_config.dart';
 
-import 'package:diplom_proj/resources/app_routes.dart';
-import 'package:diplom_proj/resources/colors/light_colors.dart';
-import 'package:diplom_proj/resources/light_text_styles/light_text_styles.dart';
 import 'package:diplom_proj/resources/resources.dart';
 
 import 'package:flutter_form_builder/flutter_form_builder.dart';

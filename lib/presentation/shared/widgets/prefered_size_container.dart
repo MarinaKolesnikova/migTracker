@@ -50,5 +50,6 @@ class _PreferedSizeContainerState extends State<PreferedSizeContainer> {
         ),
       ];
     }
+    return null;
   }
 }

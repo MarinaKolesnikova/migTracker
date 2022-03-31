@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:dio/dio.dart';
-import 'package:diplom_proj/config/modules/injection_config.dart';
+
 import 'package:diplom_proj/src/shared/interfaces/i_connection_checker.dart';
 
 class ConnectionInterceptor extends Interceptor {

@@ -89,5 +89,6 @@ class _SignUpFieldsListState extends State<SignUpFieldsList> with AuthFieldsMixi
 
   Color? getFieldColor(PasswordErrorEnum field) {
     if (passwordEnum == field) return LightColors.errorColor;
+    return null;
   }
 }

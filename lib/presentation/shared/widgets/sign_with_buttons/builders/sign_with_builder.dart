@@ -4,7 +4,7 @@ import 'package:diplom_proj/resources/resources.dart';
 import 'package:diplom_proj/src/auth/domain/bloc/auth_bloc.dart';
 import 'package:diplom_proj/src/auth/domain/bloc/events/social_sign_in_event.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/src/provider.dart';
+
 import 'package:auto_route/auto_route.dart';
 
 enum SignWithType { signUp, logIn }

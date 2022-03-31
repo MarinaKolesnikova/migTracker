@@ -3,8 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'package:diplom_proj/presentation/shared/widgets/tab_bar/light_tab_bar.dart';
 import 'package:diplom_proj/presentation/shared/widgets/tab_bar/models/tab_bar_model.dart';
-import 'package:diplom_proj/resources/dictionary/data/main_dictionary/tab_bar_dictionary/tab_bar_dictionary.dart';
-import 'package:diplom_proj/resources/paths/svg_paths.dart';
+
 import 'package:diplom_proj/resources/resources.dart';
 
 class LightTabBar extends StatelessWidget {

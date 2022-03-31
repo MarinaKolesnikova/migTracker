@@ -37,6 +37,7 @@ class AuthServiceMock implements AuthService {
       onError('Невозможно войти с предоставленными учетными данными');
       return false;
     }
+    return null;
   }
 
   @override

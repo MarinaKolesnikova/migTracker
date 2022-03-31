@@ -110,6 +110,7 @@ class MainLayout extends StatelessWidget {
     if (gradient != null) {
       return BoxDecoration(gradient: gradient);
     }
+    return null;
   }
 
   Widget focusLayout(BuildContext context, {required Widget child}) {

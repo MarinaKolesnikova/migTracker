@@ -48,5 +48,6 @@ class SocialSignInEvent extends IBlocEvent<AuthState> {
       case SignInType.email:
         break;
     }
+    return null;
   }
 }

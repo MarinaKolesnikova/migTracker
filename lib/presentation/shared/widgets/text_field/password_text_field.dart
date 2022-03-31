@@ -1,6 +1,6 @@
 import 'package:diplom_proj/presentation/shared/widgets/text_field/light_text_field_builder.dart';
 import 'package:diplom_proj/presentation/shared/widgets/text_field/mixins/password_field_mixin.dart';
-import 'package:diplom_proj/resources/colors/light_colors.dart';
+
 import 'package:diplom_proj/resources/resources.dart';
 import 'package:flutter/material.dart';
 

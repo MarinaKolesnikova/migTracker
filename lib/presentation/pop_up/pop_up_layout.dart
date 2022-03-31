@@ -1,13 +1,8 @@
-import 'dart:ui';
-
+import 'package:flutter/material.dart';
 import 'package:auto_route/src/router/auto_router_x.dart';
 
 import 'package:diplom_proj/presentation/shared/widgets/non_animated_inkwell.dart/non_animated_inkwell.dart';
 import 'package:diplom_proj/resources/resources.dart';
-
-import 'package:diplom_proj/src/main/domain/bloc/app_bloc.dart';
-import 'package:flutter/material.dart';
-import 'package:provider/src/provider.dart';
 
 class PopUpLayout extends StatelessWidget {
   const PopUpLayout({

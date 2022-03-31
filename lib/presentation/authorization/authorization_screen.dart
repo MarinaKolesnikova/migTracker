@@ -4,7 +4,6 @@ import 'package:diplom_proj/presentation/shared/scroll_component/scroll_clean_be
 import 'package:diplom_proj/presentation/shared/widgets/bru_top_tab_bar/models/tab_bar_model.dart';
 
 import 'package:diplom_proj/presentation/shared/widgets/bru_top_tab_bar/top_tab_bar_builder.dart';
-import 'package:diplom_proj/resources/colors/light_colors.dart';
 import 'package:diplom_proj/resources/resources.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

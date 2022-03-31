@@ -34,6 +34,7 @@ class AuthServiceImpl implements AuthService {
         onError(error.errorMessage);
       }
     }
+    return null;
   }
 
   @override
@@ -60,6 +61,7 @@ class AuthServiceImpl implements AuthService {
         return false;
       }
     }
+    return null;
   }
 
   @override

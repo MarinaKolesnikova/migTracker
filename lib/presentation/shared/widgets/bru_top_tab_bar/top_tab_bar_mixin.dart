@@ -25,7 +25,7 @@ mixin TopTabBarMixin<T extends TopTabBar> on AnimationState<T> {
     positionFromLeft = 0.0;
 
     animationController.forward(from: 0.0);
-    WidgetsBinding.instance?.addPostFrameCallback(
+    WidgetsBinding.instance.addPostFrameCallback(
       (timeStamp) {
         itemWidth = context.size!.width / widget.elements.length;
         positionAnimation = createPositionAnimation(from: 0, to: 0);

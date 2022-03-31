@@ -5,7 +5,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:diplom_proj/presentation/shared/widgets/non_animated_inkwell.dart/non_animated_inkwell.dart';
 
-import 'package:diplom_proj/resources/light_text_styles/light_text_styles.dart';
 import 'package:diplom_proj/resources/resources.dart';
 
 import 'package:diplom_proj/src/main/domain/bloc/app_bloc.dart';
