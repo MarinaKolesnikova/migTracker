@@ -37,8 +37,6 @@ class SignUpEvent extends IBlocEvent<AuthState> {
     yield bloc.state.copyWith(isLoading: false);
 
     if (userData != null) {
-      await bloc.tokenStorage.save(Token(accessToken: userData.token));
-
       onComplete?.call();
     }
   }

@@ -5,4 +5,5 @@ class AppRoutes {
   static const String authScreen = 'auth_screen';
 
   static const String homeScreen = 'home_screen';
+  static const String mainScreen = 'main_screen';
 }

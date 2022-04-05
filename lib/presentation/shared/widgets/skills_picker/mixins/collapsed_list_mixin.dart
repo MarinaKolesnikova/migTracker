@@ -19,7 +19,7 @@ mixin CollapsedListMixin<T extends CollapsedList> on AnimationState<T> {
 
   void createAnimation() {
     final Animation<double> curve = CurvedAnimation(parent: animationController, curve: Curves.easeInOut);
-    sizeAnimation = Tween<double>(begin: 0.0, end: 45.0 * widget.skills.length).animate(curve);
+    sizeAnimation = Tween<double>(begin: 0.0, end: 45.0 * widget.symptoms.length).animate(curve);
   }
 
   void onChanged({

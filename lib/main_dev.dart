@@ -5,5 +5,5 @@ import 'package:diplom_proj/initialize_app.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  await initializeApp(appConfig: MockConfig());
+  await initializeApp(appConfig: DevConfig());
 }

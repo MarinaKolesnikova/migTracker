@@ -16,7 +16,7 @@ class MandatoryLabel extends StatelessWidget {
         children: [
           Text(
             dictionary.mandatoryFields,
-            style: LightTextStyles.nunitoS14W400(
+            style: LightTextStyles.poppinsS14W400(
               color: LightColors.primaryColor,
               height: 1.8,
             ),

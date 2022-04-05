@@ -45,7 +45,7 @@ class LightColors {
   static const Color outlinedButtonColor = Color(0xff1F103A);
   static const Color borderColor = Color(0xff26154E);
   static const Color backgroundColor = Color(0xff290D46);
-  static const Color chipColor = Color(0xff4A4674);
+  static const Color chipColor = Color.fromARGB(255, 134, 113, 183);
   static const Color tileColor = Color(0xff4A4674);
   static const Color lightPurpleColor = Color(0xff9F98C8);
 
@@ -68,5 +68,8 @@ class LightColors {
   ];
 
   static const List<Color> bgGradient = [Color(0xff210846), Color(0xff450D60)];
-  static const List<Color> iconGradient = [Color(0xff9909B7), Color(0xff1245C6)];
+  static const List<Color> panelGradient = [Color(0xff26154E), Color(0xff450D60)];
+
+  static const List<Color> iconGradient = [Color(0xff9909B7), Color.fromARGB(255, 84, 129, 242)];
+  static const List<Color> onPanelIcon = [Color(0xff9F98C8), Color.fromARGB(255, 134, 113, 183)];
 }

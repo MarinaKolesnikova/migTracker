@@ -4,26 +4,25 @@ import 'package:diplom_proj/src/auth/entity/dto/auth_dto/auth_dto.dart';
 import 'package:diplom_proj/src/auth/entity/dto/email_dto/email_dto.dart';
 import 'package:diplom_proj/src/auth/entity/dto/login_dto/login_dto.dart';
 import 'package:diplom_proj/src/auth/entity/dto/sign_up_dto/sign_up_dto.dart';
-import 'package:diplom_proj/src/auth/entity/models/token/token.dart';
+
+import 'package:firebase_auth/firebase_auth.dart';
 
 abstract class AuthService {
-  FutureOr<Token?> login(
+  Future<User?> login(
     LoginDTO body, {
     required bool isTest,
     Function(String?)? onError,
   });
-  FutureOr<bool?> resetPassword(
+  Future<bool?> resetPassword(
     EmailDTO body, {
     required bool isTest,
     Function(String?)? onError,
   });
-  FutureOr<Token?> loginApple();
 
-  FutureOr<Token?> loginGoogle();
+  Future<User?> loginGoogle();
+  Future<User?> loginFacebook();
 
-  FutureOr<Token?> loginFacebook();
-
-  FutureOr<AuthDTO?> signup(
+  Future<User?> signup(
     SignUpDTO body, {
     Function(String?)? onError,
   });

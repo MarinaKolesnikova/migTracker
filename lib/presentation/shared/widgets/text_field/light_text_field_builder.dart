@@ -69,8 +69,8 @@ class LightTextFieldBuilder extends StatelessWidget {
       fieldKey: fieldKey,
       name: fieldName,
       autoValidateMode: autovalidateMode,
-      textStyle: textStyle ?? LightTextStyles.nunitoS16W400(),
-      labelStyle: labelStyle ?? LightTextStyles.nunitoS16W400(),
+      textStyle: textStyle ?? LightTextStyles.poppinsS16W400(),
+      labelStyle: labelStyle ?? LightTextStyles.poppinsS16W400(),
     );
   }
 
@@ -101,8 +101,8 @@ class LightTextFieldBuilder extends StatelessWidget {
       onEditingComplete: onEditingComplete,
       key: key,
       hintTextColor: obsqureIconColor,
-      textStyle: textStyle ?? LightTextStyles.nunitoS16W400(),
-      labelStyle: labelStyle ?? LightTextStyles.nunitoS16W400(),
+      textStyle: textStyle ?? LightTextStyles.poppinsS16W400(),
+      labelStyle: labelStyle ?? LightTextStyles.poppinsS16W400(),
       autoValidateMode: autovalidateMode,
     );
   }
@@ -142,8 +142,8 @@ class LightTextFieldBuilder extends StatelessWidget {
       textInputAction: textInputAction,
       keyboardType: keyboardType,
       expands: expands,
-      textStyle: textStyle ?? LightTextStyles.nunitoS16W400(),
-      labelStyle: labelStyle ?? LightTextStyles.nunitoS16W400(),
+      textStyle: textStyle ?? LightTextStyles.poppinsS16W400(),
+      labelStyle: labelStyle ?? LightTextStyles.poppinsS16W400(),
       autoValidateMode: autovalidateMode,
       formatters: formatters,
       textAlignVertical: textAlignVertical,

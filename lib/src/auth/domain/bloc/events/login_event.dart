@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import 'package:diplom_proj/src/auth/entity/dto/login_dto/login_dto.dart';
@@ -29,20 +30,13 @@ class LoginEvent extends IBlocEvent<AuthState> {
 
       yield bloc.state.copyWith(isLoading: true);
 
-      final Token? token = await bloc.authService.login(
+      final User? user = await bloc.authService.login(
         LoginDTO(email: email, password: password),
         onError: onError,
         isTest: isTest,
       );
 
-      if (token?.accessToken != null) {
-        await bloc.tokenStorage.save(
-          Token(
-            accessToken: token!.accessToken!,
-            isTest: isTest,
-          ),
-        );
-
+      if (user != null) {
         yield bloc.state.copyWith(isLoading: false);
 
         onLoginCompleted?.call();

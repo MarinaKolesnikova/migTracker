@@ -1,6 +1,7 @@
 import 'package:diplom_proj/src/main/domain/bloc/app_bloc.dart';
-import 'package:diplom_proj/src/symptoms/skill/skill.dart';
+
 import 'package:diplom_proj/src/symptoms/skills_group_abstract/skills_group_abstract.dart';
+import 'package:diplom_proj/src/symptoms/symptom_model/symptom.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -22,7 +23,7 @@ class SkillsPicker extends StatefulWidget {
     required this.onUnmark,
     this.onCustomHobbyAdded,
     this.onCustomHobbyCancelled,
-    this.customHobbies,
+    this.customSymptoms,
     this.isHobbyPicker = false,
     Key? key,
   }) : super(key: key);
@@ -31,7 +32,7 @@ class SkillsPicker extends StatefulWidget {
 
   final List<SkillsGroupAbstract> skillGroups;
   final List<int> checkedSkills;
-  final List<Skill>? customHobbies;
+  final List<Symptom>? customSymptoms;
 
   final Function(int) onMark;
   final Function(int) onUnmark;
@@ -70,10 +71,10 @@ class _SkillsPickerState extends State<SkillsPicker> with SkillsPickerMixin {
                 isSuffixVisible: isSuffixVisible,
               ),
             ),
-            if (widget.isHobbyPicker && widget.customHobbies != null)
+            if (widget.isHobbyPicker && widget.customSymptoms != null)
               CustomHobbiesContent(
                 isButtonActive: isAddButtonActive,
-                customHobbies: widget.customHobbies!,
+                customSymptoms: widget.customSymptoms!,
                 onCancelled: widget.onCustomHobbyCancelled,
                 onAdded: addHobby,
               ),
@@ -82,11 +83,11 @@ class _SkillsPickerState extends State<SkillsPicker> with SkillsPickerMixin {
                 behavior: ScrollCleanBehavior(),
                 child: ListView.builder(
                   controller: widget.scrollController,
-                  itemCount: tempSkillGroups.length,
+                  itemCount: tempSymptomsGroups.length,
                   itemBuilder: (ctx, index) {
                     return CollapsedList(
-                      skills: tempSkillGroups[index].skills,
-                      skillsHeader: tempSkillGroups[index].groupName,
+                      symptoms: tempSymptomsGroups[index].skills,
+                      skillsHeader: tempSymptomsGroups[index].groupName,
                       checkedSkills: widget.checkedSkills,
                       isSearch: isListExpanded,
                       onMark: widget.onMark,

@@ -26,7 +26,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
         return AutoTabsScaffold(
           backgroundColor: LightColors.backgroundColor,
           routes: [
-            ScreenInDevelopRoute(),
+            MainScreenRoute(),
             ScreenInDevelopRoute(),
             ScreenInDevelopRoute(),
             ScreenInDevelopRoute(),

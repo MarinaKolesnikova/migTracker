@@ -32,7 +32,7 @@ mixin PasswordFieldMixin<T extends PasswordEditingField> on State<T> {
         child: Text(
           errorMess,
           key: widget.errorKey,
-          style: LightTextStyles.nunitoS12W400(color: LightColors.errorColor),
+          style: LightTextStyles.poppinsS12W400(color: LightColors.errorColor),
         ),
       );
     }

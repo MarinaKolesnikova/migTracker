@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'tab_bar_dictionary.dart';
 
@@ -33,7 +35,7 @@ class _$TabBarDictionaryTearOff {
     );
   }
 
-  TabBarDictionary fromJson(Map<String, Object> json) {
+  TabBarDictionary fromJson(Map<String, Object?> json) {
     return TabBarDictionary.fromJson(json);
   }
 }
@@ -172,7 +174,7 @@ class _$_TabBarDictionary implements _TabBarDictionary {
       @JsonKey(name: 'predictions') required this.predictions});
 
   factory _$_TabBarDictionary.fromJson(Map<String, dynamic> json) =>
-      _$_$_TabBarDictionaryFromJson(json);
+      _$$_TabBarDictionaryFromJson(json);
 
   @override
   @JsonKey(name: 'home')
@@ -195,27 +197,22 @@ class _$_TabBarDictionary implements _TabBarDictionary {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _TabBarDictionary &&
-            (identical(other.home, home) ||
-                const DeepCollectionEquality().equals(other.home, home)) &&
-            (identical(other.calendar, calendar) ||
-                const DeepCollectionEquality()
-                    .equals(other.calendar, calendar)) &&
-            (identical(other.advices, advices) ||
-                const DeepCollectionEquality()
-                    .equals(other.advices, advices)) &&
-            (identical(other.predictions, predictions) ||
-                const DeepCollectionEquality()
-                    .equals(other.predictions, predictions)));
+        (other.runtimeType == runtimeType &&
+            other is _TabBarDictionary &&
+            const DeepCollectionEquality().equals(other.home, home) &&
+            const DeepCollectionEquality().equals(other.calendar, calendar) &&
+            const DeepCollectionEquality().equals(other.advices, advices) &&
+            const DeepCollectionEquality()
+                .equals(other.predictions, predictions));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(home) ^
-      const DeepCollectionEquality().hash(calendar) ^
-      const DeepCollectionEquality().hash(advices) ^
-      const DeepCollectionEquality().hash(predictions);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(home),
+      const DeepCollectionEquality().hash(calendar),
+      const DeepCollectionEquality().hash(advices),
+      const DeepCollectionEquality().hash(predictions));
 
   @JsonKey(ignore: true)
   @override
@@ -224,7 +221,7 @@ class _$_TabBarDictionary implements _TabBarDictionary {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_TabBarDictionaryToJson(this);
+    return _$$_TabBarDictionaryToJson(this);
   }
 }
 
@@ -241,16 +238,16 @@ abstract class _TabBarDictionary implements TabBarDictionary {
 
   @override
   @JsonKey(name: 'home')
-  String get home => throw _privateConstructorUsedError;
+  String get home;
   @override
   @JsonKey(name: 'calendar')
-  String get calendar => throw _privateConstructorUsedError;
+  String get calendar;
   @override
   @JsonKey(name: 'advices')
-  String get advices => throw _privateConstructorUsedError;
+  String get advices;
   @override
   @JsonKey(name: 'predictions')
-  String get predictions => throw _privateConstructorUsedError;
+  String get predictions;
   @override
   @JsonKey(ignore: true)
   _$TabBarDictionaryCopyWith<_TabBarDictionary> get copyWith =>

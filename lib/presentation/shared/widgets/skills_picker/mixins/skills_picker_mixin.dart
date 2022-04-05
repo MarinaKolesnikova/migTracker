@@ -1,4 +1,4 @@
-import 'package:diplom_proj/src/symptoms/skill/skill.dart';
+import 'package:diplom_proj/src/symptoms/symptom_model/symptom.dart';
 import 'package:diplom_proj/src/symptoms/skills_group/skills_group.dart';
 import 'package:diplom_proj/src/symptoms/skills_group_abstract/skills_group_abstract.dart';
 import 'package:flutter/material.dart';
@@ -7,13 +7,13 @@ import 'package:diplom_proj/presentation/shared/widgets/skills_picker/skills_pic
 import 'package:diplom_proj/resources/resources.dart';
 
 mixin SkillsPickerMixin<T extends SkillsPicker> on State<T> {
-  late List<SkillsGroupAbstract> tempSkillGroups;
+  late List<SkillsGroupAbstract> tempSymptomsGroups;
   bool isListExpanded = false;
   bool isSuffixVisible = false;
   bool isAddButtonActive = false;
   @override
   void initState() {
-    tempSkillGroups = widget.skillGroups;
+    tempSymptomsGroups = widget.skillGroups;
 
     super.initState();
   }
@@ -37,7 +37,7 @@ mixin SkillsPickerMixin<T extends SkillsPicker> on State<T> {
         isAddButtonActive = false;
       }
     } else {
-      tempSkillGroups = widget.skillGroups;
+      tempSymptomsGroups = widget.skillGroups;
       isAddButtonActive = false;
       isListExpanded = false;
     }
@@ -47,18 +47,18 @@ mixin SkillsPickerMixin<T extends SkillsPicker> on State<T> {
 
   bool isCustomExist() {
     int index = -1;
-    if (widget.customHobbies != null) {
-      index = widget.customHobbies!.indexWhere((element) => element.name == widget.searchController.text);
+    if (widget.customSymptoms != null) {
+      index = widget.customSymptoms!.indexWhere((element) => element.name == widget.searchController.text);
     }
     return index != -1;
   }
 
   void findSkills(String requestText) {
-    final List<SkillsGroup> newList = [];
+    final List<SymptomsGroup> newList = [];
     isAddButtonActive = true;
 
     for (int i = 0; i < widget.skillGroups.length; i++) {
-      final Iterable<Skill>? list = widget.skillGroups[i].skills.where(
+      final Iterable<Symptom>? list = widget.skillGroups[i].skills.where(
         (element) {
           final name = element.name!;
           if (name == requestText) {
@@ -71,7 +71,7 @@ mixin SkillsPickerMixin<T extends SkillsPicker> on State<T> {
       );
       if (list != null && list.isNotEmpty) {
         newList.add(
-          SkillsGroup(
+          SymptomsGroup(
             skills: list.toList(),
             groupName: widget.skillGroups[i].groupName,
             id: widget.skillGroups[i].id,
@@ -80,7 +80,7 @@ mixin SkillsPickerMixin<T extends SkillsPicker> on State<T> {
       }
     }
     setState(() {
-      tempSkillGroups = newList;
+      tempSymptomsGroups = newList;
     });
   }
 

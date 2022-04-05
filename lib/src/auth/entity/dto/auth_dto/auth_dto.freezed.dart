@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'auth_dto.dart';
 
@@ -33,7 +35,7 @@ class _$AuthDTOTearOff {
     );
   }
 
-  AuthDTO fromJson(Map<String, Object> json) {
+  AuthDTO fromJson(Map<String, Object?> json) {
     return AuthDTO.fromJson(json);
   }
 }
@@ -166,7 +168,7 @@ class _$_AuthDTO extends _AuthDTO {
       : super._();
 
   factory _$_AuthDTO.fromJson(Map<String, dynamic> json) =>
-      _$_$_AuthDTOFromJson(json);
+      _$$_AuthDTOFromJson(json);
 
   @override
   @JsonKey(name: 'id')
@@ -189,25 +191,21 @@ class _$_AuthDTO extends _AuthDTO {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _AuthDTO &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.userName, userName) ||
-                const DeepCollectionEquality()
-                    .equals(other.userName, userName)) &&
-            (identical(other.email, email) ||
-                const DeepCollectionEquality().equals(other.email, email)) &&
-            (identical(other.token, token) ||
-                const DeepCollectionEquality().equals(other.token, token)));
+        (other.runtimeType == runtimeType &&
+            other is _AuthDTO &&
+            const DeepCollectionEquality().equals(other.id, id) &&
+            const DeepCollectionEquality().equals(other.userName, userName) &&
+            const DeepCollectionEquality().equals(other.email, email) &&
+            const DeepCollectionEquality().equals(other.token, token));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(userName) ^
-      const DeepCollectionEquality().hash(email) ^
-      const DeepCollectionEquality().hash(token);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(id),
+      const DeepCollectionEquality().hash(userName),
+      const DeepCollectionEquality().hash(email),
+      const DeepCollectionEquality().hash(token));
 
   @JsonKey(ignore: true)
   @override
@@ -216,7 +214,7 @@ class _$_AuthDTO extends _AuthDTO {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_AuthDTOToJson(this);
+    return _$$_AuthDTOToJson(this);
   }
 }
 
@@ -232,16 +230,16 @@ abstract class _AuthDTO extends AuthDTO {
 
   @override
   @JsonKey(name: 'id')
-  int get id => throw _privateConstructorUsedError;
+  int get id;
   @override
   @JsonKey(name: 'userName')
-  String get userName => throw _privateConstructorUsedError;
+  String get userName;
   @override
   @JsonKey(name: 'email')
-  String get email => throw _privateConstructorUsedError;
+  String get email;
   @override
   @JsonKey(name: 'key')
-  String? get token => throw _privateConstructorUsedError;
+  String? get token;
   @override
   @JsonKey(ignore: true)
   _$AuthDTOCopyWith<_AuthDTO> get copyWith =>

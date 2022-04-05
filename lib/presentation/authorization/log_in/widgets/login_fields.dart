@@ -26,20 +26,21 @@ class LoginFields extends StatelessWidget {
           child: LightTextFieldBuilder.login(
             label: dict.email,
             controller: loginController,
-            labelStyle: LightTextStyles.nunitoS16W400(color: LightColors.text),
-            textStyle: LightTextStyles.nunitoS16W400(color: LightColors.text, height: 1.5),
+            labelStyle: LightTextStyles.poppinsS16W400(),
+            textStyle: LightTextStyles.poppinsS16W400(height: 1.5),
             filledColor: isError ? LightColors.errorColor : LightColors.text,
             onChange: (_) {
               onChange();
             },
+            autovalidateMode: AutovalidateMode.onUserInteraction,
           ),
         ),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20.0),
           child: LightTextFieldBuilder.password(
             controller: passwordController,
-            labelStyle: LightTextStyles.nunitoS16W400(color: LightColors.text),
-            textStyle: LightTextStyles.nunitoS16W400(color: LightColors.text, height: 1.5),
+            labelStyle: LightTextStyles.poppinsS16W400(),
+            textStyle: LightTextStyles.poppinsS16W400(height: 1.5),
             filledColor: isError ? LightColors.errorColor : LightColors.text,
             onChange: (_) {
               onChange();

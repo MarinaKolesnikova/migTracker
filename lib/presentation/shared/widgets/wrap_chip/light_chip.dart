@@ -1,24 +1,25 @@
 import 'package:diplom_proj/presentation/shared/widgets/non_animated_inkwell.dart/non_animated_inkwell.dart';
 import 'package:diplom_proj/resources/resources.dart';
-import 'package:diplom_proj/src/symptoms/skill/skill.dart';
+
+import 'package:diplom_proj/src/symptoms/symptom_model/symptom.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class LightChip extends StatelessWidget {
   const LightChip({
-    required this.skill,
+    required this.symptom,
     this.isEditable = false,
     this.onCancelled,
     Key? key,
   }) : super(key: key);
-  final Skill skill;
+  final Symptom symptom;
   final bool isEditable;
-  final Function(Skill value)? onCancelled;
+  final Function(Symptom value)? onCancelled;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 30.0,
+      height: 20.0,
       decoration: getDecoration(),
       padding: EdgeInsets.only(
         left: 15.0,
@@ -29,18 +30,17 @@ class LightChip extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              skill.name!,
+              symptom.name!,
               overflow: TextOverflow.ellipsis,
               maxLines: 1,
-              style: LightTextStyles.robotoS16W400(
+              style: LightTextStyles.poppinsS12W400(
                 color: LightColors.accentColor,
-                letterSpacing: 0.5,
               ),
             ),
             if (isEditable)
               NonAnimatedInkWell(
                 onTap: () {
-                  onCancelled?.call(skill);
+                  onCancelled?.call(symptom);
                 },
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 5.0),

@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'login_dto.dart';
 
@@ -29,7 +31,7 @@ class _$LoginDTOTearOff {
     );
   }
 
-  LoginDTO fromJson(Map<String, Object> json) {
+  LoginDTO fromJson(Map<String, Object?> json) {
     return LoginDTO.fromJson(json);
   }
 }
@@ -133,7 +135,7 @@ class _$_LoginDTO extends _LoginDTO {
       : super._();
 
   factory _$_LoginDTO.fromJson(Map<String, dynamic> json) =>
-      _$_$_LoginDTOFromJson(json);
+      _$$_LoginDTOFromJson(json);
 
   @override
   @JsonKey(name: 'email')
@@ -150,19 +152,17 @@ class _$_LoginDTO extends _LoginDTO {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _LoginDTO &&
-            (identical(other.email, email) ||
-                const DeepCollectionEquality().equals(other.email, email)) &&
-            (identical(other.password, password) ||
-                const DeepCollectionEquality()
-                    .equals(other.password, password)));
+        (other.runtimeType == runtimeType &&
+            other is _LoginDTO &&
+            const DeepCollectionEquality().equals(other.email, email) &&
+            const DeepCollectionEquality().equals(other.password, password));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(email) ^
-      const DeepCollectionEquality().hash(password);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(email),
+      const DeepCollectionEquality().hash(password));
 
   @JsonKey(ignore: true)
   @override
@@ -171,7 +171,7 @@ class _$_LoginDTO extends _LoginDTO {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_LoginDTOToJson(this);
+    return _$$_LoginDTOToJson(this);
   }
 }
 
@@ -185,10 +185,10 @@ abstract class _LoginDTO extends LoginDTO {
 
   @override
   @JsonKey(name: 'email')
-  String get email => throw _privateConstructorUsedError;
+  String get email;
   @override
   @JsonKey(name: 'password')
-  String get password => throw _privateConstructorUsedError;
+  String get password;
   @override
   @JsonKey(ignore: true)
   _$LoginDTOCopyWith<_LoginDTO> get copyWith =>

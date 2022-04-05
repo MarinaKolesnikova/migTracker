@@ -7,17 +7,18 @@ import 'package:diplom_proj/src/auth/entity/dto/login_dto/login_dto.dart';
 import 'package:diplom_proj/src/auth/data/services/auth_service.dart';
 import 'package:diplom_proj/src/auth/entity/dto/sign_up_dto/sign_up_dto.dart';
 import 'package:diplom_proj/src/auth/entity/models/token/token.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class AuthServiceMock implements AuthService {
   const AuthServiceMock();
 
   @override
-  FutureOr<Token?> login(
+  Future<User?> login(
     LoginDTO body, {
     required bool isTest,
     Function(String?)? onError,
-  }) {
-    return Token.mock();
+  }) async {
+    return null;
     // if (body.email == 'correctEmail' && body.password == 'correctPassword') {
     //   return Token.mock();
     // } else if (onError != null) {
@@ -26,11 +27,11 @@ class AuthServiceMock implements AuthService {
   }
 
   @override
-  FutureOr<bool?> resetPassword(
+  Future<bool?> resetPassword(
     EmailDTO body, {
     required bool isTest,
     Function(String?)? onError,
-  }) {
+  }) async {
     if (body.email == 'correctEmail') {
       return true;
     } else if (onError != null) {
@@ -41,25 +42,26 @@ class AuthServiceMock implements AuthService {
   }
 
   @override
-  FutureOr<AuthDTO?> signup(SignUpDTO body, {Function(String?)? onError}) {
-    return AuthDTO.mock();
+  Future<User?> signup(SignUpDTO body, {Function(String?)? onError}) async {
+    await Future.delayed(Duration(milliseconds: 100));
+    return null;
   }
 
   @override
-  FutureOr<Token?> loginApple() async {
+  Future<User?> loginApple() async {
     await Future.delayed(Duration(seconds: 2));
-    return Token.mock();
+    return null;
   }
 
   @override
-  FutureOr<Token?> loginFacebook() async {
+  Future<User?> loginFacebook() async {
     await Future.delayed(Duration(seconds: 2));
-    return Token.mock();
+    return null;
   }
 
   @override
-  FutureOr<Token?> loginGoogle() async {
+  Future<User?> loginGoogle() async {
     await Future.delayed(Duration(seconds: 2));
-    return Token.mock();
+    return null;
   }
 }

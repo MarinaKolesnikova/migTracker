@@ -1,6 +1,7 @@
 import 'package:auto_route/src/router/auto_router_x.dart';
 import 'package:diplom_proj/presentation/authorization/sign_up/sign_up_screen.dart';
 import 'package:diplom_proj/src/auth/domain/bloc/events/sign_up_event.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import 'package:diplom_proj/resources/resources.dart';
@@ -36,8 +37,10 @@ mixin SignUpScreenMixin<T extends SignUpScreen> on State<T> {
     super.dispose();
   }
 
-  void onChanged(String? field) {
-    buttonDisabilityCheck();
+  void onChanged({required bool buttonDisability}) {
+    isButtonDisable = buttonDisability;
+
+    setState(() {});
   }
 
   void buttonDisabilityCheck() {
@@ -51,19 +54,17 @@ mixin SignUpScreenMixin<T extends SignUpScreen> on State<T> {
 
   void onSignUpButtonTap() {
     if (!isButtonDisable) {
-      final valid = formKey.currentState!.validate();
-      if (valid) {
-        context.read<AuthBloc>().add(
-              SignUpEvent(
-                  name: nameController.text,
-                  email: emailController.text,
-                  password: passwordController.text,
-                  confirmPassword: confirmPasswordController.text,
-                  onComplete: () async {
-                    await context.router.pushNamed(AppRoutes.homeScreen);
-                  }),
-            );
-      }
+      context.read<AuthBloc>().add(
+            SignUpEvent(
+              name: nameController.text,
+              email: emailController.text,
+              password: passwordController.text,
+              confirmPassword: confirmPasswordController.text,
+              onComplete: () async {
+                await context.router.pushNamed(AppRoutes.homeScreen);
+              },
+            ),
+          );
     }
   }
 

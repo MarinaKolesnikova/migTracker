@@ -31,7 +31,10 @@ mixin BottomTabBarItemMixin<T extends CustomBottomBarItem> on AnimationState<T> 
             tileMode: TileMode.mirror,
           ).createShader(bounds);
         },
-        child: SvgPicture.asset(widget.tabData.activeIconPath),
+        child: SvgPicture.asset(
+          widget.tabData.activeIconPath,
+          color: LightColors.lightPurpleColor,
+        ),
       );
     }
 
@@ -46,7 +49,7 @@ mixin BottomTabBarItemMixin<T extends CustomBottomBarItem> on AnimationState<T> 
     if (widget.isSelected) {
       weight = FontWeight.w500;
     }
-    return LightTextStyles.nunito(
+    return LightTextStyles.poppins(
       fontWeight: weight,
       height: 1.15,
       letterSpacing: 0.5,
