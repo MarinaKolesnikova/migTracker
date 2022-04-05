@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:diplom_proj/src/auth/entity/dto/sign_up_dto/sign_up_dto.dart';
-import 'package:diplom_proj/src/auth/entity/models/token/token.dart';
+
 import 'package:diplom_proj/src/shared/interfaces/i_bloc.dart';
 import 'package:flutter/material.dart';
 

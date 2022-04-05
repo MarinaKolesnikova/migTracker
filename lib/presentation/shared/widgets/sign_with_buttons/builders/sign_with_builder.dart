@@ -1,4 +1,3 @@
-import 'dart:io' show Platform;
 import 'package:diplom_proj/presentation/shared/widgets/sign_with_buttons/sign_with_buttons.dart';
 import 'package:diplom_proj/resources/resources.dart';
 import 'package:diplom_proj/src/auth/domain/bloc/auth_bloc.dart';

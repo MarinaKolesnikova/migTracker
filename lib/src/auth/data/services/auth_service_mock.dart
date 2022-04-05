@@ -1,12 +1,9 @@
 import 'dart:async';
 
-import 'package:diplom_proj/src/auth/entity/dto/auth_dto/auth_dto.dart';
+import 'package:diplom_proj/src/auth/data/services/auth_service.dart';
 import 'package:diplom_proj/src/auth/entity/dto/email_dto/email_dto.dart';
 import 'package:diplom_proj/src/auth/entity/dto/login_dto/login_dto.dart';
-
-import 'package:diplom_proj/src/auth/data/services/auth_service.dart';
 import 'package:diplom_proj/src/auth/entity/dto/sign_up_dto/sign_up_dto.dart';
-import 'package:diplom_proj/src/auth/entity/models/token/token.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class AuthServiceMock implements AuthService {

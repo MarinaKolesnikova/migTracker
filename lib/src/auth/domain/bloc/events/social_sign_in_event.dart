@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:dio/dio.dart';
-import 'package:diplom_proj/src/auth/entity/models/token/token.dart';
+
 import 'package:diplom_proj/src/shared/interfaces/i_bloc_event.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 

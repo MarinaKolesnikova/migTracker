@@ -4,7 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import 'package:diplom_proj/src/auth/entity/dto/login_dto/login_dto.dart';
-import 'package:diplom_proj/src/auth/entity/models/token/token.dart';
+
 import 'package:diplom_proj/src/shared/interfaces/i_bloc.dart';
 
 import '../auth_bloc.dart';
