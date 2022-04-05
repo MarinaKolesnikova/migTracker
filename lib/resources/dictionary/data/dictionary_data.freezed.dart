@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'dictionary_data.dart';
 
@@ -23,15 +25,19 @@ class _$DictionaryDataTearOff {
   _DictionaryData call(
       {@JsonKey(name: 'auth') required AuthDictionary auth,
       @JsonKey(name: 'main') required MainDictionary main,
-      @JsonKey(name: 'validation') required ValidationDictionary validation}) {
+      @JsonKey(name: 'validation') required ValidationDictionary validation,
+      @JsonKey(name: 'messages') required MessagesDictionary messages,
+      @JsonKey(name: 'home') required HomeDictionary home}) {
     return _DictionaryData(
       auth: auth,
       main: main,
       validation: validation,
+      messages: messages,
+      home: home,
     );
   }
 
-  DictionaryData fromJson(Map<String, Object> json) {
+  DictionaryData fromJson(Map<String, Object?> json) {
     return DictionaryData.fromJson(json);
   }
 }
@@ -47,6 +53,10 @@ mixin _$DictionaryData {
   MainDictionary get main => throw _privateConstructorUsedError;
   @JsonKey(name: 'validation')
   ValidationDictionary get validation => throw _privateConstructorUsedError;
+  @JsonKey(name: 'messages')
+  MessagesDictionary get messages => throw _privateConstructorUsedError;
+  @JsonKey(name: 'home')
+  HomeDictionary get home => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -62,11 +72,15 @@ abstract class $DictionaryDataCopyWith<$Res> {
   $Res call(
       {@JsonKey(name: 'auth') AuthDictionary auth,
       @JsonKey(name: 'main') MainDictionary main,
-      @JsonKey(name: 'validation') ValidationDictionary validation});
+      @JsonKey(name: 'validation') ValidationDictionary validation,
+      @JsonKey(name: 'messages') MessagesDictionary messages,
+      @JsonKey(name: 'home') HomeDictionary home});
 
   $AuthDictionaryCopyWith<$Res> get auth;
   $MainDictionaryCopyWith<$Res> get main;
   $ValidationDictionaryCopyWith<$Res> get validation;
+  $MessagesDictionaryCopyWith<$Res> get messages;
+  $HomeDictionaryCopyWith<$Res> get home;
 }
 
 /// @nodoc
@@ -83,6 +97,8 @@ class _$DictionaryDataCopyWithImpl<$Res>
     Object? auth = freezed,
     Object? main = freezed,
     Object? validation = freezed,
+    Object? messages = freezed,
+    Object? home = freezed,
   }) {
     return _then(_value.copyWith(
       auth: auth == freezed
@@ -97,6 +113,14 @@ class _$DictionaryDataCopyWithImpl<$Res>
           ? _value.validation
           : validation // ignore: cast_nullable_to_non_nullable
               as ValidationDictionary,
+      messages: messages == freezed
+          ? _value.messages
+          : messages // ignore: cast_nullable_to_non_nullable
+              as MessagesDictionary,
+      home: home == freezed
+          ? _value.home
+          : home // ignore: cast_nullable_to_non_nullable
+              as HomeDictionary,
     ));
   }
 
@@ -120,6 +144,20 @@ class _$DictionaryDataCopyWithImpl<$Res>
       return _then(_value.copyWith(validation: value));
     });
   }
+
+  @override
+  $MessagesDictionaryCopyWith<$Res> get messages {
+    return $MessagesDictionaryCopyWith<$Res>(_value.messages, (value) {
+      return _then(_value.copyWith(messages: value));
+    });
+  }
+
+  @override
+  $HomeDictionaryCopyWith<$Res> get home {
+    return $HomeDictionaryCopyWith<$Res>(_value.home, (value) {
+      return _then(_value.copyWith(home: value));
+    });
+  }
 }
 
 /// @nodoc
@@ -132,7 +170,9 @@ abstract class _$DictionaryDataCopyWith<$Res>
   $Res call(
       {@JsonKey(name: 'auth') AuthDictionary auth,
       @JsonKey(name: 'main') MainDictionary main,
-      @JsonKey(name: 'validation') ValidationDictionary validation});
+      @JsonKey(name: 'validation') ValidationDictionary validation,
+      @JsonKey(name: 'messages') MessagesDictionary messages,
+      @JsonKey(name: 'home') HomeDictionary home});
 
   @override
   $AuthDictionaryCopyWith<$Res> get auth;
@@ -140,6 +180,10 @@ abstract class _$DictionaryDataCopyWith<$Res>
   $MainDictionaryCopyWith<$Res> get main;
   @override
   $ValidationDictionaryCopyWith<$Res> get validation;
+  @override
+  $MessagesDictionaryCopyWith<$Res> get messages;
+  @override
+  $HomeDictionaryCopyWith<$Res> get home;
 }
 
 /// @nodoc
@@ -158,6 +202,8 @@ class __$DictionaryDataCopyWithImpl<$Res>
     Object? auth = freezed,
     Object? main = freezed,
     Object? validation = freezed,
+    Object? messages = freezed,
+    Object? home = freezed,
   }) {
     return _then(_DictionaryData(
       auth: auth == freezed
@@ -172,6 +218,14 @@ class __$DictionaryDataCopyWithImpl<$Res>
           ? _value.validation
           : validation // ignore: cast_nullable_to_non_nullable
               as ValidationDictionary,
+      messages: messages == freezed
+          ? _value.messages
+          : messages // ignore: cast_nullable_to_non_nullable
+              as MessagesDictionary,
+      home: home == freezed
+          ? _value.home
+          : home // ignore: cast_nullable_to_non_nullable
+              as HomeDictionary,
     ));
   }
 }
@@ -184,10 +238,12 @@ class _$_DictionaryData implements _DictionaryData {
   const _$_DictionaryData(
       {@JsonKey(name: 'auth') required this.auth,
       @JsonKey(name: 'main') required this.main,
-      @JsonKey(name: 'validation') required this.validation});
+      @JsonKey(name: 'validation') required this.validation,
+      @JsonKey(name: 'messages') required this.messages,
+      @JsonKey(name: 'home') required this.home});
 
   factory _$_DictionaryData.fromJson(Map<String, dynamic> json) =>
-      _$_$_DictionaryDataFromJson(json);
+      _$$_DictionaryDataFromJson(json);
 
   @override
   @JsonKey(name: 'auth')
@@ -198,31 +254,39 @@ class _$_DictionaryData implements _DictionaryData {
   @override
   @JsonKey(name: 'validation')
   final ValidationDictionary validation;
+  @override
+  @JsonKey(name: 'messages')
+  final MessagesDictionary messages;
+  @override
+  @JsonKey(name: 'home')
+  final HomeDictionary home;
 
   @override
   String toString() {
-    return 'DictionaryData(auth: $auth, main: $main, validation: $validation)';
+    return 'DictionaryData(auth: $auth, main: $main, validation: $validation, messages: $messages, home: $home)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _DictionaryData &&
-            (identical(other.auth, auth) ||
-                const DeepCollectionEquality().equals(other.auth, auth)) &&
-            (identical(other.main, main) ||
-                const DeepCollectionEquality().equals(other.main, main)) &&
-            (identical(other.validation, validation) ||
-                const DeepCollectionEquality()
-                    .equals(other.validation, validation)));
+        (other.runtimeType == runtimeType &&
+            other is _DictionaryData &&
+            const DeepCollectionEquality().equals(other.auth, auth) &&
+            const DeepCollectionEquality().equals(other.main, main) &&
+            const DeepCollectionEquality()
+                .equals(other.validation, validation) &&
+            const DeepCollectionEquality().equals(other.messages, messages) &&
+            const DeepCollectionEquality().equals(other.home, home));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(auth) ^
-      const DeepCollectionEquality().hash(main) ^
-      const DeepCollectionEquality().hash(validation);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(auth),
+      const DeepCollectionEquality().hash(main),
+      const DeepCollectionEquality().hash(validation),
+      const DeepCollectionEquality().hash(messages),
+      const DeepCollectionEquality().hash(home));
 
   @JsonKey(ignore: true)
   @override
@@ -231,31 +295,36 @@ class _$_DictionaryData implements _DictionaryData {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_DictionaryDataToJson(this);
+    return _$$_DictionaryDataToJson(this);
   }
 }
 
 abstract class _DictionaryData implements DictionaryData {
   const factory _DictionaryData(
-      {@JsonKey(name: 'auth')
-          required AuthDictionary auth,
-      @JsonKey(name: 'main')
-          required MainDictionary main,
-      @JsonKey(name: 'validation')
-          required ValidationDictionary validation}) = _$_DictionaryData;
+      {@JsonKey(name: 'auth') required AuthDictionary auth,
+      @JsonKey(name: 'main') required MainDictionary main,
+      @JsonKey(name: 'validation') required ValidationDictionary validation,
+      @JsonKey(name: 'messages') required MessagesDictionary messages,
+      @JsonKey(name: 'home') required HomeDictionary home}) = _$_DictionaryData;
 
   factory _DictionaryData.fromJson(Map<String, dynamic> json) =
       _$_DictionaryData.fromJson;
 
   @override
   @JsonKey(name: 'auth')
-  AuthDictionary get auth => throw _privateConstructorUsedError;
+  AuthDictionary get auth;
   @override
   @JsonKey(name: 'main')
-  MainDictionary get main => throw _privateConstructorUsedError;
+  MainDictionary get main;
   @override
   @JsonKey(name: 'validation')
-  ValidationDictionary get validation => throw _privateConstructorUsedError;
+  ValidationDictionary get validation;
+  @override
+  @JsonKey(name: 'messages')
+  MessagesDictionary get messages;
+  @override
+  @JsonKey(name: 'home')
+  HomeDictionary get home;
   @override
   @JsonKey(ignore: true)
   _$DictionaryDataCopyWith<_DictionaryData> get copyWith =>

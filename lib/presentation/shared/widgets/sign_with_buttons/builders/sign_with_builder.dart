@@ -39,7 +39,7 @@ class SignWithBuilder extends StatelessWidget {
           padding: const EdgeInsets.only(top: 30.0, bottom: 6.0),
           child: Text(
             assignment + authDictionary.socialNetworks,
-            style: LightTextStyles.nunitoS14W400(color: LightColors.text),
+            style: LightTextStyles.poppinsS14W400(color: LightColors.text),
           ),
         ),
         SignWithButton(
@@ -56,14 +56,6 @@ class SignWithBuilder extends StatelessWidget {
           padding: padding,
           onTap: () => onSocialSignInButtonTap(context, signInType: SignInType.google),
         ),
-        if (Platform.isIOS)
-          SignWithButton(
-            color: LightColors.black,
-            iconPath: SvgPathPicker.apple,
-            text: assignment + authDictionary.apple,
-            padding: padding,
-            onTap: () => onSocialSignInButtonTap(context, signInType: SignInType.apple),
-          ),
       ],
     );
   }

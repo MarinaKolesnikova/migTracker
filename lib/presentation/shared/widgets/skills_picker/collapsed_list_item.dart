@@ -46,8 +46,8 @@ class _CollapsedListItemState extends State<CollapsedListItem> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              widget.skillModel.skill.name!,
-              style: LightTextStyles.nunitoS14W400(color: LightColors.text),
+              widget.skillModel.symptom.name!,
+              style: LightTextStyles.poppinsS14W400(color: LightColors.text),
             ),
             if (isChecked)
               Icon(

@@ -1,4 +1,4 @@
-package com.example.diplom_proj
+package com.mobile.migtracker
 
 import io.flutter.embedding.android.FlutterActivity
 

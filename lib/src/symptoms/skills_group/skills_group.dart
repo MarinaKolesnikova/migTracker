@@ -1,4 +1,4 @@
-import 'package:diplom_proj/src/symptoms/skill/skill.dart';
+import 'package:diplom_proj/src/symptoms/symptom_model/symptom.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:diplom_proj/src/symptoms/skills_group_abstract/skills_group_abstract.dart';
 
@@ -6,26 +6,26 @@ part 'skills_group.freezed.dart';
 part 'skills_group.g.dart';
 
 @freezed
-class SkillsGroup extends SkillsGroupAbstract with _$SkillsGroup {
+class SymptomsGroup extends SkillsGroupAbstract with _$SymptomsGroup {
   @JsonSerializable(
     fieldRename: FieldRename.snake,
     checked: true,
     explicitToJson: true,
   )
-  const factory SkillsGroup({
+  const factory SymptomsGroup({
     @JsonKey(name: 'id') required int id,
-    @JsonKey(name: 'skills') required List<Skill> skills,
+    @JsonKey(name: 'symptoms') required List<Symptom> skills,
     @JsonKey(name: 'name') required String groupName,
   }) = _SkillsGroup;
 
-  factory SkillsGroup.mock() => SkillsGroup(
+  factory SymptomsGroup.mock() => SymptomsGroup(
         id: 0,
         groupName: 'Any',
         skills: [
-          Skill.mock(),
-          Skill.mock(),
+          Symptom.mock(),
+          Symptom.mock(),
         ],
       );
 
-  factory SkillsGroup.fromJson(Map<String, dynamic> json) => _$SkillsGroupFromJson(json);
+  factory SymptomsGroup.fromJson(Map<String, dynamic> json) => _$SymptomsGroupFromJson(json);
 }

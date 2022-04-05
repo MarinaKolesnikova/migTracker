@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'settings.dart';
 
@@ -26,7 +28,7 @@ class _$SettingsTearOff {
     );
   }
 
-  Settings fromJson(Map<String, Object> json) {
+  Settings fromJson(Map<String, Object?> json) {
     return Settings.fromJson(json);
   }
 }
@@ -111,7 +113,7 @@ class _$_Settings implements _Settings {
   const _$_Settings({@JsonKey(name: 'language') this.language = 'en'});
 
   factory _$_Settings.fromJson(Map<String, dynamic> json) =>
-      _$_$_SettingsFromJson(json);
+      _$$_SettingsFromJson(json);
 
   @override
   @JsonKey(name: 'language')
@@ -125,15 +127,14 @@ class _$_Settings implements _Settings {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Settings &&
-            (identical(other.language, language) ||
-                const DeepCollectionEquality()
-                    .equals(other.language, language)));
+        (other.runtimeType == runtimeType &&
+            other is _Settings &&
+            const DeepCollectionEquality().equals(other.language, language));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(language);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(language));
 
   @JsonKey(ignore: true)
   @override
@@ -142,7 +143,7 @@ class _$_Settings implements _Settings {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_SettingsToJson(this);
+    return _$$_SettingsToJson(this);
   }
 }
 
@@ -154,7 +155,7 @@ abstract class _Settings implements Settings {
 
   @override
   @JsonKey(name: 'language')
-  String get language => throw _privateConstructorUsedError;
+  String get language;
   @override
   @JsonKey(ignore: true)
   _$SettingsCopyWith<_Settings> get copyWith =>

@@ -4,8 +4,8 @@ import 'package:diplom_proj/resources/resources.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class LightCheckBox extends StatefulWidget {
-  const LightCheckBox({
+class LightSortArrows extends StatefulWidget {
+  const LightSortArrows({
     required this.isChecked,
     required this.onChange,
     this.labelWidget,
@@ -17,10 +17,10 @@ class LightCheckBox extends StatefulWidget {
   final Widget? labelWidget;
 
   @override
-  _LightCheckBoxState createState() => _LightCheckBoxState();
+  _LightSortArrowsState createState() => _LightSortArrowsState();
 }
 
-class _LightCheckBoxState extends State<LightCheckBox> {
+class _LightSortArrowsState extends State<LightSortArrows> {
   late bool isChecked;
 
   @override
@@ -30,7 +30,7 @@ class _LightCheckBoxState extends State<LightCheckBox> {
   }
 
   @override
-  void didUpdateWidget(covariant LightCheckBox oldWidget) {
+  void didUpdateWidget(covariant LightSortArrows oldWidget) {
     super.didUpdateWidget(oldWidget);
     if (oldWidget.isChecked != widget.isChecked) {
       isChecked = widget.isChecked;
@@ -41,14 +41,14 @@ class _LightCheckBoxState extends State<LightCheckBox> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(right: 10.0),
+      padding: const EdgeInsets.only(right: 5.0),
       child: NonAnimatedInkWell(
         onTap: onTap,
         child: Row(
           children: [
             Container(
-              height: 24.0,
-              width: 24.0,
+              height: 22.0,
+              width: 18.0,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10.0),
                 boxShadow: [
@@ -60,7 +60,7 @@ class _LightCheckBoxState extends State<LightCheckBox> {
                 ],
               ),
               child: getImage(
-                isChecked: isChecked,
+                isSortUp: isChecked,
               ),
             ),
             widget.labelWidget ?? SizedBox.shrink(),
@@ -76,20 +76,20 @@ class _LightCheckBoxState extends State<LightCheckBox> {
     widget.onChange(isChecked);
   }
 
-  Widget getImage({required bool isChecked}) {
-    if (isChecked) {
+  Widget getImage({required bool isSortUp}) {
+    if (!isSortUp) {
       return Padding(
         padding: const EdgeInsets.all(1.0),
         child: SvgPicture.asset(
-          SvgPathPicker.checkMark,
-          height: 18.0,
-          color: LightColors.text,
+          SvgPathPicker.sortUp,
         ),
       );
     }
     return Padding(
-      padding: const EdgeInsets.all(5.0),
-      child: SizedBox.shrink(),
+      padding: const EdgeInsets.all(1.0),
+      child: SvgPicture.asset(
+        SvgPathPicker.sortDown,
+      ),
     );
   }
 }

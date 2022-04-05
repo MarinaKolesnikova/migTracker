@@ -100,7 +100,7 @@ class _LightTextFieldState extends State<LightTextField> with LightTextFieldMixi
       keyboardType: widget.keyboardType,
       autovalidateMode: widget.autoValidateMode,
       inputFormatters: widget.inputFormatters,
-      style: widget.textStyle ?? LightTextStyles.nunitoS16W400(height: 1.5),
+      style: widget.textStyle ?? LightTextStyles.poppinsS16W400(height: 1.5),
       onEditingComplete: widget.onEditingComplete ?? FocusScope.of(context).nextFocus,
       decoration: getDecoration,
       validator: widget.validator,

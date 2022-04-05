@@ -6,17 +6,19 @@ part of 'login_dto.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_LoginDTO _$_$_LoginDTOFromJson(Map<String, dynamic> json) {
-  return $checkedNew(r'_$_LoginDTO', json, () {
-    final val = _$_LoginDTO(
-      email: $checkedConvert(json, 'email', (v) => v as String),
-      password: $checkedConvert(json, 'password', (v) => v as String),
+_$_LoginDTO _$$_LoginDTOFromJson(Map<String, dynamic> json) => $checkedCreate(
+      r'_$_LoginDTO',
+      json,
+      ($checkedConvert) {
+        final val = _$_LoginDTO(
+          email: $checkedConvert('email', (v) => v as String),
+          password: $checkedConvert('password', (v) => v as String),
+        );
+        return val;
+      },
     );
-    return val;
-  });
-}
 
-Map<String, dynamic> _$_$_LoginDTOToJson(_$_LoginDTO instance) =>
+Map<String, dynamic> _$$_LoginDTOToJson(_$_LoginDTO instance) =>
     <String, dynamic>{
       'email': instance.email,
       'password': instance.password,

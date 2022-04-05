@@ -6,16 +6,18 @@ part of 'settings.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Settings _$_$_SettingsFromJson(Map<String, dynamic> json) {
-  return $checkedNew(r'_$_Settings', json, () {
-    final val = _$_Settings(
-      language: $checkedConvert(json, 'language', (v) => v as String),
+_$_Settings _$$_SettingsFromJson(Map<String, dynamic> json) => $checkedCreate(
+      r'_$_Settings',
+      json,
+      ($checkedConvert) {
+        final val = _$_Settings(
+          language: $checkedConvert('language', (v) => v as String? ?? 'en'),
+        );
+        return val;
+      },
     );
-    return val;
-  });
-}
 
-Map<String, dynamic> _$_$_SettingsToJson(_$_Settings instance) =>
+Map<String, dynamic> _$$_SettingsToJson(_$_Settings instance) =>
     <String, dynamic>{
       'language': instance.language,
     };

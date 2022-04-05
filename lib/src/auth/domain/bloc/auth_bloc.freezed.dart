@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'auth_bloc.dart';
 
@@ -129,7 +131,7 @@ class _$_AuthState implements _AuthState {
 
   @override
   final Token? token;
-  @JsonKey(defaultValue: false)
+  @JsonKey()
   @override
   final bool isLoading;
 
@@ -141,19 +143,17 @@ class _$_AuthState implements _AuthState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _AuthState &&
-            (identical(other.token, token) ||
-                const DeepCollectionEquality().equals(other.token, token)) &&
-            (identical(other.isLoading, isLoading) ||
-                const DeepCollectionEquality()
-                    .equals(other.isLoading, isLoading)));
+        (other.runtimeType == runtimeType &&
+            other is _AuthState &&
+            const DeepCollectionEquality().equals(other.token, token) &&
+            const DeepCollectionEquality().equals(other.isLoading, isLoading));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(token) ^
-      const DeepCollectionEquality().hash(isLoading);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(token),
+      const DeepCollectionEquality().hash(isLoading));
 
   @JsonKey(ignore: true)
   @override
@@ -165,9 +165,9 @@ abstract class _AuthState implements AuthState {
   const factory _AuthState({Token? token, bool isLoading}) = _$_AuthState;
 
   @override
-  Token? get token => throw _privateConstructorUsedError;
+  Token? get token;
   @override
-  bool get isLoading => throw _privateConstructorUsedError;
+  bool get isLoading;
   @override
   @JsonKey(ignore: true)
   _$AuthStateCopyWith<_AuthState> get copyWith =>
