@@ -28,7 +28,7 @@ class AddButton extends StatelessWidget {
           child: Center(
             child: Text(
               '+ Add',
-              style: LightTextStyles.poppinsS14W400(color: LightColors.white),
+              style: LightTextStyles.nunitoS14W400(color: LightColors.white),
             ),
           ),
         ),

@@ -42,11 +42,11 @@ class _PasswordEditingFieldState extends State<PasswordEditingField> with Passwo
         Focus(
           child: LightTextFieldBuilder.password(
             obsqureIconColor: LightColors.text,
-            textStyle: LightTextStyles.poppinsS14W400(
+            textStyle: LightTextStyles.nunitoS14W400(
               color: LightColors.text,
               height: 1.8,
             ),
-            labelStyle: LightTextStyles.poppinsS14W400(color: LightColors.text),
+            labelStyle: LightTextStyles.nunitoS14W400(color: LightColors.text),
             label: widget.labelText,
             controller: widget.textController,
             filledColor: validate() ? widget.fieldColor ?? LightColors.text : LightColors.errorColor,

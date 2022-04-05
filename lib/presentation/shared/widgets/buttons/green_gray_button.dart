@@ -47,7 +47,7 @@ class _GreenGrayButtonState extends AnimationState<GreenGrayButton> {
         child: Center(
           child: Text(
             widget.label,
-            style: LightTextStyles.poppinsS16W400(
+            style: LightTextStyles.nunitoS16W400(
               color: LightColors.white,
               height: 1.3,
             ),

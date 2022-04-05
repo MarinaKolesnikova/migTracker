@@ -33,9 +33,8 @@ class CustomBottomBar extends StatelessWidget with BottomTabBarMixin {
       decoration: BoxDecoration(
         boxShadow: [
           BoxShadow(
-            color: LightColors.shadowColor.withOpacity(0.9),
+            color: LightColors.shadowColor.withOpacity(0.1),
             blurRadius: 10.0,
-            spreadRadius: 10.0,
           ),
         ],
       ),

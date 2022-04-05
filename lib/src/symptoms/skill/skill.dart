@@ -1,25 +1,27 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'symptom.freezed.dart';
+part 'skill.freezed.dart';
 
-part 'symptom.g.dart';
+part 'skill.g.dart';
 
 @freezed
-class Symptom with _$Symptom {
+class Skill with _$Skill {
   @JsonSerializable(
     fieldRename: FieldRename.snake,
     checked: true,
     explicitToJson: true,
   )
-  const factory Symptom({
+  const factory Skill({
     @JsonKey(name: 'id') int? id,
     @JsonKey(name: 'name') String? name,
-  }) = _Symptom;
+    @JsonKey(name: 'group_id') int? groupId,
+  }) = _Skill;
 
-  factory Symptom.mock() => const Symptom(
+  factory Skill.mock() => const Skill(
         id: 0,
         name: 'Any',
+        groupId: 0,
       );
 
-  factory Symptom.fromJson(Map<String, dynamic> json) => _$SymptomFromJson(json);
+  factory Skill.fromJson(Map<String, dynamic> json) => _$SkillFromJson(json);
 }

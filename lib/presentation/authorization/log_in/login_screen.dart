@@ -48,7 +48,7 @@ class _LogInScreenState extends State<LogInScreen> with LogInScreenMixin {
                       child: Text(
                         errorText!,
                         key: const Key('errorText'),
-                        style: LightTextStyles.poppinsS12W400(color: LightColors.errorColor),
+                        style: LightTextStyles.nunitoS12W400(color: LightColors.errorColor),
                       ),
                     ),
                   Align(

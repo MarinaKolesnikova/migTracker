@@ -24,7 +24,7 @@ mixin LightTextFieldMixin<T extends LightTextField> on State<T> {
       prefixIcon: widget.prefixIcon,
       contentPadding: textFieldPadding,
       hintStyle: widget.hintTextStyle ??
-          LightTextStyles.poppinsS16W400(
+          LightTextStyles.nunitoS16W400(
             color: widget.hintTextColor,
             height: 1.5,
           ),
@@ -36,7 +36,7 @@ mixin LightTextFieldMixin<T extends LightTextField> on State<T> {
       suffixIconConstraints: getBoxConstraints,
       prefixIconConstraints: getPrefixBoxConstraints,
       errorMaxLines: 3,
-      errorStyle: LightTextStyles.poppinsS12W400(color: Colors.red),
+      errorStyle: LightTextStyles.nunitoS12W400(color: Colors.red),
     );
   }
 

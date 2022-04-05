@@ -1,19 +1,18 @@
 import 'package:diplom_proj/presentation/shared/widgets/wrap_chip/chips_block.dart';
-import 'package:diplom_proj/src/symptoms/symptom_model/symptom.dart';
-
+import 'package:diplom_proj/src/symptoms/skill/skill.dart';
 import 'package:flutter/material.dart';
 import 'package:diplom_proj/presentation/shared/widgets/skills_picker/add_button.dart';
 
 class CustomHobbiesContent extends StatefulWidget {
   const CustomHobbiesContent({
     required this.isButtonActive,
-    required this.customSymptoms,
+    required this.customHobbies,
     this.onCancelled,
     this.onAdded,
     Key? key,
   }) : super(key: key);
   final bool isButtonActive;
-  final List<Symptom> customSymptoms;
+  final List<Skill> customHobbies;
   final Function(int)? onCancelled;
   final Function? onAdded;
 
@@ -37,7 +36,7 @@ class _CustomHobbiesContentState extends State<CustomHobbiesContent> {
             ),
           ),
           ChipsBlock(
-            symptoms: widget.customSymptoms,
+            skills: widget.customHobbies,
             onCancelled: widget.onCancelled,
             isEditable: true,
           )

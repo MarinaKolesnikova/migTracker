@@ -1,4 +1,3 @@
-import 'package:diplom_proj/resources/resources.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -60,7 +59,7 @@ class LightTextStyles extends TextStyle {
     );
   }
 
-  factory LightTextStyles.poppins({
+  factory LightTextStyles.nunito({
     required double fontSize,
     required Color color,
     double height = 1.0,
@@ -75,7 +74,7 @@ class LightTextStyles extends TextStyle {
       fontSize: fontSize,
       decoration: decoration,
       fontWeight: fontWeight,
-      fontFamily: GoogleFonts.poppins().fontFamily,
+      fontFamily: GoogleFonts.nunito().fontFamily,
       letterSpacing: letterSpacing,
       decorationStyle: decorationStyle,
     );
@@ -142,7 +141,7 @@ class LightTextStyles extends TextStyle {
     double letterSpacing = 0.5,
     double height = 1.0,
   }) {
-    return LightTextStyles.poppins(
+    return LightTextStyles.nunito(
       fontSize: 12.0,
       color: color,
       fontWeight: FontWeight.w700,
@@ -155,7 +154,7 @@ class LightTextStyles extends TextStyle {
     double letterSpacing = 0.5,
     double height = 1.0,
   }) {
-    return LightTextStyles.poppins(
+    return LightTextStyles.nunito(
       fontSize: 14.0,
       color: color,
       fontWeight: FontWeight.w700,
@@ -164,11 +163,11 @@ class LightTextStyles extends TextStyle {
     );
   }
 
-  factory LightTextStyles.poppinsS12W400Lsp0({
+  factory LightTextStyles.nunitoS12W400Lsp0({
     required Color color,
     double height = 1.0,
   }) {
-    return LightTextStyles.poppins(
+    return LightTextStyles.nunito(
       fontSize: 12.0,
       color: color,
       letterSpacing: 0.0,
@@ -176,13 +175,13 @@ class LightTextStyles extends TextStyle {
     );
   }
 
-  factory LightTextStyles.poppinsW700({
+  factory LightTextStyles.nunitoW700({
     required Color color,
     required double fontSize,
     double letterSpacing = 0.5,
     double height = 1.0,
   }) {
-    return LightTextStyles.poppins(
+    return LightTextStyles.nunito(
       fontSize: fontSize,
       color: color,
       fontWeight: FontWeight.w700,
@@ -190,13 +189,13 @@ class LightTextStyles extends TextStyle {
       height: height,
     );
   }
-  factory LightTextStyles.poppinsW400({
+  factory LightTextStyles.nunitoW400({
     required Color color,
     required double fontSize,
     double letterSpacing = 0.5,
     double height = 1.0,
   }) {
-    return LightTextStyles.poppins(
+    return LightTextStyles.nunito(
       fontSize: fontSize,
       color: color,
       letterSpacing: letterSpacing,
@@ -204,24 +203,24 @@ class LightTextStyles extends TextStyle {
     );
   }
 
-  factory LightTextStyles.poppinsS14W400({
+  factory LightTextStyles.nunitoS14W400({
     required Color color,
     double letterSpacing = 0.5,
     double height = 1.0,
   }) {
-    return LightTextStyles.poppins(
+    return LightTextStyles.nunito(
       fontSize: 14.0,
       color: color,
       letterSpacing: letterSpacing,
       height: height,
     );
   }
-  factory LightTextStyles.poppinsS20W400({
+  factory LightTextStyles.nunitoS20W400({
     required Color color,
     double letterSpacing = 0.5,
     double height = 1.0,
   }) {
-    return LightTextStyles.poppins(
+    return LightTextStyles.nunito(
       fontSize: 20.0,
       color: color,
       letterSpacing: letterSpacing,
@@ -243,12 +242,12 @@ class LightTextStyles extends TextStyle {
     );
   }
 
-  factory LightTextStyles.poppinsS12W400({
+  factory LightTextStyles.nunitoS12W400({
     required Color color,
     double letterSpacing = 0.5,
     double height = 1.0,
   }) {
-    return LightTextStyles.poppins(
+    return LightTextStyles.nunito(
       fontSize: 12.0,
       color: color,
       letterSpacing: letterSpacing,
@@ -256,12 +255,12 @@ class LightTextStyles extends TextStyle {
     );
   }
 
-  factory LightTextStyles.poppinsS12W400Undrl({
+  factory LightTextStyles.nunitoS12W400Undrl({
     required Color color,
     double letterSpacing = 0.5,
     double height = 1.0,
   }) {
-    return LightTextStyles.poppins(
+    return LightTextStyles.nunito(
       fontSize: 12.0,
       color: color,
       letterSpacing: letterSpacing,
@@ -270,12 +269,12 @@ class LightTextStyles extends TextStyle {
     );
   }
 
-  factory LightTextStyles.poppinsS16W400({
-    Color color = LightColors.text,
+  factory LightTextStyles.nunitoS16W400({
+    Color color = Colors.black,
     double height = 1.0,
     double letterSpacing = 0.0,
   }) {
-    return LightTextStyles.poppins(
+    return LightTextStyles.nunito(
       fontSize: 16.0,
       color: color,
       height: height,
@@ -283,11 +282,11 @@ class LightTextStyles extends TextStyle {
     );
   }
 
-  factory LightTextStyles.poppinsS15W500Lsp02({
-    Color color = LightColors.text,
+  factory LightTextStyles.nunitoS15W500Lsp02({
+    Color color = Colors.black,
     double height = 1.0,
   }) {
-    return LightTextStyles.poppins(
+    return LightTextStyles.nunito(
       fontSize: 15.0,
       color: color,
       height: height,
@@ -296,12 +295,12 @@ class LightTextStyles extends TextStyle {
     );
   }
 
-  factory LightTextStyles.poppinsS18W500({
-    Color color = LightColors.text,
+  factory LightTextStyles.nunitoS18W500({
+    Color color = Colors.white,
     double height = 1.0,
     double letterSpacing = 0.0,
   }) {
-    return LightTextStyles.poppins(
+    return LightTextStyles.nunito(
       fontSize: 18.0,
       color: color,
       height: height,

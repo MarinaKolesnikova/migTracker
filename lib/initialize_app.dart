@@ -1,6 +1,5 @@
 import 'dart:io';
 
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter/services.dart';
 
@@ -20,10 +19,7 @@ class MyHttpOverrides extends HttpOverrides {
 Future<void> initializeApp({required AppConfig appConfig}) async {
   initDependencies(appConfig);
   initLogger(appConfig);
-
   WidgetsFlutterBinding.ensureInitialized();
-
-  await Firebase.initializeApp();
 
   await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
 

@@ -4,7 +4,6 @@ import 'package:diplom_proj/presentation/additional/splash_screen.dart';
 import 'package:diplom_proj/presentation/authorization/authorization_screen.dart';
 
 import 'package:diplom_proj/presentation/home/home_screen.dart';
-import 'package:diplom_proj/presentation/main/main_screen.dart';
 import 'package:diplom_proj/resources/app_routes.dart';
 
 @MaterialAutoRouter(
@@ -29,12 +28,6 @@ import 'package:diplom_proj/resources/app_routes.dart';
         CustomRoute(
           page: ScreenInDevelop,
           path: AppRoutes.screenInDevelop,
-          durationInMilliseconds: 300,
-          transitionsBuilder: TransitionsBuilders.fadeIn,
-        ),
-        CustomRoute(
-          page: MainScreen,
-          path: AppRoutes.mainScreen,
           durationInMilliseconds: 300,
           transitionsBuilder: TransitionsBuilders.fadeIn,
         ),

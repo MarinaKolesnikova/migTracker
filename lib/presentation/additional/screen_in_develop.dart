@@ -22,7 +22,9 @@ class _SplashScreenState extends State<ScreenInDevelop> {
           Center(
             child: Text(
               'Screen in develop',
-              style: LightTextStyles.poppinsS16W400(),
+              style: LightTextStyles.nunitoS16W400(
+                color: LightColors.text,
+              ),
             ),
           ),
           Padding(

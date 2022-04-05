@@ -1,6 +1,5 @@
 import 'package:diplom_proj/presentation/shared/widgets/wrap_chip/wrap_chips.dart';
-
-import 'package:diplom_proj/src/symptoms/symptom_model/symptom.dart';
+import 'package:diplom_proj/src/symptoms/skill/skill.dart';
 import 'package:flutter/material.dart';
 
 class ChipsContent extends StatelessWidget {
@@ -12,9 +11,9 @@ class ChipsContent extends StatelessWidget {
     Key? key,
   }) : super(key: key);
 
-  final List<Symptom> know;
-  final List<Symptom> inform;
-  final List<Symptom> hobbies;
+  final List<Skill> know;
+  final List<Skill> inform;
+  final List<Skill> hobbies;
   final bool isEditable;
   @override
   Widget build(BuildContext context) {
@@ -24,19 +23,19 @@ class ChipsContent extends StatelessWidget {
         if (know.isNotEmpty)
           WrapChips(
             label: '',
-            symptoms: know,
+            skills: know,
             isEditable: isEditable,
           ),
         if (inform.isNotEmpty)
           WrapChips(
             label: '',
-            symptoms: inform,
+            skills: inform,
             isEditable: isEditable,
           ),
         if (hobbies.isNotEmpty)
           WrapChips(
             label: '',
-            symptoms: hobbies,
+            skills: hobbies,
             isEditable: isEditable,
           ),
       ],

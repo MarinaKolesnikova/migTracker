@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 class SvgPathPicker {
   const SvgPathPicker._();
 
@@ -31,11 +29,4 @@ class SvgPathPicker {
 
   static const String exit = _path + 'exit.svg';
   static const String settings = _path + 'settings.svg';
-  static const String delete = _path + 'delete.svg';
-
-  static const String selected = _path + 'selected.svg';
-  static const String unselected = _path + 'unselected.svg';
-
-  static const String sortUp = _path + 'sort_up.svg';
-  static const String sortDown = _path + 'sort_down.svg';
 }

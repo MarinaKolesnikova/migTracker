@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:diplom_proj/src/main/domain/bloc/app_bloc.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 
 enum CompleteStatus {
   hasToken,
@@ -17,14 +16,15 @@ class InitAppEvent extends AppEvent {
   Stream<AppState> action(covariant AppBloc bloc) async* {
     await bloc.storage.init();
 
-    final user = FirebaseAuth.instance.currentUser;
+    final token = await bloc.tokenStorage.take();
+    bloc.logger.info('TOKEN $token');
     final settings = await bloc.settingStorage.take();
     if (settings != null) {
       //add here language changes
     }
     try {
-      await Future.delayed(const Duration(seconds: 2));
-      onInitializeComplete(user != null ? CompleteStatus.hasToken : CompleteStatus.none);
+      await Future.delayed(const Duration(seconds: 2000));
+      onInitializeComplete(token != null ? CompleteStatus.hasToken : CompleteStatus.none);
 
       yield bloc.state.copyWith(
         appLoaded: bloc.state.appLoaded..complete(),

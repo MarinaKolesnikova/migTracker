@@ -1,7 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'email_error.dart';
 
@@ -28,7 +26,7 @@ class _$EmailErrorTearOff {
     );
   }
 
-  EmailError fromJson(Map<String, Object?> json) {
+  EmailError fromJson(Map<String, Object> json) {
     return EmailError.fromJson(json);
   }
 }
@@ -116,7 +114,7 @@ class _$_EmailError implements _EmailError {
   const _$_EmailError({@JsonKey(name: 'email') this.errorMessage});
 
   factory _$_EmailError.fromJson(Map<String, dynamic> json) =>
-      _$$_EmailErrorFromJson(json);
+      _$_$_EmailErrorFromJson(json);
 
   @override
   @JsonKey(name: 'email')
@@ -130,15 +128,15 @@ class _$_EmailError implements _EmailError {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _EmailError &&
-            const DeepCollectionEquality()
-                .equals(other.errorMessage, errorMessage));
+        (other is _EmailError &&
+            (identical(other.errorMessage, errorMessage) ||
+                const DeepCollectionEquality()
+                    .equals(other.errorMessage, errorMessage)));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(errorMessage));
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(errorMessage);
 
   @JsonKey(ignore: true)
   @override
@@ -147,7 +145,7 @@ class _$_EmailError implements _EmailError {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_EmailErrorToJson(this);
+    return _$_$_EmailErrorToJson(this);
   }
 }
 
@@ -160,7 +158,7 @@ abstract class _EmailError implements EmailError {
 
   @override
   @JsonKey(name: 'email')
-  List<String>? get errorMessage;
+  List<String>? get errorMessage => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$EmailErrorCopyWith<_EmailError> get copyWith =>

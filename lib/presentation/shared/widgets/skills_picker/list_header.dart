@@ -26,7 +26,7 @@ class ListHeader extends StatelessWidget {
         children: [
           Text(
             headerLabel,
-            style: LightTextStyles.poppinsS18W500(color: LightColors.text.withOpacity(1.0)),
+            style: LightTextStyles.nunitoS18W500(color: LightColors.text.withOpacity(1.0)),
           ),
           Icon(
             !isExpand ? Icons.arrow_drop_down : Icons.arrow_drop_up,

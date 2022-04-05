@@ -50,7 +50,7 @@ class SignWithButton extends StatelessWidget {
                 child: Text(
                   text,
                   textAlign: TextAlign.center,
-                  style: LightTextStyles.poppinsS14W400(color: LightColors.white),
+                  style: LightTextStyles.nunitoS14W400(color: LightColors.white),
                 ),
               ),
             ],

@@ -19,7 +19,7 @@ class SignUpFieldsList extends StatefulWidget {
   final TextEditingController emailController;
   final TextEditingController passwordController;
   final TextEditingController confirmPasswordController;
-  final Function({required bool buttonDisability}) onChanged;
+  final Function(String?) onChanged;
 
   @override
   State<SignUpFieldsList> createState() => _SignUpFieldsListState();
@@ -30,8 +30,8 @@ class _SignUpFieldsListState extends State<SignUpFieldsList> with AuthFieldsMixi
   Widget build(BuildContext context) {
     const EdgeInsetsGeometry fieldPadding = EdgeInsets.fromLTRB(26.0, 15.0, 26.0, 0.0);
     final AuthDictionary dict = dictionaryManager.getSelectedData.auth;
-    final TextStyle textStyle = LightTextStyles.poppinsS16W400(color: LightColors.white.withOpacity(0.8), height: 1.5);
-    final TextStyle labelStyle = LightTextStyles.poppinsS16W400(color: LightColors.white.withOpacity(0.8));
+    final TextStyle textStyle = LightTextStyles.nunitoS16W400(color: LightColors.white.withOpacity(0.8), height: 1.5);
+    final TextStyle labelStyle = LightTextStyles.nunitoS16W400(color: LightColors.white.withOpacity(0.8));
     return Padding(
       padding: const EdgeInsets.all(20.0),
       child: Column(
@@ -42,23 +42,22 @@ class _SignUpFieldsListState extends State<SignUpFieldsList> with AuthFieldsMixi
               label: dict.userName,
               controller: widget.nameController,
               fieldPadding: fieldPadding,
+              onChange: widget.onChanged,
               isMandatory: true,
               labelStyle: labelStyle,
               textStyle: textStyle,
               filledColor: LightColors.white,
-              onChange: (_) => onChange(),
             ),
           ),
           LightTextFieldBuilder.login(
             label: dict.email,
             controller: widget.emailController,
             fieldPadding: fieldPadding,
+            onChange: widget.onChanged,
             isMandatory: true,
             labelStyle: labelStyle,
             textStyle: textStyle,
             filledColor: isEmailValid ? LightColors.white : LightColors.errorColor,
-            autovalidateMode: AutovalidateMode.onUserInteraction,
-            onChange: (_) => onChange(),
           ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 20.0),

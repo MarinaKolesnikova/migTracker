@@ -1,7 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'sign_up_dto.dart';
 
@@ -33,7 +31,7 @@ class _$SignUpDTOTearOff {
     );
   }
 
-  SignUpDTO fromJson(Map<String, Object?> json) {
+  SignUpDTO fromJson(Map<String, Object> json) {
     return SignUpDTO.fromJson(json);
   }
 }
@@ -153,7 +151,7 @@ class _$_SignUpDTO extends _SignUpDTO {
       : super._();
 
   factory _$_SignUpDTO.fromJson(Map<String, dynamic> json) =>
-      _$$_SignUpDTOFromJson(json);
+      _$_$_SignUpDTOFromJson(json);
 
   @override
   @JsonKey(name: 'email')
@@ -173,19 +171,23 @@ class _$_SignUpDTO extends _SignUpDTO {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _SignUpDTO &&
-            const DeepCollectionEquality().equals(other.email, email) &&
-            const DeepCollectionEquality().equals(other.userName, userName) &&
-            const DeepCollectionEquality().equals(other.password, password));
+        (other is _SignUpDTO &&
+            (identical(other.email, email) ||
+                const DeepCollectionEquality().equals(other.email, email)) &&
+            (identical(other.userName, userName) ||
+                const DeepCollectionEquality()
+                    .equals(other.userName, userName)) &&
+            (identical(other.password, password) ||
+                const DeepCollectionEquality()
+                    .equals(other.password, password)));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(email),
-      const DeepCollectionEquality().hash(userName),
-      const DeepCollectionEquality().hash(password));
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(email) ^
+      const DeepCollectionEquality().hash(userName) ^
+      const DeepCollectionEquality().hash(password);
 
   @JsonKey(ignore: true)
   @override
@@ -194,7 +196,7 @@ class _$_SignUpDTO extends _SignUpDTO {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_SignUpDTOToJson(this);
+    return _$_$_SignUpDTOToJson(this);
   }
 }
 
@@ -210,13 +212,13 @@ abstract class _SignUpDTO extends SignUpDTO {
 
   @override
   @JsonKey(name: 'email')
-  String get email;
+  String get email => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'userName')
-  String get userName;
+  String get userName => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'password')
-  String get password;
+  String get password => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$SignUpDTOCopyWith<_SignUpDTO> get copyWith =>

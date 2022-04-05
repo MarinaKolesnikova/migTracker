@@ -1,7 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'app_bloc.dart';
 
@@ -145,20 +143,23 @@ class _$_AppState implements _AppState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _AppState &&
-            const DeepCollectionEquality().equals(other.appLoaded, appLoaded) &&
-            const DeepCollectionEquality()
-                .equals(other.connectionTrigger, connectionTrigger) &&
-            const DeepCollectionEquality().equals(other.locale, locale));
+        (other is _AppState &&
+            (identical(other.appLoaded, appLoaded) ||
+                const DeepCollectionEquality()
+                    .equals(other.appLoaded, appLoaded)) &&
+            (identical(other.connectionTrigger, connectionTrigger) ||
+                const DeepCollectionEquality()
+                    .equals(other.connectionTrigger, connectionTrigger)) &&
+            (identical(other.locale, locale) ||
+                const DeepCollectionEquality().equals(other.locale, locale)));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(appLoaded),
-      const DeepCollectionEquality().hash(connectionTrigger),
-      const DeepCollectionEquality().hash(locale));
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(appLoaded) ^
+      const DeepCollectionEquality().hash(connectionTrigger) ^
+      const DeepCollectionEquality().hash(locale);
 
   @JsonKey(ignore: true)
   @override
@@ -173,11 +174,11 @@ abstract class _AppState implements AppState {
       Locale? locale}) = _$_AppState;
 
   @override
-  Completer<dynamic> get appLoaded;
+  Completer<dynamic> get appLoaded => throw _privateConstructorUsedError;
   @override
-  bool get connectionTrigger;
+  bool get connectionTrigger => throw _privateConstructorUsedError;
   @override
-  Locale? get locale;
+  Locale? get locale => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$AppStateCopyWith<_AppState> get copyWith =>

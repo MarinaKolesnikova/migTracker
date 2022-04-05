@@ -1,4 +1,4 @@
-import 'package:diplom_proj/src/symptoms/symptom_model/symptom.dart';
+import 'package:diplom_proj/src/symptoms/skill/skill.dart';
 
 abstract class SkillsGroupAbstract {
   const SkillsGroupAbstract({
@@ -7,6 +7,6 @@ abstract class SkillsGroupAbstract {
     required this.groupName,
   });
   final int id;
-  final List<Symptom> skills;
+  final List<Skill> skills;
   final String groupName;
 }

@@ -1,10 +1,10 @@
-import 'package:diplom_proj/src/symptoms/symptom_model/symptom.dart';
+import 'package:diplom_proj/src/symptoms/skill/skill.dart';
 
 class EditableSkillModel {
   const EditableSkillModel({
-    required this.symptom,
+    required this.skill,
     required this.isChecked,
   });
-  final Symptom symptom;
+  final Skill skill;
   final bool isChecked;
 }

@@ -1,7 +1,6 @@
 import 'package:diplom_proj/presentation/authorization/sign_up/widgets/sign_up_fields_list.dart';
 import 'package:diplom_proj/resources/dictionary/data/validation_dictionary/validation_dictionary.dart';
 import 'package:diplom_proj/resources/resources.dart';
-import 'package:diplom_proj/src/shared/utils/text_validation_util.dart';
 import 'package:flutter/material.dart';
 
 enum PasswordErrorEnum {
@@ -9,7 +8,6 @@ enum PasswordErrorEnum {
   newField,
   none,
 }
-
 mixin AuthFieldsMixin<T extends SignUpFieldsList> on State<T> {
   late final TextEditingController currentPassController;
   late final TextEditingController newPassController;
@@ -41,15 +39,6 @@ mixin AuthFieldsMixin<T extends SignUpFieldsList> on State<T> {
       errorText = text;
       passwordEnum = passwordErrorEnum;
     });
-  }
-
-  void onChange() {
-    final bool isNameEmail = widget.nameController.text.isNotEmpty && TextValidationUtil.isEmail(widget.emailController.text);
-    if (isNameEmail && newPassValid && eqPassValid) {
-      widget.onChanged(buttonDisability: false);
-    } else {
-      widget.onChanged(buttonDisability: true);
-    }
   }
 
   void isButtonActive({
@@ -90,7 +79,6 @@ mixin AuthFieldsMixin<T extends SignUpFieldsList> on State<T> {
       eqValid: eqPassValid,
       newValid: isValid,
     );
-    onChange();
   }
 
   void eqPassIsValid({required bool isValid}) {
@@ -100,6 +88,5 @@ mixin AuthFieldsMixin<T extends SignUpFieldsList> on State<T> {
       eqValid: isValid,
       newValid: newPassValid,
     );
-    onChange();
   }
 }

@@ -30,7 +30,10 @@ class LightMultiLineTextField extends StatelessWidget {
           fieldName: 'comment',
           expands: true,
           keyboardType: TextInputType.multiline,
-          textStyle: LightTextStyles.poppinsS16W400(height: 1.3),
+          textStyle: LightTextStyles.nunitoS16W400(
+            color: LightColors.text,
+            height: 1.3,
+          ),
           filledColor: LightColors.text,
           textAlignVertical: TextAlignVertical.bottom,
           controller: controller,

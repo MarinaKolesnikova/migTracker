@@ -81,7 +81,7 @@ class LightAppBar extends StatelessWidget implements PreferredSizeWidget {
                         textAlign: TextAlign.center,
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
-                        style: LightTextStyles.poppinsW400(
+                        style: LightTextStyles.nunitoW400(
                           color: LightColors.white,
                           fontSize: 16.0,
                           height: 1.6,

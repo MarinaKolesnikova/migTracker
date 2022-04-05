@@ -20,7 +20,7 @@ class PopUpTextButton extends StatelessWidget {
         alignment: Alignment.center,
         child: Text(
           title,
-          style: LightTextStyles.poppinsS18W500(color: LightColors.white),
+          style: LightTextStyles.nunitoS18W500(color: LightColors.white),
         ),
       ),
     );

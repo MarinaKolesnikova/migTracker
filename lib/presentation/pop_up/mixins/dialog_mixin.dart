@@ -16,7 +16,7 @@ mixin DialogMixin {
         child: Text(
           text,
           textAlign: messageTextAlignment ?? TextAlign.center,
-          style: LightTextStyles.poppins(
+          style: LightTextStyles.nunito(
             fontWeight: fontWeight,
             height: 1.5,
             fontSize: fontSize,

@@ -22,7 +22,7 @@ class TopTabBarItem extends StatelessWidget {
         child: Align(
           child: Text(
             element.title,
-            style: LightTextStyles.poppinsS18W500(),
+            style: LightTextStyles.nunitoS18W500(color: LightColors.lightText),
             textAlign: TextAlign.center,
           ),
         ),

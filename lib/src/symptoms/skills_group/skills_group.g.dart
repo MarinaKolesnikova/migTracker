@@ -6,28 +6,25 @@ part of 'skills_group.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_SkillsGroup _$$_SkillsGroupFromJson(Map<String, dynamic> json) =>
-    $checkedCreate(
-      r'_$_SkillsGroup',
-      json,
-      ($checkedConvert) {
-        final val = _$_SkillsGroup(
-          id: $checkedConvert('id', (v) => v as int),
-          skills: $checkedConvert(
-              'symptoms',
-              (v) => (v as List<dynamic>)
-                  .map((e) => Symptom.fromJson(e as Map<String, dynamic>))
-                  .toList()),
-          groupName: $checkedConvert('name', (v) => v as String),
-        );
-        return val;
-      },
-      fieldKeyMap: const {'skills': 'symptoms', 'groupName': 'name'},
+_$_SkillsGroup _$_$_SkillsGroupFromJson(Map<String, dynamic> json) {
+  return $checkedNew(r'_$_SkillsGroup', json, () {
+    final val = _$_SkillsGroup(
+      id: $checkedConvert(json, 'id', (v) => v as int),
+      skills: $checkedConvert(
+          json,
+          'skills',
+          (v) => (v as List<dynamic>)
+              .map((e) => Skill.fromJson(e as Map<String, dynamic>))
+              .toList()),
+      groupName: $checkedConvert(json, 'name', (v) => v as String),
     );
+    return val;
+  }, fieldKeyMap: const {'groupName': 'name'});
+}
 
-Map<String, dynamic> _$$_SkillsGroupToJson(_$_SkillsGroup instance) =>
+Map<String, dynamic> _$_$_SkillsGroupToJson(_$_SkillsGroup instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'symptoms': instance.skills.map((e) => e.toJson()).toList(),
+      'skills': instance.skills.map((e) => e.toJson()).toList(),
       'name': instance.groupName,
     };

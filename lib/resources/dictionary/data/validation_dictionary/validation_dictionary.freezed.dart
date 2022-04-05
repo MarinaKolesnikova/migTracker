@@ -1,7 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'validation_dictionary.dart';
 
@@ -45,7 +43,7 @@ class _$ValidationDictionaryTearOff {
     );
   }
 
-  ValidationDictionary fromJson(Map<String, Object?> json) {
+  ValidationDictionary fromJson(Map<String, Object> json) {
     return ValidationDictionary.fromJson(json);
   }
 }
@@ -220,7 +218,7 @@ class _$_ValidationDictionary implements _ValidationDictionary {
           required this.wrongPasswordFormat});
 
   factory _$_ValidationDictionary.fromJson(Map<String, dynamic> json) =>
-      _$$_ValidationDictionaryFromJson(json);
+      _$_$_ValidationDictionaryFromJson(json);
 
   @override
   @JsonKey(name: 'wrong_email_format')
@@ -249,31 +247,36 @@ class _$_ValidationDictionary implements _ValidationDictionary {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _ValidationDictionary &&
-            const DeepCollectionEquality()
-                .equals(other.emailValidationError, emailValidationError) &&
-            const DeepCollectionEquality()
-                .equals(other.cyrillicOnly, cyrillicOnly) &&
-            const DeepCollectionEquality()
-                .equals(other.numbersOnly, numbersOnly) &&
-            const DeepCollectionEquality()
-                .equals(other.wrongPhoneFormat, wrongPhoneFormat) &&
-            const DeepCollectionEquality()
-                .equals(other.passwordsNotEqual, passwordsNotEqual) &&
-            const DeepCollectionEquality()
-                .equals(other.wrongPasswordFormat, wrongPasswordFormat));
+        (other is _ValidationDictionary &&
+            (identical(other.emailValidationError, emailValidationError) ||
+                const DeepCollectionEquality().equals(
+                    other.emailValidationError, emailValidationError)) &&
+            (identical(other.cyrillicOnly, cyrillicOnly) ||
+                const DeepCollectionEquality()
+                    .equals(other.cyrillicOnly, cyrillicOnly)) &&
+            (identical(other.numbersOnly, numbersOnly) ||
+                const DeepCollectionEquality()
+                    .equals(other.numbersOnly, numbersOnly)) &&
+            (identical(other.wrongPhoneFormat, wrongPhoneFormat) ||
+                const DeepCollectionEquality()
+                    .equals(other.wrongPhoneFormat, wrongPhoneFormat)) &&
+            (identical(other.passwordsNotEqual, passwordsNotEqual) ||
+                const DeepCollectionEquality()
+                    .equals(other.passwordsNotEqual, passwordsNotEqual)) &&
+            (identical(other.wrongPasswordFormat, wrongPasswordFormat) ||
+                const DeepCollectionEquality()
+                    .equals(other.wrongPasswordFormat, wrongPasswordFormat)));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(emailValidationError),
-      const DeepCollectionEquality().hash(cyrillicOnly),
-      const DeepCollectionEquality().hash(numbersOnly),
-      const DeepCollectionEquality().hash(wrongPhoneFormat),
-      const DeepCollectionEquality().hash(passwordsNotEqual),
-      const DeepCollectionEquality().hash(wrongPasswordFormat));
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(emailValidationError) ^
+      const DeepCollectionEquality().hash(cyrillicOnly) ^
+      const DeepCollectionEquality().hash(numbersOnly) ^
+      const DeepCollectionEquality().hash(wrongPhoneFormat) ^
+      const DeepCollectionEquality().hash(passwordsNotEqual) ^
+      const DeepCollectionEquality().hash(wrongPasswordFormat);
 
   @JsonKey(ignore: true)
   @override
@@ -283,7 +286,7 @@ class _$_ValidationDictionary implements _ValidationDictionary {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ValidationDictionaryToJson(this);
+    return _$_$_ValidationDictionaryToJson(this);
   }
 }
 
@@ -307,22 +310,22 @@ abstract class _ValidationDictionary implements ValidationDictionary {
 
   @override
   @JsonKey(name: 'wrong_email_format')
-  String get emailValidationError;
+  String get emailValidationError => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'cyrillic_only')
-  String get cyrillicOnly;
+  String get cyrillicOnly => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'numbers_only')
-  String get numbersOnly;
+  String get numbersOnly => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'wrong_phone_format')
-  String get wrongPhoneFormat;
+  String get wrongPhoneFormat => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'passwords_not_equal')
-  String get passwordsNotEqual;
+  String get passwordsNotEqual => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'wrong_password_format')
-  String get wrongPasswordFormat;
+  String get wrongPasswordFormat => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$ValidationDictionaryCopyWith<_ValidationDictionary> get copyWith =>

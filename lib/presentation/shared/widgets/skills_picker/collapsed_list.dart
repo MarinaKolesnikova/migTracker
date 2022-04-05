@@ -1,7 +1,6 @@
 import 'package:diplom_proj/presentation/shared/widgets/divider/divider.dart';
 import 'package:diplom_proj/src/symptoms/editable_skills_model/editable_skill_model.dart';
-import 'package:diplom_proj/src/symptoms/symptom_model/symptom.dart';
-
+import 'package:diplom_proj/src/symptoms/skill/skill.dart';
 import 'package:flutter/material.dart';
 import 'package:diplom_proj/presentation/shared/widgets/skills_picker/mixins/collapsed_list_mixin.dart';
 import 'package:diplom_proj/presentation/shared/widgets/skills_picker/mixins/is_checked_mixin.dart';
@@ -16,7 +15,7 @@ import 'package:diplom_proj/presentation/shared/widgets/skills_picker/list_heade
 class CollapsedList extends StatefulWidget {
   const CollapsedList({
     required this.skillsHeader,
-    required this.symptoms,
+    required this.skills,
     required this.checkedSkills,
     required this.onMark,
     required this.onUnmark,
@@ -25,7 +24,7 @@ class CollapsedList extends StatefulWidget {
     Key? key,
   }) : super(key: key);
   final String skillsHeader;
-  final List<Symptom> symptoms;
+  final List<Skill> skills;
   final List<int> checkedSkills;
   final bool isExpanded;
   final bool isSearch;
@@ -70,25 +69,25 @@ class _CollapsedListState extends AnimationState<CollapsedList> with IsChecked, 
         ),
         ClipRRect(
           child: SizedBox(
-            height: widget.isSearch && isExpanded ? 45.0 * widget.symptoms.length : sizeAnimation.value,
+            height: widget.isSearch && isExpanded ? 45.0 * widget.skills.length : sizeAnimation.value,
             child: ScrollConfiguration(
               behavior: ScrollCleanBehavior(),
               child: ListView.separated(
                 physics: NeverScrollableScrollPhysics(),
                 separatorBuilder: (ctx, index) => LightDivider(),
-                itemCount: widget.symptoms.length,
+                itemCount: widget.skills.length,
                 itemBuilder: (ctx, index) {
-                  final symptom = widget.symptoms[index];
+                  final skill = widget.skills[index];
                   return CollapsedListItem(
                     onChange: (isMarked) {
                       onChanged(
                         isChecked: isMarked,
-                        id: symptom.id!,
+                        id: skill.id!,
                       );
                     },
                     skillModel: EditableSkillModel(
-                      isChecked: isChecked(symptom, widget.checkedSkills),
-                      symptom: symptom,
+                      isChecked: isChecked(skill, widget.checkedSkills),
+                      skill: skill,
                     ),
                   );
                 },

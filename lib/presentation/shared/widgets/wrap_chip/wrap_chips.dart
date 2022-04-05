@@ -1,18 +1,17 @@
 import 'package:diplom_proj/presentation/shared/widgets/wrap_chip/chips_block.dart';
 import 'package:diplom_proj/resources/resources.dart';
-import 'package:diplom_proj/src/symptoms/symptom_model/symptom.dart';
-
+import 'package:diplom_proj/src/symptoms/skill/skill.dart';
 import 'package:flutter/material.dart';
 
 class WrapChips extends StatelessWidget {
   const WrapChips({
-    required this.symptoms,
+    required this.skills,
     required this.label,
     this.onCancelled,
     this.isEditable = false,
     Key? key,
   }) : super(key: key);
-  final List<Symptom> symptoms;
+  final List<Skill> skills;
   final String label;
   final Function(int index)? onCancelled;
   final bool isEditable;
@@ -24,14 +23,17 @@ class WrapChips extends StatelessWidget {
       children: [
         Row(
           children: [
-            Text(
-              label,
-              style: LightTextStyles.poppinsS12W400(color: LightColors.text),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 8.0),
+              child: Text(
+                label,
+                style: LightTextStyles.nunitoS16W400(color: LightColors.text),
+              ),
             ),
           ],
         ),
         ChipsBlock(
-          symptoms: symptoms,
+          skills: skills,
           onCancelled: onCancelled,
           isEditable: isEditable,
         ),

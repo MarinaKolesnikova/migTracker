@@ -1,7 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'token.dart';
 
@@ -30,7 +28,7 @@ class _$TokenTearOff {
     );
   }
 
-  Token fromJson(Map<String, Object?> json) {
+  Token fromJson(Map<String, Object> json) {
     return Token.fromJson(json);
   }
 }
@@ -125,12 +123,12 @@ class _$_Token implements _Token {
   const _$_Token({@JsonKey(name: 'key') this.accessToken, this.isTest = false});
 
   factory _$_Token.fromJson(Map<String, dynamic> json) =>
-      _$$_TokenFromJson(json);
+      _$_$_TokenFromJson(json);
 
   @override
   @JsonKey(name: 'key')
   final String? accessToken;
-  @JsonKey()
+  @JsonKey(defaultValue: false)
   @override
   final bool? isTest;
 
@@ -142,18 +140,19 @@ class _$_Token implements _Token {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _Token &&
-            const DeepCollectionEquality()
-                .equals(other.accessToken, accessToken) &&
-            const DeepCollectionEquality().equals(other.isTest, isTest));
+        (other is _Token &&
+            (identical(other.accessToken, accessToken) ||
+                const DeepCollectionEquality()
+                    .equals(other.accessToken, accessToken)) &&
+            (identical(other.isTest, isTest) ||
+                const DeepCollectionEquality().equals(other.isTest, isTest)));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(accessToken),
-      const DeepCollectionEquality().hash(isTest));
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(accessToken) ^
+      const DeepCollectionEquality().hash(isTest);
 
   @JsonKey(ignore: true)
   @override
@@ -162,7 +161,7 @@ class _$_Token implements _Token {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_TokenToJson(this);
+    return _$_$_TokenToJson(this);
   }
 }
 
@@ -174,9 +173,9 @@ abstract class _Token implements Token {
 
   @override
   @JsonKey(name: 'key')
-  String? get accessToken;
+  String? get accessToken => throw _privateConstructorUsedError;
   @override
-  bool? get isTest;
+  bool? get isTest => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$TokenCopyWith<_Token> get copyWith => throw _privateConstructorUsedError;

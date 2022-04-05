@@ -1,7 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'main_dictionary.dart';
 
@@ -29,7 +27,7 @@ class _$MainDictionaryTearOff {
     );
   }
 
-  MainDictionary fromJson(Map<String, Object?> json) {
+  MainDictionary fromJson(Map<String, Object> json) {
     return MainDictionary.fromJson(json);
   }
 }
@@ -133,7 +131,7 @@ class _$_MainDictionary implements _MainDictionary {
       {@JsonKey(name: 'tab_bar') required this.tabBarDictionary});
 
   factory _$_MainDictionary.fromJson(Map<String, dynamic> json) =>
-      _$$_MainDictionaryFromJson(json);
+      _$_$_MainDictionaryFromJson(json);
 
   @override
   @JsonKey(name: 'tab_bar')
@@ -147,15 +145,16 @@ class _$_MainDictionary implements _MainDictionary {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _MainDictionary &&
-            const DeepCollectionEquality()
-                .equals(other.tabBarDictionary, tabBarDictionary));
+        (other is _MainDictionary &&
+            (identical(other.tabBarDictionary, tabBarDictionary) ||
+                const DeepCollectionEquality()
+                    .equals(other.tabBarDictionary, tabBarDictionary)));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(tabBarDictionary));
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(tabBarDictionary);
 
   @JsonKey(ignore: true)
   @override
@@ -164,7 +163,7 @@ class _$_MainDictionary implements _MainDictionary {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_MainDictionaryToJson(this);
+    return _$_$_MainDictionaryToJson(this);
   }
 }
 
@@ -178,7 +177,7 @@ abstract class _MainDictionary implements MainDictionary {
 
   @override
   @JsonKey(name: 'tab_bar')
-  TabBarDictionary get tabBarDictionary;
+  TabBarDictionary get tabBarDictionary => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$MainDictionaryCopyWith<_MainDictionary> get copyWith =>

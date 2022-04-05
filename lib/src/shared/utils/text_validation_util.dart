@@ -8,10 +8,6 @@ class TextValidationUtil {
   static RegExp passwordReg = RegExp(
     r"^(?=.*[0-9]){0,}(?=.*[a-zA-Z~`\u0401\u0451\u0410-\u044f\x22!\-@#$%^&*()_+={[}|:;\'<,>.?\/\]]){1,}[\w\W\d~`\u0401\u0451\u0410-\u044f\x22!-@#$%^&*()_+={[}|:;\'<,>.?\/\]]{8,}$",
   );
-  static RegExp emailReg = RegExp(
-    r"^(([a-zA-Z]|\d|[\x22!#$%&'\-*+?^_`~|\/}{]){1,})+(([a-zA-Z]|\d|[.,;:)(\]\[<>]|[\x22!#$%&'\-*+?^_`~|\/}{]){1,})@(([a-zA-Z]|\d){1,})\.(([a-zA-Z]|\d){1,})$",
-    caseSensitive: false,
-  );
 
   static final ValidationDictionary dict = dictionaryManager.getSelectedData.validation;
 
@@ -35,14 +31,8 @@ class TextValidationUtil {
     return null;
   }
 
-  static String? emailFormat(String text) {
-    if (!emailReg.hasMatch(text)) return dict.emailValidationError;
-    return null;
-  }
-
   static bool isCyrrilicOnly(String text) => cyrrilicExp.hasMatch(text);
 
   static bool isNumbersOnly(String text) => numbersExp.hasMatch(text);
   static bool isPhoneNumber(String text) => numbersExp.hasMatch(text) && text.length == 10;
-  static bool isEmail(String text) => emailReg.hasMatch(text) && text.isNotEmpty;
 }

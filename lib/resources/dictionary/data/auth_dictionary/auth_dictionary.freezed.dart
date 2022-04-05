@@ -1,7 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'auth_dictionary.dart';
 
@@ -67,7 +65,7 @@ class _$AuthDictionaryTearOff {
     );
   }
 
-  AuthDictionary fromJson(Map<String, Object?> json) {
+  AuthDictionary fromJson(Map<String, Object> json) {
     return AuthDictionary.fromJson(json);
   }
 }
@@ -446,7 +444,7 @@ class _$_AuthDictionary implements _AuthDictionary {
       @JsonKey(name: 'apple') required this.apple});
 
   factory _$_AuthDictionary.fromJson(Map<String, dynamic> json) =>
-      _$$_AuthDictionaryFromJson(json);
+      _$_$_AuthDictionaryFromJson(json);
 
   @override
   @JsonKey(name: 'log_in')
@@ -517,61 +515,84 @@ class _$_AuthDictionary implements _AuthDictionary {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _AuthDictionary &&
-            const DeepCollectionEquality().equals(other.login, login) &&
-            const DeepCollectionEquality().equals(other.loginWith, loginWith) &&
-            const DeepCollectionEquality().equals(other.signUp, signUp) &&
-            const DeepCollectionEquality()
-                .equals(other.signUpWith, signUpWith) &&
-            const DeepCollectionEquality().equals(other.userName, userName) &&
-            const DeepCollectionEquality().equals(other.password, password) &&
-            const DeepCollectionEquality()
-                .equals(other.confirmPassword, confirmPassword) &&
-            const DeepCollectionEquality().equals(other.enter, enter) &&
-            const DeepCollectionEquality().equals(other.email, email) &&
-            const DeepCollectionEquality().equals(other.send, send) &&
-            const DeepCollectionEquality().equals(other.ok, ok) &&
-            const DeepCollectionEquality()
-                .equals(other.linkWasSend, linkWasSend) &&
-            const DeepCollectionEquality()
-                .equals(other.linkWouldBeSend, linkWouldBeSend) &&
-            const DeepCollectionEquality()
-                .equals(other.mandatoryFields, mandatoryFields) &&
-            const DeepCollectionEquality().equals(other.recovery, recovery) &&
-            const DeepCollectionEquality()
-                .equals(other.recoveryLabel, recoveryLabel) &&
-            const DeepCollectionEquality()
-                .equals(other.socialNetworks, socialNetworks) &&
-            const DeepCollectionEquality().equals(other.google, google) &&
-            const DeepCollectionEquality().equals(other.facebook, facebook) &&
-            const DeepCollectionEquality().equals(other.apple, apple));
+        (other is _AuthDictionary &&
+            (identical(other.login, login) ||
+                const DeepCollectionEquality().equals(other.login, login)) &&
+            (identical(other.loginWith, loginWith) ||
+                const DeepCollectionEquality()
+                    .equals(other.loginWith, loginWith)) &&
+            (identical(other.signUp, signUp) ||
+                const DeepCollectionEquality().equals(other.signUp, signUp)) &&
+            (identical(other.signUpWith, signUpWith) ||
+                const DeepCollectionEquality()
+                    .equals(other.signUpWith, signUpWith)) &&
+            (identical(other.userName, userName) ||
+                const DeepCollectionEquality()
+                    .equals(other.userName, userName)) &&
+            (identical(other.password, password) ||
+                const DeepCollectionEquality()
+                    .equals(other.password, password)) &&
+            (identical(other.confirmPassword, confirmPassword) ||
+                const DeepCollectionEquality()
+                    .equals(other.confirmPassword, confirmPassword)) &&
+            (identical(other.enter, enter) ||
+                const DeepCollectionEquality().equals(other.enter, enter)) &&
+            (identical(other.email, email) ||
+                const DeepCollectionEquality().equals(other.email, email)) &&
+            (identical(other.send, send) ||
+                const DeepCollectionEquality().equals(other.send, send)) &&
+            (identical(other.ok, ok) ||
+                const DeepCollectionEquality().equals(other.ok, ok)) &&
+            (identical(other.linkWasSend, linkWasSend) ||
+                const DeepCollectionEquality()
+                    .equals(other.linkWasSend, linkWasSend)) &&
+            (identical(other.linkWouldBeSend, linkWouldBeSend) ||
+                const DeepCollectionEquality()
+                    .equals(other.linkWouldBeSend, linkWouldBeSend)) &&
+            (identical(other.mandatoryFields, mandatoryFields) ||
+                const DeepCollectionEquality()
+                    .equals(other.mandatoryFields, mandatoryFields)) &&
+            (identical(other.recovery, recovery) ||
+                const DeepCollectionEquality()
+                    .equals(other.recovery, recovery)) &&
+            (identical(other.recoveryLabel, recoveryLabel) ||
+                const DeepCollectionEquality()
+                    .equals(other.recoveryLabel, recoveryLabel)) &&
+            (identical(other.socialNetworks, socialNetworks) ||
+                const DeepCollectionEquality()
+                    .equals(other.socialNetworks, socialNetworks)) &&
+            (identical(other.google, google) ||
+                const DeepCollectionEquality().equals(other.google, google)) &&
+            (identical(other.facebook, facebook) ||
+                const DeepCollectionEquality()
+                    .equals(other.facebook, facebook)) &&
+            (identical(other.apple, apple) ||
+                const DeepCollectionEquality().equals(other.apple, apple)));
   }
 
   @override
-  int get hashCode => Object.hashAll([
-        runtimeType,
-        const DeepCollectionEquality().hash(login),
-        const DeepCollectionEquality().hash(loginWith),
-        const DeepCollectionEquality().hash(signUp),
-        const DeepCollectionEquality().hash(signUpWith),
-        const DeepCollectionEquality().hash(userName),
-        const DeepCollectionEquality().hash(password),
-        const DeepCollectionEquality().hash(confirmPassword),
-        const DeepCollectionEquality().hash(enter),
-        const DeepCollectionEquality().hash(email),
-        const DeepCollectionEquality().hash(send),
-        const DeepCollectionEquality().hash(ok),
-        const DeepCollectionEquality().hash(linkWasSend),
-        const DeepCollectionEquality().hash(linkWouldBeSend),
-        const DeepCollectionEquality().hash(mandatoryFields),
-        const DeepCollectionEquality().hash(recovery),
-        const DeepCollectionEquality().hash(recoveryLabel),
-        const DeepCollectionEquality().hash(socialNetworks),
-        const DeepCollectionEquality().hash(google),
-        const DeepCollectionEquality().hash(facebook),
-        const DeepCollectionEquality().hash(apple)
-      ]);
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(login) ^
+      const DeepCollectionEquality().hash(loginWith) ^
+      const DeepCollectionEquality().hash(signUp) ^
+      const DeepCollectionEquality().hash(signUpWith) ^
+      const DeepCollectionEquality().hash(userName) ^
+      const DeepCollectionEquality().hash(password) ^
+      const DeepCollectionEquality().hash(confirmPassword) ^
+      const DeepCollectionEquality().hash(enter) ^
+      const DeepCollectionEquality().hash(email) ^
+      const DeepCollectionEquality().hash(send) ^
+      const DeepCollectionEquality().hash(ok) ^
+      const DeepCollectionEquality().hash(linkWasSend) ^
+      const DeepCollectionEquality().hash(linkWouldBeSend) ^
+      const DeepCollectionEquality().hash(mandatoryFields) ^
+      const DeepCollectionEquality().hash(recovery) ^
+      const DeepCollectionEquality().hash(recoveryLabel) ^
+      const DeepCollectionEquality().hash(socialNetworks) ^
+      const DeepCollectionEquality().hash(google) ^
+      const DeepCollectionEquality().hash(facebook) ^
+      const DeepCollectionEquality().hash(apple);
 
   @JsonKey(ignore: true)
   @override
@@ -580,7 +601,7 @@ class _$_AuthDictionary implements _AuthDictionary {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_AuthDictionaryToJson(this);
+    return _$_$_AuthDictionaryToJson(this);
   }
 }
 
@@ -612,64 +633,64 @@ abstract class _AuthDictionary implements AuthDictionary {
 
   @override
   @JsonKey(name: 'log_in')
-  String get login;
+  String get login => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'log_in_with')
-  String get loginWith;
+  String get loginWith => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'sign_up')
-  String get signUp;
+  String get signUp => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'sign_up_with')
-  String get signUpWith;
+  String get signUpWith => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'user_name')
-  String get userName;
+  String get userName => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'password')
-  String get password;
+  String get password => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'confirm_password')
-  String get confirmPassword;
+  String get confirmPassword => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'enter')
-  String get enter;
+  String get enter => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'email')
-  String get email;
+  String get email => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'send')
-  String get send;
+  String get send => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'ok')
-  String get ok;
+  String get ok => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'link_was_send')
-  String get linkWasSend;
+  String get linkWasSend => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'link_would_be_send')
-  String get linkWouldBeSend;
+  String get linkWouldBeSend => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'mandatory_fields')
-  String get mandatoryFields;
+  String get mandatoryFields => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'recovery')
-  String get recovery;
+  String get recovery => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'recovery_label')
-  String get recoveryLabel;
+  String get recoveryLabel => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'social_networks')
-  String get socialNetworks;
+  String get socialNetworks => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'google')
-  String get google;
+  String get google => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'facebook')
-  String get facebook;
+  String get facebook => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'apple')
-  String get apple;
+  String get apple => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$AuthDictionaryCopyWith<_AuthDictionary> get copyWith =>
