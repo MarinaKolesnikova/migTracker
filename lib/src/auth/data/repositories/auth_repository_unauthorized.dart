@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:diplom_proj/config/app_config.dart';
 import 'package:diplom_proj/config/modules/dio_module_config.dart';
 import 'package:diplom_proj/presentation/messages/scaffold_messanger.dart';
+import 'package:diplom_proj/presentation/shared/mixins/logout.dart';
 import 'package:diplom_proj/src/auth/data/api/auth_api.dart';
 import 'package:diplom_proj/src/auth/entity/dto/email_dto/email_dto.dart';
 import 'package:diplom_proj/src/auth/entity/dto/login_dto/login_dto.dart';
@@ -33,7 +34,7 @@ class AuthRepositoryUnAuthorized extends IBaseRepository<AuthApi> {
     } on FirebaseAuthException catch (e) {
       if (e.code == 'account-exists-with-different-credential') {
         InfoMessages.accountExistsMessage();
-      } else if (e.code == 'invalid-credential') {
+      } else if (e.code == 'invalid-credential' || e.code == 'wrong-password') {
         InfoMessages.wrongCredentialsMessage();
       }
       return null;
@@ -83,5 +84,13 @@ class AuthRepositoryUnAuthorized extends IBaseRepository<AuthApi> {
 
   Future<Token?> loginApple(SocialToken socialToken) async {
     return await api.loginApple(SocialTokenDTO.fromModel(socialToken));
+  }
+
+  Future<void> refreshToken() async {
+    await FirebaseAuth.instance.currentUser?.getIdTokenResult(true);
+  }
+
+  Future<void> logout() async {
+    await FirebaseAuth.instance.signOut();
   }
 }

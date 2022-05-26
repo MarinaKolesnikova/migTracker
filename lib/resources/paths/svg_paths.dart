@@ -36,4 +36,20 @@ class SvgPathPicker {
 
   static const String sortUp = _path + 'sort_up.svg';
   static const String sortDown = _path + 'sort_down.svg';
+
+  static const String time = _path + 'time.svg';
+  static const String hourglass = _path + 'hourglass.svg';
+  static const String date = _path + 'date.svg';
+
+  static const String brain_1 = _path + 'brain_1.svg';
+  static const String brain_2 = _path + 'brain_2.svg';
+  static const String brain_3 = _path + 'brain_3.svg';
+  static const String brain_4 = _path + 'brain_4.svg';
+  static const String brain_5 = _path + 'brain_5.svg';
+  static const String sleepingTime = _path + 'sleeping_time.svg';
+
+  static const String temperature = _path + 'temperature.svg';
+  static const String pressure = _path + 'pressure.svg';
+  static const String humidity = _path + 'humidity.svg';
+  static const String autofill = _path + 'autofill.svg';
 }

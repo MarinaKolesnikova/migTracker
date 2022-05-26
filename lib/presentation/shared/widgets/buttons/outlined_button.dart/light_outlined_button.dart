@@ -61,17 +61,20 @@ class LightOutlineButton extends StatelessWidget with OutlineButtonMixin {
                 mainAxisAlignment: MainAxisAlignment.center,
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Text(
-                    text,
-                    textAlign: TextAlign.center,
-                    style: textStyle ??
-                        LightTextStyles.poppinsS18W500(
-                          height: 1.2,
-                          color: getTextColor(
-                            isDisable: isDisable,
-                            borderColor: color ?? LightColors.borderColor,
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                    child: Text(
+                      text,
+                      textAlign: TextAlign.center,
+                      style: textStyle ??
+                          LightTextStyles.poppinsS18W500(
+                            height: 1.2,
+                            color: getTextColor(
+                              isDisable: isDisable,
+                              borderColor: color ?? LightColors.borderColor,
+                            ),
                           ),
-                        ),
+                    ),
                   ),
                 ],
               ),

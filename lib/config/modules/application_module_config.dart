@@ -1,3 +1,7 @@
+import 'package:diplom_proj/src/attack/data/repository/attack_repository.dart';
+import 'package:diplom_proj/src/attack/data/services/attack_service.dart';
+import 'package:diplom_proj/src/attack/data/services/attack_service_impl.dart';
+import 'package:diplom_proj/src/attack/data/services/attack_service_mock.dart';
 import 'package:injectable/injectable.dart';
 import 'package:diplom_proj/config/modules/injection_config.dart';
 
@@ -43,6 +47,12 @@ abstract class ApplicationModuleConfig {
   AppService getAppService(AppConfig config, AppRepository appRepo) {
     if (config is MockConfig) return AppServiceMock();
     return AppServiceImpl(appRepo);
+  }
+
+  @injectable
+  AttackService getAttackService(AppConfig config, AttackRepository attackRepo) {
+    if (config is MockConfig) return AttackServiceMock();
+    return AttackServiceImpl(attackRepo);
   }
 
   @singleton

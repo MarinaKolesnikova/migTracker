@@ -14,6 +14,7 @@ class LogoutEvent extends IBlocEvent<AuthState> {
 
   @override
   Stream<AuthState> action(covariant AuthBloc bloc) async* {
+    await bloc.authService.logout();
     await bloc.tokenStorage.delete().whenComplete(() => onLogoutCompleted());
   }
 }

@@ -61,9 +61,9 @@ class AttackItem extends StatelessWidget {
                       symptoms: model.symptoms!,
                       label: 'Symptoms',
                     ),
-                  if (model.treatment != null)
+                  if (model.treatments != null)
                     WrapChips(
-                      symptoms: model.treatment!,
+                      symptoms: model.treatments!,
                       label: 'Treatment',
                     ),
                 ],

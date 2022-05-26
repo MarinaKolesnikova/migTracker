@@ -13,7 +13,7 @@ import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 const String authorized = 'authorized';
 const String unauthorized = 'unauthorized';
-const String authorizedMentoring = 'authorized_mentoring';
+const String weather = 'weather';
 
 @module
 abstract class NetworkModuleConfig {
@@ -40,7 +40,7 @@ abstract class NetworkModuleConfig {
         isAuthorized: true,
       );
 
-  @Named(authorizedMentoring)
+  @Named(weather)
   @injectable
   Dio provideAuthorizedMentoringDio(AppConfig config) => _getDio(
         config: config,

@@ -22,6 +22,8 @@ _$_DictionaryData _$$_DictionaryDataFromJson(Map<String, dynamic> json) =>
               (v) => MessagesDictionary.fromJson(v as Map<String, dynamic>)),
           home: $checkedConvert('home',
               (v) => HomeDictionary.fromJson(v as Map<String, dynamic>)),
+          calendar: $checkedConvert('calendar',
+              (v) => CalendarDictionary.fromJson(v as Map<String, dynamic>)),
         );
         return val;
       },
@@ -34,4 +36,5 @@ Map<String, dynamic> _$$_DictionaryDataToJson(_$_DictionaryData instance) =>
       'validation': instance.validation.toJson(),
       'messages': instance.messages.toJson(),
       'home': instance.home.toJson(),
+      'calendar': instance.calendar.toJson(),
     };

@@ -1,3 +1,4 @@
+import 'package:diplom_proj/resources/dictionary/data/calendar_dictionary/calendar_dictionary.dart';
 import 'package:diplom_proj/resources/dictionary/data/home_dictionary/home_dictionary.dart';
 import 'package:diplom_proj/resources/dictionary/data/messages_dictionary/messages_dictionary.dart';
 import 'package:diplom_proj/resources/dictionary/data/validation_dictionary/validation_dictionary.dart';
@@ -21,6 +22,7 @@ class DictionaryData with _$DictionaryData {
     @JsonKey(name: 'validation') required ValidationDictionary validation,
     @JsonKey(name: 'messages') required MessagesDictionary messages,
     @JsonKey(name: 'home') required HomeDictionary home,
+    @JsonKey(name: 'calendar') required CalendarDictionary calendar,
   }) = _DictionaryData;
 
   factory DictionaryData.fromJson(Map<String, dynamic> json) => _$DictionaryDataFromJson(json);

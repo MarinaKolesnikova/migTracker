@@ -1,4 +1,5 @@
-import 'package:diplom_proj/src/symptoms/symptom_model/symptom.dart';
+
+import 'package:diplom_proj/src/attack/entities/symptoms/symptom_model/symptom.dart';
 
 mixin IsChecked {
   bool isChecked(

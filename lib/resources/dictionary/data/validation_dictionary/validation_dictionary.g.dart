@@ -23,6 +23,7 @@ _$_ValidationDictionary _$$_ValidationDictionaryFromJson(
               $checkedConvert('passwords_not_equal', (v) => v as String),
           wrongPasswordFormat:
               $checkedConvert('wrong_password_format', (v) => v as String),
+          requiredField: $checkedConvert('required_field', (v) => v as String),
         );
         return val;
       },
@@ -32,7 +33,8 @@ _$_ValidationDictionary _$$_ValidationDictionaryFromJson(
         'numbersOnly': 'numbers_only',
         'wrongPhoneFormat': 'wrong_phone_format',
         'passwordsNotEqual': 'passwords_not_equal',
-        'wrongPasswordFormat': 'wrong_password_format'
+        'wrongPasswordFormat': 'wrong_password_format',
+        'requiredField': 'required_field'
       },
     );
 
@@ -45,4 +47,5 @@ Map<String, dynamic> _$$_ValidationDictionaryToJson(
       'wrong_phone_format': instance.wrongPhoneFormat,
       'passwords_not_equal': instance.passwordsNotEqual,
       'wrong_password_format': instance.wrongPasswordFormat,
+      'required_field': instance.requiredField,
     };

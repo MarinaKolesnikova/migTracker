@@ -45,9 +45,14 @@ class LightColors {
   static const Color outlinedButtonColor = Color(0xff1F103A);
   static const Color borderColor = Color(0xff26154E);
   static const Color backgroundColor = Color(0xff290D46);
+  static const Color calendarColor = Color(0xff290D46);
+
+  static const Color skelletonColors = Color(0xff9F98C8);
+
   static const Color chipColor = Color.fromARGB(255, 134, 113, 183);
   static const Color tileColor = Color(0xff4A4674);
   static const Color lightPurpleColor = Color(0xff9F98C8);
+  static const Color trackColor = Color.fromARGB(255, 119, 113, 151);
 
   static const Color mainItemsColor = Color(0xff4B3A6D);
 

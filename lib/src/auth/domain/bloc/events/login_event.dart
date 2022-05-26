@@ -26,14 +26,11 @@ class LoginEvent extends IBlocEvent<AuthState> {
   @override
   Stream<AuthState> action(covariant AuthBloc bloc) async* {
     try {
-      final bool isTest = email == 'test.account@light-it.net' && password == 'ZOB1c0XaHZ0hcixpPPAC';
-
       yield bloc.state.copyWith(isLoading: true);
 
       final User? user = await bloc.authService.login(
         LoginDTO(email: email, password: password),
         onError: onError,
-        isTest: isTest,
       );
 
       if (user != null) {

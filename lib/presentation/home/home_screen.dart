@@ -1,5 +1,6 @@
 import 'package:diplom_proj/presentation/home/widgets/light_tab_bar.dart';
 import 'package:diplom_proj/resources/resources.dart';
+import 'package:diplom_proj/src/attack/domain/attack_bloc.dart';
 import 'package:diplom_proj/src/main/domain/bloc/app_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -23,18 +24,20 @@ class _HomePageScreenState extends State<HomePageScreen> {
   Widget build(BuildContext context) {
     return BlocBuilder<AppBloc, AppState>(
       builder: (appContext, appState) {
-        return AutoTabsScaffold(
-          backgroundColor: LightColors.backgroundColor,
-          routes: [
-            MainScreenRoute(),
-            ScreenInDevelopRoute(),
-            ScreenInDevelopRoute(),
-            ScreenInDevelopRoute(),
-          ],
-          extendBody: true,
-          bottomNavigationBuilder: (_, tabsRouter) {
-            return LightTabBar(tabsRouter: tabsRouter);
-          },
+        return BlocProvider(
+          create: (context) => AttackBloc.byGetIt(),
+          child: AutoTabsScaffold(
+            backgroundColor: LightColors.backgroundColor,
+            routes: [
+              MainScreenRouter(),
+              CalendarScreenRoute(),
+              ScreenInDevelopRoute(),
+              ScreenInDevelopRoute(),
+            ],
+            bottomNavigationBuilder: (_, tabsRouter) {
+              return LightTabBar(tabsRouter: tabsRouter);
+            },
+          ),
         );
       },
     );

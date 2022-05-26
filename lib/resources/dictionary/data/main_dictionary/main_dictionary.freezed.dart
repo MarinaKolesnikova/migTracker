@@ -23,9 +23,11 @@ class _$MainDictionaryTearOff {
   const _$MainDictionaryTearOff();
 
   _MainDictionary call(
-      {@JsonKey(name: 'tab_bar') required TabBarDictionary tabBarDictionary}) {
+      {@JsonKey(name: 'tab_bar') required TabBarDictionary tabBarDictionary,
+      @JsonKey(name: 'attack') required AttackDictionary attackDictionary}) {
     return _MainDictionary(
       tabBarDictionary: tabBarDictionary,
+      attackDictionary: attackDictionary,
     );
   }
 
@@ -41,6 +43,8 @@ const $MainDictionary = _$MainDictionaryTearOff();
 mixin _$MainDictionary {
   @JsonKey(name: 'tab_bar')
   TabBarDictionary get tabBarDictionary => throw _privateConstructorUsedError;
+  @JsonKey(name: 'attack')
+  AttackDictionary get attackDictionary => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -53,9 +57,12 @@ abstract class $MainDictionaryCopyWith<$Res> {
   factory $MainDictionaryCopyWith(
           MainDictionary value, $Res Function(MainDictionary) then) =
       _$MainDictionaryCopyWithImpl<$Res>;
-  $Res call({@JsonKey(name: 'tab_bar') TabBarDictionary tabBarDictionary});
+  $Res call(
+      {@JsonKey(name: 'tab_bar') TabBarDictionary tabBarDictionary,
+      @JsonKey(name: 'attack') AttackDictionary attackDictionary});
 
   $TabBarDictionaryCopyWith<$Res> get tabBarDictionary;
+  $AttackDictionaryCopyWith<$Res> get attackDictionary;
 }
 
 /// @nodoc
@@ -70,12 +77,17 @@ class _$MainDictionaryCopyWithImpl<$Res>
   @override
   $Res call({
     Object? tabBarDictionary = freezed,
+    Object? attackDictionary = freezed,
   }) {
     return _then(_value.copyWith(
       tabBarDictionary: tabBarDictionary == freezed
           ? _value.tabBarDictionary
           : tabBarDictionary // ignore: cast_nullable_to_non_nullable
               as TabBarDictionary,
+      attackDictionary: attackDictionary == freezed
+          ? _value.attackDictionary
+          : attackDictionary // ignore: cast_nullable_to_non_nullable
+              as AttackDictionary,
     ));
   }
 
@@ -83,6 +95,13 @@ class _$MainDictionaryCopyWithImpl<$Res>
   $TabBarDictionaryCopyWith<$Res> get tabBarDictionary {
     return $TabBarDictionaryCopyWith<$Res>(_value.tabBarDictionary, (value) {
       return _then(_value.copyWith(tabBarDictionary: value));
+    });
+  }
+
+  @override
+  $AttackDictionaryCopyWith<$Res> get attackDictionary {
+    return $AttackDictionaryCopyWith<$Res>(_value.attackDictionary, (value) {
+      return _then(_value.copyWith(attackDictionary: value));
     });
   }
 }
@@ -94,10 +113,14 @@ abstract class _$MainDictionaryCopyWith<$Res>
           _MainDictionary value, $Res Function(_MainDictionary) then) =
       __$MainDictionaryCopyWithImpl<$Res>;
   @override
-  $Res call({@JsonKey(name: 'tab_bar') TabBarDictionary tabBarDictionary});
+  $Res call(
+      {@JsonKey(name: 'tab_bar') TabBarDictionary tabBarDictionary,
+      @JsonKey(name: 'attack') AttackDictionary attackDictionary});
 
   @override
   $TabBarDictionaryCopyWith<$Res> get tabBarDictionary;
+  @override
+  $AttackDictionaryCopyWith<$Res> get attackDictionary;
 }
 
 /// @nodoc
@@ -114,12 +137,17 @@ class __$MainDictionaryCopyWithImpl<$Res>
   @override
   $Res call({
     Object? tabBarDictionary = freezed,
+    Object? attackDictionary = freezed,
   }) {
     return _then(_MainDictionary(
       tabBarDictionary: tabBarDictionary == freezed
           ? _value.tabBarDictionary
           : tabBarDictionary // ignore: cast_nullable_to_non_nullable
               as TabBarDictionary,
+      attackDictionary: attackDictionary == freezed
+          ? _value.attackDictionary
+          : attackDictionary // ignore: cast_nullable_to_non_nullable
+              as AttackDictionary,
     ));
   }
 }
@@ -130,7 +158,8 @@ class __$MainDictionaryCopyWithImpl<$Res>
     fieldRename: FieldRename.snake, checked: true, explicitToJson: true)
 class _$_MainDictionary implements _MainDictionary {
   const _$_MainDictionary(
-      {@JsonKey(name: 'tab_bar') required this.tabBarDictionary});
+      {@JsonKey(name: 'tab_bar') required this.tabBarDictionary,
+      @JsonKey(name: 'attack') required this.attackDictionary});
 
   factory _$_MainDictionary.fromJson(Map<String, dynamic> json) =>
       _$$_MainDictionaryFromJson(json);
@@ -138,10 +167,13 @@ class _$_MainDictionary implements _MainDictionary {
   @override
   @JsonKey(name: 'tab_bar')
   final TabBarDictionary tabBarDictionary;
+  @override
+  @JsonKey(name: 'attack')
+  final AttackDictionary attackDictionary;
 
   @override
   String toString() {
-    return 'MainDictionary(tabBarDictionary: $tabBarDictionary)';
+    return 'MainDictionary(tabBarDictionary: $tabBarDictionary, attackDictionary: $attackDictionary)';
   }
 
   @override
@@ -150,12 +182,16 @@ class _$_MainDictionary implements _MainDictionary {
         (other.runtimeType == runtimeType &&
             other is _MainDictionary &&
             const DeepCollectionEquality()
-                .equals(other.tabBarDictionary, tabBarDictionary));
+                .equals(other.tabBarDictionary, tabBarDictionary) &&
+            const DeepCollectionEquality()
+                .equals(other.attackDictionary, attackDictionary));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(tabBarDictionary));
+      runtimeType,
+      const DeepCollectionEquality().hash(tabBarDictionary),
+      const DeepCollectionEquality().hash(attackDictionary));
 
   @JsonKey(ignore: true)
   @override
@@ -171,7 +207,9 @@ class _$_MainDictionary implements _MainDictionary {
 abstract class _MainDictionary implements MainDictionary {
   const factory _MainDictionary(
       {@JsonKey(name: 'tab_bar')
-          required TabBarDictionary tabBarDictionary}) = _$_MainDictionary;
+          required TabBarDictionary tabBarDictionary,
+      @JsonKey(name: 'attack')
+          required AttackDictionary attackDictionary}) = _$_MainDictionary;
 
   factory _MainDictionary.fromJson(Map<String, dynamic> json) =
       _$_MainDictionary.fromJson;
@@ -179,6 +217,9 @@ abstract class _MainDictionary implements MainDictionary {
   @override
   @JsonKey(name: 'tab_bar')
   TabBarDictionary get tabBarDictionary;
+  @override
+  @JsonKey(name: 'attack')
+  AttackDictionary get attackDictionary;
   @override
   @JsonKey(ignore: true)
   _$MainDictionaryCopyWith<_MainDictionary> get copyWith =>

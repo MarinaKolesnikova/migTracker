@@ -34,7 +34,9 @@ class _$ValidationDictionaryTearOff {
       @JsonKey(name: 'passwords_not_equal')
           required String passwordsNotEqual,
       @JsonKey(name: 'wrong_password_format')
-          required String wrongPasswordFormat}) {
+          required String wrongPasswordFormat,
+      @JsonKey(name: 'required_field')
+          required String requiredField}) {
     return _ValidationDictionary(
       emailValidationError: emailValidationError,
       cyrillicOnly: cyrillicOnly,
@@ -42,6 +44,7 @@ class _$ValidationDictionaryTearOff {
       wrongPhoneFormat: wrongPhoneFormat,
       passwordsNotEqual: passwordsNotEqual,
       wrongPasswordFormat: wrongPasswordFormat,
+      requiredField: requiredField,
     );
   }
 
@@ -67,6 +70,8 @@ mixin _$ValidationDictionary {
   String get passwordsNotEqual => throw _privateConstructorUsedError;
   @JsonKey(name: 'wrong_password_format')
   String get wrongPasswordFormat => throw _privateConstructorUsedError;
+  @JsonKey(name: 'required_field')
+  String get requiredField => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -85,7 +90,8 @@ abstract class $ValidationDictionaryCopyWith<$Res> {
       @JsonKey(name: 'numbers_only') String numbersOnly,
       @JsonKey(name: 'wrong_phone_format') String wrongPhoneFormat,
       @JsonKey(name: 'passwords_not_equal') String passwordsNotEqual,
-      @JsonKey(name: 'wrong_password_format') String wrongPasswordFormat});
+      @JsonKey(name: 'wrong_password_format') String wrongPasswordFormat,
+      @JsonKey(name: 'required_field') String requiredField});
 }
 
 /// @nodoc
@@ -105,6 +111,7 @@ class _$ValidationDictionaryCopyWithImpl<$Res>
     Object? wrongPhoneFormat = freezed,
     Object? passwordsNotEqual = freezed,
     Object? wrongPasswordFormat = freezed,
+    Object? requiredField = freezed,
   }) {
     return _then(_value.copyWith(
       emailValidationError: emailValidationError == freezed
@@ -131,6 +138,10 @@ class _$ValidationDictionaryCopyWithImpl<$Res>
           ? _value.wrongPasswordFormat
           : wrongPasswordFormat // ignore: cast_nullable_to_non_nullable
               as String,
+      requiredField: requiredField == freezed
+          ? _value.requiredField
+          : requiredField // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -148,7 +159,8 @@ abstract class _$ValidationDictionaryCopyWith<$Res>
       @JsonKey(name: 'numbers_only') String numbersOnly,
       @JsonKey(name: 'wrong_phone_format') String wrongPhoneFormat,
       @JsonKey(name: 'passwords_not_equal') String passwordsNotEqual,
-      @JsonKey(name: 'wrong_password_format') String wrongPasswordFormat});
+      @JsonKey(name: 'wrong_password_format') String wrongPasswordFormat,
+      @JsonKey(name: 'required_field') String requiredField});
 }
 
 /// @nodoc
@@ -170,6 +182,7 @@ class __$ValidationDictionaryCopyWithImpl<$Res>
     Object? wrongPhoneFormat = freezed,
     Object? passwordsNotEqual = freezed,
     Object? wrongPasswordFormat = freezed,
+    Object? requiredField = freezed,
   }) {
     return _then(_ValidationDictionary(
       emailValidationError: emailValidationError == freezed
@@ -196,6 +209,10 @@ class __$ValidationDictionaryCopyWithImpl<$Res>
           ? _value.wrongPasswordFormat
           : wrongPasswordFormat // ignore: cast_nullable_to_non_nullable
               as String,
+      requiredField: requiredField == freezed
+          ? _value.requiredField
+          : requiredField // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -206,18 +223,13 @@ class __$ValidationDictionaryCopyWithImpl<$Res>
     fieldRename: FieldRename.snake, checked: true, explicitToJson: true)
 class _$_ValidationDictionary implements _ValidationDictionary {
   const _$_ValidationDictionary(
-      {@JsonKey(name: 'wrong_email_format')
-          required this.emailValidationError,
-      @JsonKey(name: 'cyrillic_only')
-          required this.cyrillicOnly,
-      @JsonKey(name: 'numbers_only')
-          required this.numbersOnly,
-      @JsonKey(name: 'wrong_phone_format')
-          required this.wrongPhoneFormat,
-      @JsonKey(name: 'passwords_not_equal')
-          required this.passwordsNotEqual,
-      @JsonKey(name: 'wrong_password_format')
-          required this.wrongPasswordFormat});
+      {@JsonKey(name: 'wrong_email_format') required this.emailValidationError,
+      @JsonKey(name: 'cyrillic_only') required this.cyrillicOnly,
+      @JsonKey(name: 'numbers_only') required this.numbersOnly,
+      @JsonKey(name: 'wrong_phone_format') required this.wrongPhoneFormat,
+      @JsonKey(name: 'passwords_not_equal') required this.passwordsNotEqual,
+      @JsonKey(name: 'wrong_password_format') required this.wrongPasswordFormat,
+      @JsonKey(name: 'required_field') required this.requiredField});
 
   factory _$_ValidationDictionary.fromJson(Map<String, dynamic> json) =>
       _$$_ValidationDictionaryFromJson(json);
@@ -240,10 +252,13 @@ class _$_ValidationDictionary implements _ValidationDictionary {
   @override
   @JsonKey(name: 'wrong_password_format')
   final String wrongPasswordFormat;
+  @override
+  @JsonKey(name: 'required_field')
+  final String requiredField;
 
   @override
   String toString() {
-    return 'ValidationDictionary(emailValidationError: $emailValidationError, cyrillicOnly: $cyrillicOnly, numbersOnly: $numbersOnly, wrongPhoneFormat: $wrongPhoneFormat, passwordsNotEqual: $passwordsNotEqual, wrongPasswordFormat: $wrongPasswordFormat)';
+    return 'ValidationDictionary(emailValidationError: $emailValidationError, cyrillicOnly: $cyrillicOnly, numbersOnly: $numbersOnly, wrongPhoneFormat: $wrongPhoneFormat, passwordsNotEqual: $passwordsNotEqual, wrongPasswordFormat: $wrongPasswordFormat, requiredField: $requiredField)';
   }
 
   @override
@@ -262,7 +277,9 @@ class _$_ValidationDictionary implements _ValidationDictionary {
             const DeepCollectionEquality()
                 .equals(other.passwordsNotEqual, passwordsNotEqual) &&
             const DeepCollectionEquality()
-                .equals(other.wrongPasswordFormat, wrongPasswordFormat));
+                .equals(other.wrongPasswordFormat, wrongPasswordFormat) &&
+            const DeepCollectionEquality()
+                .equals(other.requiredField, requiredField));
   }
 
   @override
@@ -273,7 +290,8 @@ class _$_ValidationDictionary implements _ValidationDictionary {
       const DeepCollectionEquality().hash(numbersOnly),
       const DeepCollectionEquality().hash(wrongPhoneFormat),
       const DeepCollectionEquality().hash(passwordsNotEqual),
-      const DeepCollectionEquality().hash(wrongPasswordFormat));
+      const DeepCollectionEquality().hash(wrongPasswordFormat),
+      const DeepCollectionEquality().hash(requiredField));
 
   @JsonKey(ignore: true)
   @override
@@ -300,7 +318,9 @@ abstract class _ValidationDictionary implements ValidationDictionary {
       @JsonKey(name: 'passwords_not_equal')
           required String passwordsNotEqual,
       @JsonKey(name: 'wrong_password_format')
-          required String wrongPasswordFormat}) = _$_ValidationDictionary;
+          required String wrongPasswordFormat,
+      @JsonKey(name: 'required_field')
+          required String requiredField}) = _$_ValidationDictionary;
 
   factory _ValidationDictionary.fromJson(Map<String, dynamic> json) =
       _$_ValidationDictionary.fromJson;
@@ -323,6 +343,9 @@ abstract class _ValidationDictionary implements ValidationDictionary {
   @override
   @JsonKey(name: 'wrong_password_format')
   String get wrongPasswordFormat;
+  @override
+  @JsonKey(name: 'required_field')
+  String get requiredField;
   @override
   @JsonKey(ignore: true)
   _$ValidationDictionaryCopyWith<_ValidationDictionary> get copyWith =>

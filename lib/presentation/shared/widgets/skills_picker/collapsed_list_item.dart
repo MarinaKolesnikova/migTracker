@@ -1,4 +1,4 @@
-import 'package:diplom_proj/src/symptoms/editable_skills_model/editable_skill_model.dart';
+import 'package:diplom_proj/src/attack/entities/symptoms/editable_skills_model/editable_skill_model.dart';
 import 'package:flutter/material.dart';
 import 'package:diplom_proj/presentation/shared/widgets/non_animated_inkwell.dart/non_animated_inkwell.dart';
 import 'package:diplom_proj/resources/resources.dart';

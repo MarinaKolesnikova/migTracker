@@ -18,6 +18,7 @@ class ValidationDictionary with _$ValidationDictionary {
     @JsonKey(name: 'wrong_phone_format') required String wrongPhoneFormat,
     @JsonKey(name: 'passwords_not_equal') required String passwordsNotEqual,
     @JsonKey(name: 'wrong_password_format') required String wrongPasswordFormat,
+    @JsonKey(name: 'required_field') required String requiredField,
   }) = _ValidationDictionary;
 
   factory ValidationDictionary.fromJson(Map<String, dynamic> json) => _$ValidationDictionaryFromJson(json);

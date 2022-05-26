@@ -9,7 +9,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 abstract class AuthService {
   Future<User?> login(
     LoginDTO body, {
-    required bool isTest,
     Function(String?)? onError,
   });
   Future<bool?> resetPassword(
@@ -25,4 +24,6 @@ abstract class AuthService {
     SignUpDTO body, {
     Function(String?)? onError,
   });
+  Future<void> refreshToken();
+  Future<void> logout();
 }

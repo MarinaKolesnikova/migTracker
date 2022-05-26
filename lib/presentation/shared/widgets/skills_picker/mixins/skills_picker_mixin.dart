@@ -1,19 +1,19 @@
-import 'package:diplom_proj/src/symptoms/symptom_model/symptom.dart';
-import 'package:diplom_proj/src/symptoms/skills_group/skills_group.dart';
-import 'package:diplom_proj/src/symptoms/skills_group_abstract/skills_group_abstract.dart';
+import 'package:diplom_proj/src/attack/entities/symptoms/picking_group_abstract/picking_group_abstract.dart';
+import 'package:diplom_proj/src/attack/entities/symptoms/skills_group/symptoms_group.dart';
+import 'package:diplom_proj/src/attack/entities/symptoms/symptom_model/symptom.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:diplom_proj/presentation/shared/widgets/skills_picker/skills_picker.dart';
+import 'package:diplom_proj/presentation/shared/widgets/skills_picker/custom_picker.dart';
 import 'package:diplom_proj/resources/resources.dart';
 
-mixin SkillsPickerMixin<T extends SkillsPicker> on State<T> {
-  late List<SkillsGroupAbstract> tempSymptomsGroups;
+mixin SkillsPickerMixin<T extends CustomPicker> on State<T> {
+  late List<PickingGroupAbstract> tempSymptomsGroups;
   bool isListExpanded = false;
   bool isSuffixVisible = false;
   bool isAddButtonActive = false;
   @override
   void initState() {
-    tempSymptomsGroups = widget.skillGroups;
+    tempSymptomsGroups = widget.pickedGroups;
 
     super.initState();
   }
@@ -37,7 +37,7 @@ mixin SkillsPickerMixin<T extends SkillsPicker> on State<T> {
         isAddButtonActive = false;
       }
     } else {
-      tempSymptomsGroups = widget.skillGroups;
+      tempSymptomsGroups = widget.pickedGroups;
       isAddButtonActive = false;
       isListExpanded = false;
     }
@@ -57,8 +57,8 @@ mixin SkillsPickerMixin<T extends SkillsPicker> on State<T> {
     final List<SymptomsGroup> newList = [];
     isAddButtonActive = true;
 
-    for (int i = 0; i < widget.skillGroups.length; i++) {
-      final Iterable<Symptom>? list = widget.skillGroups[i].skills.where(
+    for (int i = 0; i < widget.pickedGroups.length; i++) {
+      final Iterable<Symptom>? list = widget.pickedGroups[i].items.where(
         (element) {
           final name = element.name!;
           if (name == requestText) {
@@ -72,9 +72,9 @@ mixin SkillsPickerMixin<T extends SkillsPicker> on State<T> {
       if (list != null && list.isNotEmpty) {
         newList.add(
           SymptomsGroup(
-            skills: list.toList(),
-            groupName: widget.skillGroups[i].groupName,
-            id: widget.skillGroups[i].id,
+            items: list.toList(),
+            groupName: widget.pickedGroups[i].groupName,
+            id: widget.pickedGroups[i].id,
           ),
         );
       }

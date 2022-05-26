@@ -39,7 +39,7 @@ class ListHeader extends StatelessWidget {
 
   BoxDecoration getDecoration() {
     return BoxDecoration(
-      color: LightColors.lightUndercover,
+      color: LightColors.mainItemsColor,
       border: Border(
         bottom: BorderSide(color: LightColors.text.withOpacity(0.3)),
       ),

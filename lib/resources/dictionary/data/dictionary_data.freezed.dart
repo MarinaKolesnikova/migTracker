@@ -27,13 +27,15 @@ class _$DictionaryDataTearOff {
       @JsonKey(name: 'main') required MainDictionary main,
       @JsonKey(name: 'validation') required ValidationDictionary validation,
       @JsonKey(name: 'messages') required MessagesDictionary messages,
-      @JsonKey(name: 'home') required HomeDictionary home}) {
+      @JsonKey(name: 'home') required HomeDictionary home,
+      @JsonKey(name: 'calendar') required CalendarDictionary calendar}) {
     return _DictionaryData(
       auth: auth,
       main: main,
       validation: validation,
       messages: messages,
       home: home,
+      calendar: calendar,
     );
   }
 
@@ -57,6 +59,8 @@ mixin _$DictionaryData {
   MessagesDictionary get messages => throw _privateConstructorUsedError;
   @JsonKey(name: 'home')
   HomeDictionary get home => throw _privateConstructorUsedError;
+  @JsonKey(name: 'calendar')
+  CalendarDictionary get calendar => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -74,13 +78,15 @@ abstract class $DictionaryDataCopyWith<$Res> {
       @JsonKey(name: 'main') MainDictionary main,
       @JsonKey(name: 'validation') ValidationDictionary validation,
       @JsonKey(name: 'messages') MessagesDictionary messages,
-      @JsonKey(name: 'home') HomeDictionary home});
+      @JsonKey(name: 'home') HomeDictionary home,
+      @JsonKey(name: 'calendar') CalendarDictionary calendar});
 
   $AuthDictionaryCopyWith<$Res> get auth;
   $MainDictionaryCopyWith<$Res> get main;
   $ValidationDictionaryCopyWith<$Res> get validation;
   $MessagesDictionaryCopyWith<$Res> get messages;
   $HomeDictionaryCopyWith<$Res> get home;
+  $CalendarDictionaryCopyWith<$Res> get calendar;
 }
 
 /// @nodoc
@@ -99,6 +105,7 @@ class _$DictionaryDataCopyWithImpl<$Res>
     Object? validation = freezed,
     Object? messages = freezed,
     Object? home = freezed,
+    Object? calendar = freezed,
   }) {
     return _then(_value.copyWith(
       auth: auth == freezed
@@ -121,6 +128,10 @@ class _$DictionaryDataCopyWithImpl<$Res>
           ? _value.home
           : home // ignore: cast_nullable_to_non_nullable
               as HomeDictionary,
+      calendar: calendar == freezed
+          ? _value.calendar
+          : calendar // ignore: cast_nullable_to_non_nullable
+              as CalendarDictionary,
     ));
   }
 
@@ -158,6 +169,13 @@ class _$DictionaryDataCopyWithImpl<$Res>
       return _then(_value.copyWith(home: value));
     });
   }
+
+  @override
+  $CalendarDictionaryCopyWith<$Res> get calendar {
+    return $CalendarDictionaryCopyWith<$Res>(_value.calendar, (value) {
+      return _then(_value.copyWith(calendar: value));
+    });
+  }
 }
 
 /// @nodoc
@@ -172,7 +190,8 @@ abstract class _$DictionaryDataCopyWith<$Res>
       @JsonKey(name: 'main') MainDictionary main,
       @JsonKey(name: 'validation') ValidationDictionary validation,
       @JsonKey(name: 'messages') MessagesDictionary messages,
-      @JsonKey(name: 'home') HomeDictionary home});
+      @JsonKey(name: 'home') HomeDictionary home,
+      @JsonKey(name: 'calendar') CalendarDictionary calendar});
 
   @override
   $AuthDictionaryCopyWith<$Res> get auth;
@@ -184,6 +203,8 @@ abstract class _$DictionaryDataCopyWith<$Res>
   $MessagesDictionaryCopyWith<$Res> get messages;
   @override
   $HomeDictionaryCopyWith<$Res> get home;
+  @override
+  $CalendarDictionaryCopyWith<$Res> get calendar;
 }
 
 /// @nodoc
@@ -204,6 +225,7 @@ class __$DictionaryDataCopyWithImpl<$Res>
     Object? validation = freezed,
     Object? messages = freezed,
     Object? home = freezed,
+    Object? calendar = freezed,
   }) {
     return _then(_DictionaryData(
       auth: auth == freezed
@@ -226,6 +248,10 @@ class __$DictionaryDataCopyWithImpl<$Res>
           ? _value.home
           : home // ignore: cast_nullable_to_non_nullable
               as HomeDictionary,
+      calendar: calendar == freezed
+          ? _value.calendar
+          : calendar // ignore: cast_nullable_to_non_nullable
+              as CalendarDictionary,
     ));
   }
 }
@@ -240,7 +266,8 @@ class _$_DictionaryData implements _DictionaryData {
       @JsonKey(name: 'main') required this.main,
       @JsonKey(name: 'validation') required this.validation,
       @JsonKey(name: 'messages') required this.messages,
-      @JsonKey(name: 'home') required this.home});
+      @JsonKey(name: 'home') required this.home,
+      @JsonKey(name: 'calendar') required this.calendar});
 
   factory _$_DictionaryData.fromJson(Map<String, dynamic> json) =>
       _$$_DictionaryDataFromJson(json);
@@ -260,10 +287,13 @@ class _$_DictionaryData implements _DictionaryData {
   @override
   @JsonKey(name: 'home')
   final HomeDictionary home;
+  @override
+  @JsonKey(name: 'calendar')
+  final CalendarDictionary calendar;
 
   @override
   String toString() {
-    return 'DictionaryData(auth: $auth, main: $main, validation: $validation, messages: $messages, home: $home)';
+    return 'DictionaryData(auth: $auth, main: $main, validation: $validation, messages: $messages, home: $home, calendar: $calendar)';
   }
 
   @override
@@ -276,7 +306,8 @@ class _$_DictionaryData implements _DictionaryData {
             const DeepCollectionEquality()
                 .equals(other.validation, validation) &&
             const DeepCollectionEquality().equals(other.messages, messages) &&
-            const DeepCollectionEquality().equals(other.home, home));
+            const DeepCollectionEquality().equals(other.home, home) &&
+            const DeepCollectionEquality().equals(other.calendar, calendar));
   }
 
   @override
@@ -286,7 +317,8 @@ class _$_DictionaryData implements _DictionaryData {
       const DeepCollectionEquality().hash(main),
       const DeepCollectionEquality().hash(validation),
       const DeepCollectionEquality().hash(messages),
-      const DeepCollectionEquality().hash(home));
+      const DeepCollectionEquality().hash(home),
+      const DeepCollectionEquality().hash(calendar));
 
   @JsonKey(ignore: true)
   @override
@@ -301,11 +333,13 @@ class _$_DictionaryData implements _DictionaryData {
 
 abstract class _DictionaryData implements DictionaryData {
   const factory _DictionaryData(
-      {@JsonKey(name: 'auth') required AuthDictionary auth,
-      @JsonKey(name: 'main') required MainDictionary main,
-      @JsonKey(name: 'validation') required ValidationDictionary validation,
-      @JsonKey(name: 'messages') required MessagesDictionary messages,
-      @JsonKey(name: 'home') required HomeDictionary home}) = _$_DictionaryData;
+          {@JsonKey(name: 'auth') required AuthDictionary auth,
+          @JsonKey(name: 'main') required MainDictionary main,
+          @JsonKey(name: 'validation') required ValidationDictionary validation,
+          @JsonKey(name: 'messages') required MessagesDictionary messages,
+          @JsonKey(name: 'home') required HomeDictionary home,
+          @JsonKey(name: 'calendar') required CalendarDictionary calendar}) =
+      _$_DictionaryData;
 
   factory _DictionaryData.fromJson(Map<String, dynamic> json) =
       _$_DictionaryData.fromJson;
@@ -325,6 +359,9 @@ abstract class _DictionaryData implements DictionaryData {
   @override
   @JsonKey(name: 'home')
   HomeDictionary get home;
+  @override
+  @JsonKey(name: 'calendar')
+  CalendarDictionary get calendar;
   @override
   @JsonKey(ignore: true)
   _$DictionaryDataCopyWith<_DictionaryData> get copyWith =>

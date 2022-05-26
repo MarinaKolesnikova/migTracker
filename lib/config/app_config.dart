@@ -6,6 +6,8 @@ abstract class AppConfig {
   String get name;
 
   String get baseUrl;
+  String get weatherUrl;
+  String get apiKey;
 
   bool get enableLogs;
 
@@ -27,6 +29,12 @@ class DevConfig extends AppConfig {
   String get baseUrl => 'https://net';
 
   @override
+  String get weatherUrl => 'https://api.openweathermap.org/data/2.5/';
+
+  @override
+  String get apiKey => '65dc8668808320d75b2529f3bb3a8004';
+
+  @override
   bool get enableLogs => true;
 
   @override
@@ -46,6 +54,12 @@ class StageConfig implements AppConfig {
   String get baseUrl => 'https://net';
 
   @override
+  String get weatherUrl => 'https://api.openweathermap.org/data/2.5/';
+
+  @override
+  String get apiKey => '65dc8668808320d75b2529f3bb3a8004';
+
+  @override
   bool get enableLogs => true;
 
   @override
@@ -60,6 +74,11 @@ class StageConfig implements AppConfig {
 class ProdConfig implements AppConfig {
   @override
   bool get useMock => false;
+  @override
+  String get weatherUrl => 'https://api.openweathermap.org/data/2.5/';
+
+  @override
+  String get apiKey => '65dc8668808320d75b2529f3bb3a8004';
 
   @override
   String get baseUrl => 'https://net';
@@ -80,6 +99,11 @@ class MockConfig implements AppConfig {
   @override
   bool get useMock => true;
 
+  @override
+  String get apiKey => '65dc8668808320d75b2529f3bb3a8004';
+
+  @override
+  String get weatherUrl => 'https://api.openweathermap.org/data/2.5/';
   @override
   String get baseUrl => 'just mock service';
 

@@ -22,7 +22,6 @@ class AuthServiceImpl implements AuthService {
   @override
   Future<User?> login(
     LoginDTO body, {
-    required bool isTest,
     Function(String?)? onError,
   }) async {
     try {
@@ -99,5 +98,15 @@ class AuthServiceImpl implements AuthService {
     final AuthCredential facebookCredential = FacebookAuthProvider.credential(authentication.accessToken!.token);
 
     return await _authRepo.loginService(facebookCredential);
+  }
+
+  @override
+  Future<void> refreshToken() async {
+    await _authRepo.refreshToken();
+  }
+
+  @override
+  Future<void> logout() async {
+    await Future.delayed(Duration(milliseconds: 100));
   }
 }

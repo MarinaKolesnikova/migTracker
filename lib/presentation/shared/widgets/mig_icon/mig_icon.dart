@@ -20,6 +20,7 @@ class MigIcon extends StatelessWidget {
       onTap: onTap ?? () {},
       child: SizedBox(
         height: size,
+        width: size,
         child: ShaderMask(
           shaderCallback: (bounds) {
             return RadialGradient(

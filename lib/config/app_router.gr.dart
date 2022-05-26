@@ -10,74 +10,93 @@
 //
 // ignore_for_file: type=lint
 
-import 'package:auto_route/auto_route.dart' as _i6;
-import 'package:flutter/material.dart' as _i7;
+import 'package:auto_route/auto_route.dart' as _i5;
+import 'package:flutter/material.dart' as _i9;
 
 import '../presentation/additional/screen_in_develop.dart' as _i3;
 import '../presentation/additional/splash_screen.dart' as _i1;
+import '../presentation/attack_creation/attack_creation.dart' as _i8;
 import '../presentation/authorization/authorization_screen.dart' as _i2;
+import '../presentation/calendar/calendar_screen.dart' as _i6;
 import '../presentation/home/home_screen.dart' as _i4;
-import '../presentation/main/main_screen.dart' as _i5;
+import '../presentation/main/main_screen.dart' as _i7;
 
-class AppRouter extends _i6.RootStackRouter {
-  AppRouter([_i7.GlobalKey<_i7.NavigatorState>? navigatorKey])
+class AppRouter extends _i5.RootStackRouter {
+  AppRouter([_i9.GlobalKey<_i9.NavigatorState>? navigatorKey])
       : super(navigatorKey);
 
   @override
-  final Map<String, _i6.PageFactory> pagesMap = {
+  final Map<String, _i5.PageFactory> pagesMap = {
     SplashScreenRoute.name: (routeData) {
-      return _i6.MaterialPageX<dynamic>(
+      return _i5.MaterialPageX<dynamic>(
           routeData: routeData, child: const _i1.SplashScreen());
     },
     AuthorizationScreenRoute.name: (routeData) {
-      return _i6.MaterialPageX<dynamic>(
+      return _i5.MaterialPageX<dynamic>(
           routeData: routeData, child: const _i2.AuthorizationScreen());
     },
     ScreenInDevelopRoute.name: (routeData) {
-      return _i6.CustomPage<dynamic>(
-          routeData: routeData,
-          child: const _i3.ScreenInDevelop(),
-          transitionsBuilder: _i6.TransitionsBuilders.fadeIn,
-          durationInMilliseconds: 300,
-          opaque: true,
-          barrierDismissible: false);
+      return _i5.MaterialPageX<dynamic>(
+          routeData: routeData, child: const _i3.ScreenInDevelop());
     },
     HomePageScreenRoute.name: (routeData) {
-      return _i6.MaterialPageX<dynamic>(
+      return _i5.MaterialPageX<dynamic>(
           routeData: routeData, child: const _i4.HomePageScreen());
     },
-    MainScreenRoute.name: (routeData) {
-      return _i6.CustomPage<dynamic>(
+    MainScreenRouter.name: (routeData) {
+      return _i5.MaterialPageX<dynamic>(
+          routeData: routeData, child: const _i5.EmptyRouterPage());
+    },
+    CalendarScreenRoute.name: (routeData) {
+      return _i5.CustomPage<dynamic>(
           routeData: routeData,
-          child: const _i5.MainScreen(),
-          transitionsBuilder: _i6.TransitionsBuilders.fadeIn,
+          child: const _i6.CalendarScreen(),
+          transitionsBuilder: _i5.TransitionsBuilders.fadeIn,
           durationInMilliseconds: 300,
           opaque: true,
           barrierDismissible: false);
+    },
+    MainScreenRoute.name: (routeData) {
+      return _i5.MaterialPageX<dynamic>(
+          routeData: routeData, child: const _i7.MainScreen());
+    },
+    AttackCreationRoute.name: (routeData) {
+      return _i5.MaterialPageX<dynamic>(
+          routeData: routeData, child: const _i8.AttackCreation());
     }
   };
 
   @override
-  List<_i6.RouteConfig> get routes => [
-        _i6.RouteConfig('/#redirect',
+  List<_i5.RouteConfig> get routes => [
+        _i5.RouteConfig('/#redirect',
             path: '/', redirectTo: 'splash_screen', fullMatch: true),
-        _i6.RouteConfig(SplashScreenRoute.name, path: 'splash_screen'),
-        _i6.RouteConfig(AuthorizationScreenRoute.name, path: 'auth_screen'),
-        _i6.RouteConfig(ScreenInDevelopRoute.name, path: 'screen_in_develop'),
-        _i6.RouteConfig(HomePageScreenRoute.name,
+        _i5.RouteConfig(SplashScreenRoute.name, path: 'splash_screen'),
+        _i5.RouteConfig(AuthorizationScreenRoute.name, path: 'auth_screen'),
+        _i5.RouteConfig(ScreenInDevelopRoute.name, path: 'screen_in_develop'),
+        _i5.RouteConfig(HomePageScreenRoute.name,
             path: 'home_screen',
             children: [
-              _i6.RouteConfig(ScreenInDevelopRoute.name,
-                  path: 'screen_in_develop', parent: HomePageScreenRoute.name),
-              _i6.RouteConfig(MainScreenRoute.name,
-                  path: 'main_screen', parent: HomePageScreenRoute.name)
+              _i5.RouteConfig(MainScreenRouter.name,
+                  path: 'main_screen',
+                  parent: HomePageScreenRoute.name,
+                  children: [
+                    _i5.RouteConfig(MainScreenRoute.name,
+                        path: '', parent: MainScreenRouter.name),
+                    _i5.RouteConfig(AttackCreationRoute.name,
+                        path: 'attack_creation_screen',
+                        parent: MainScreenRouter.name)
+                  ]),
+              _i5.RouteConfig(CalendarScreenRoute.name,
+                  path: 'calendar_screen', parent: HomePageScreenRoute.name),
+              _i5.RouteConfig(ScreenInDevelopRoute.name,
+                  path: 'screen_in_develop', parent: HomePageScreenRoute.name)
             ])
       ];
 }
 
 /// generated route for
 /// [_i1.SplashScreen]
-class SplashScreenRoute extends _i6.PageRouteInfo<void> {
+class SplashScreenRoute extends _i5.PageRouteInfo<void> {
   const SplashScreenRoute()
       : super(SplashScreenRoute.name, path: 'splash_screen');
 
@@ -86,7 +105,7 @@ class SplashScreenRoute extends _i6.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i2.AuthorizationScreen]
-class AuthorizationScreenRoute extends _i6.PageRouteInfo<void> {
+class AuthorizationScreenRoute extends _i5.PageRouteInfo<void> {
   const AuthorizationScreenRoute()
       : super(AuthorizationScreenRoute.name, path: 'auth_screen');
 
@@ -95,7 +114,7 @@ class AuthorizationScreenRoute extends _i6.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i3.ScreenInDevelop]
-class ScreenInDevelopRoute extends _i6.PageRouteInfo<void> {
+class ScreenInDevelopRoute extends _i5.PageRouteInfo<void> {
   const ScreenInDevelopRoute()
       : super(ScreenInDevelopRoute.name, path: 'screen_in_develop');
 
@@ -104,8 +123,8 @@ class ScreenInDevelopRoute extends _i6.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i4.HomePageScreen]
-class HomePageScreenRoute extends _i6.PageRouteInfo<void> {
-  const HomePageScreenRoute({List<_i6.PageRouteInfo>? children})
+class HomePageScreenRoute extends _i5.PageRouteInfo<void> {
+  const HomePageScreenRoute({List<_i5.PageRouteInfo>? children})
       : super(HomePageScreenRoute.name,
             path: 'home_screen', initialChildren: children);
 
@@ -113,9 +132,37 @@ class HomePageScreenRoute extends _i6.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i5.MainScreen]
-class MainScreenRoute extends _i6.PageRouteInfo<void> {
-  const MainScreenRoute() : super(MainScreenRoute.name, path: 'main_screen');
+/// [_i5.EmptyRouterPage]
+class MainScreenRouter extends _i5.PageRouteInfo<void> {
+  const MainScreenRouter({List<_i5.PageRouteInfo>? children})
+      : super(MainScreenRouter.name,
+            path: 'main_screen', initialChildren: children);
+
+  static const String name = 'MainScreenRouter';
+}
+
+/// generated route for
+/// [_i6.CalendarScreen]
+class CalendarScreenRoute extends _i5.PageRouteInfo<void> {
+  const CalendarScreenRoute()
+      : super(CalendarScreenRoute.name, path: 'calendar_screen');
+
+  static const String name = 'CalendarScreenRoute';
+}
+
+/// generated route for
+/// [_i7.MainScreen]
+class MainScreenRoute extends _i5.PageRouteInfo<void> {
+  const MainScreenRoute() : super(MainScreenRoute.name, path: '');
 
   static const String name = 'MainScreenRoute';
+}
+
+/// generated route for
+/// [_i8.AttackCreation]
+class AttackCreationRoute extends _i5.PageRouteInfo<void> {
+  const AttackCreationRoute()
+      : super(AttackCreationRoute.name, path: 'attack_creation_screen');
+
+  static const String name = 'AttackCreationRoute';
 }

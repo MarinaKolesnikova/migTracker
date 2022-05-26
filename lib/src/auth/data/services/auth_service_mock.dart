@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:diplom_proj/presentation/shared/mixins/logout.dart';
 import 'package:diplom_proj/src/auth/data/services/auth_service.dart';
 import 'package:diplom_proj/src/auth/entity/dto/email_dto/email_dto.dart';
 import 'package:diplom_proj/src/auth/entity/dto/login_dto/login_dto.dart';
@@ -12,7 +13,6 @@ class AuthServiceMock implements AuthService {
   @override
   Future<User?> login(
     LoginDTO body, {
-    required bool isTest,
     Function(String?)? onError,
   }) async {
     return null;
@@ -45,20 +45,24 @@ class AuthServiceMock implements AuthService {
   }
 
   @override
-  Future<User?> loginApple() async {
-    await Future.delayed(Duration(seconds: 2));
-    return null;
-  }
-
-  @override
   Future<User?> loginFacebook() async {
-    await Future.delayed(Duration(seconds: 2));
+    await Future.delayed(Duration(milliseconds: 100));
     return null;
   }
 
   @override
   Future<User?> loginGoogle() async {
-    await Future.delayed(Duration(seconds: 2));
+    await Future.delayed(Duration(milliseconds: 100));
     return null;
+  }
+
+  @override
+  Future<void> refreshToken() async {
+    await Future.delayed(Duration(milliseconds: 100));
+  }
+
+  @override
+  Future<void> logout() async {
+    await Future.delayed(Duration(milliseconds: 100));
   }
 }

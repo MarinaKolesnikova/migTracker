@@ -1,6 +1,6 @@
 import 'package:diplom_proj/presentation/shared/widgets/divider/divider.dart';
-import 'package:diplom_proj/src/symptoms/editable_skills_model/editable_skill_model.dart';
-import 'package:diplom_proj/src/symptoms/symptom_model/symptom.dart';
+import 'package:diplom_proj/src/attack/entities/symptoms/editable_skills_model/editable_skill_model.dart';
+import 'package:diplom_proj/src/attack/entities/symptoms/symptom_model/symptom.dart';
 
 import 'package:flutter/material.dart';
 import 'package:diplom_proj/presentation/shared/widgets/skills_picker/mixins/collapsed_list_mixin.dart';

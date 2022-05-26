@@ -10,4 +10,6 @@ export 'package:diplom_proj/resources/colors/light_colors.dart';
 export 'package:diplom_proj/resources/dictionary/data/auth_dictionary/auth_dictionary.dart';
 
 export 'package:diplom_proj/resources/dictionary/data/main_dictionary/main_dictionary.dart';
+export 'package:diplom_proj/resources/dictionary/data/calendar_dictionary/calendar_dictionary.dart';
+
 export 'package:diplom_proj/resources/dictionary/all.dart';

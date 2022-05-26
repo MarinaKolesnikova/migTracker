@@ -1,6 +1,6 @@
 import 'package:diplom_proj/presentation/shared/widgets/wrap_chip/chips_block.dart';
 import 'package:diplom_proj/resources/resources.dart';
-import 'package:diplom_proj/src/symptoms/symptom_model/symptom.dart';
+import 'package:diplom_proj/src/attack/entities/symptoms/symptom_model/symptom.dart';
 
 import 'package:flutter/material.dart';
 
