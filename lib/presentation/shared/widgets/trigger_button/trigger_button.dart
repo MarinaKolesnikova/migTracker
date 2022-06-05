@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:diplom_proj/presentation/shared/widgets/non_animated_inkwell.dart/non_animated_inkwell.dart';
 import 'package:diplom_proj/resources/resources.dart';
 import 'package:flutter/material.dart';
@@ -61,7 +59,7 @@ class _TriggerButtonState extends State<TriggerButton> {
   BoxDecoration get decoration {
     return BoxDecoration(
       borderRadius: BorderRadius.circular(20.0),
-      color: isSelected ? LightColors.chipColor.withOpacity(0.2) : LightColors.chipColor.withOpacity(0.7),
+      color: isSelected ? LightColors.chipColor.withOpacity(0.7) : LightColors.chipColor.withOpacity(0.2),
     );
   }
 }

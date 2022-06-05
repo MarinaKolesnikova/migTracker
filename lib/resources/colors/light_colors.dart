@@ -21,6 +21,8 @@ class LightColors {
   static const Color semiGrey = Color(0xff9D9D9D);
   static const Color unactiveColor = Color(0xff777777);
 
+  static const Color orange = Color.fromARGB(255, 255, 145, 0);
+
   static const Color darkGrey = Color.fromRGBO(55, 55, 55, 1);
 
   //darkThemeBackground
@@ -32,7 +34,7 @@ class LightColors {
   static const Color lightUndercover = Color(0xff26154E);
   //diplom
 
-  static const Color accentColor = Color(0xff26154E);
+  static const Color accentColor = Color(0xff210846);
   static const Color primaryColor = Color(0xff26154E);
   static const Color lightText = Color(0xffEBEBEB);
   static const Color darkText = Color(0xff26154E);

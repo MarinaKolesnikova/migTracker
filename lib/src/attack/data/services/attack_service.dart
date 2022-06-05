@@ -21,4 +21,5 @@ abstract class AttackService {
 
   Future<bool> postAttack(AttackModel model);
   Future<List<AttackDTO>?> fetchAttacks();
+  
 }

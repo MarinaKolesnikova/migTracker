@@ -35,6 +35,11 @@ _$_AttackModel _$$_AttackModelFromJson(Map<String, dynamic> json) =>
               (v) => (v as List<dynamic>?)
                   ?.map((e) => Symptom.fromJson(e as Map<String, dynamic>))
                   .toList()),
+          weather: $checkedConvert(
+              'weather',
+              (v) => v == null
+                  ? null
+                  : ForecastDTO.fromJson(v as Map<String, dynamic>)),
         );
         return val;
       },
@@ -63,4 +68,5 @@ Map<String, dynamic> _$$_AttackModelToJson(_$_AttackModel instance) =>
       'pain_level': instance.painLevel,
       'symptoms': instance.symptoms?.map((e) => e.toJson()).toList(),
       'treatments': instance.treatments?.map((e) => e.toJson()).toList(),
+      'weather': instance.weather?.toJson(),
     };

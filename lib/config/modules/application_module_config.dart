@@ -5,7 +5,7 @@ import 'package:diplom_proj/src/attack/data/services/attack_service_mock.dart';
 import 'package:injectable/injectable.dart';
 import 'package:diplom_proj/config/modules/injection_config.dart';
 
-import 'package:diplom_proj/resources/i18n/ru.dart';
+import 'package:diplom_proj/resources/i18n/en.dart';
 import 'package:diplom_proj/resources/resources.dart';
 
 import 'package:diplom_proj/src/auth/data/repositories/auth_repository_unauthorized.dart';

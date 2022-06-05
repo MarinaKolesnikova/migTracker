@@ -8,6 +8,9 @@ class SvgPathPicker {
   static const String showIcon = _path + 'show_icon2.svg';
   static const String advices = _path + 'advices.svg';
   static const String calendar = _path + 'calendar.svg';
+  static const String settings = _path + 'settings.svg';
+  static const String attention = _path + 'attention.svg';
+  static const String sunIcon = _path + 'sun_icon.svg';
 
   static const String search = _path + 'search.svg';
   static const String home = _path + 'home.svg';
@@ -28,7 +31,7 @@ class SvgPathPicker {
   static const String facebook = _path + 'facebook.svg';
 
   static const String exit = _path + 'exit.svg';
-  static const String settings = _path + 'settings.svg';
+
   static const String delete = _path + 'delete.svg';
 
   static const String selected = _path + 'selected.svg';

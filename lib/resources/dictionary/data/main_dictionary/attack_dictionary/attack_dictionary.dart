@@ -37,6 +37,7 @@ class AttackDictionary with _$AttackDictionary {
     @JsonKey(name: 'submit') required String submit,
     @JsonKey(name: 'stop') required String stop,
     @JsonKey(name: 'edit') required String edit,
+    @JsonKey(name: 'start') required String start,
   }) = _AttackDictionary;
 
   factory AttackDictionary.fromJson(Map<String, dynamic> json) => _$AttackDictionaryFromJson(json);

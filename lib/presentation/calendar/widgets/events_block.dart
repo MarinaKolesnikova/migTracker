@@ -17,14 +17,19 @@ class EventsBlock extends StatelessWidget {
     final CalendarDictionary dict = dictionaryManager.getSelectedData.calendar;
 
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20.0),
+      padding: const EdgeInsets.symmetric(
+        horizontal: 15.0,
+      ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           if (attacks.isNotEmpty)
-            Text(
-              dict.attacks,
-              style: LightTextStyles.poppinsS20W400(color: LightColors.text),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 20.0),
+              child: Text(
+                dict.attacks,
+                style: LightTextStyles.poppinsS20W400(color: LightColors.text),
+              ),
             ),
           ...attacks.map((item) => AttackItem(model: item)).toList(),
         ],

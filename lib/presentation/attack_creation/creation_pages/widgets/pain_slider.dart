@@ -1,12 +1,17 @@
 import 'package:diplom_proj/resources/colors/light_colors.dart';
+import 'package:diplom_proj/src/attack/domain/attack_bloc.dart';
+import 'package:diplom_proj/src/attack/domain/events/set_attack_parameters_event.dart';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart' as chart;
 import 'package:syncfusion_flutter_sliders/sliders.dart';
 import 'package:syncfusion_flutter_core/theme.dart';
 
 class PainSlider extends StatefulWidget {
-  PainSlider({Key? key}) : super(key: key);
-
+  PainSlider({
+    required this.value,
+    Key? key,
+  }) : super(key: key);
+  final int value;
   @override
   State<PainSlider> createState() => _PainSliderState();
 }
@@ -14,7 +19,7 @@ class PainSlider extends StatefulWidget {
 class _PainSliderState extends State<PainSlider> {
   @override
   Widget build(BuildContext context) {
-    final SfRangeValues? values = SfRangeValues(1, 5);
+    final SfRangeValues? values = SfRangeValues(widget.value - 1, widget.value);
     final List<int> painLevel = [1, 2, 3, 4, 5];
     return Center(
       child: SfRangeSelectorTheme(
@@ -37,6 +42,9 @@ class _PainSliderState extends State<PainSlider> {
           showLabels: true,
           inactiveColor: LightColors.mainItemsColor.withOpacity(0.5),
           enableIntervalSelection: true,
+          onChangeEnd: (val) {
+            context.read<AttackBloc>().add(SetAttackParametersEvent(painLevel: int.parse(val.end)));
+          },
           child: SizedBox(
             height: 50,
             child: chart.SfCartesianChart(

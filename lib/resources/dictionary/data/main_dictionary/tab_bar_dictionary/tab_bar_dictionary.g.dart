@@ -16,6 +16,7 @@ _$_TabBarDictionary _$$_TabBarDictionaryFromJson(Map<String, dynamic> json) =>
           calendar: $checkedConvert('calendar', (v) => v as String),
           advices: $checkedConvert('advices', (v) => v as String),
           predictions: $checkedConvert('predictions', (v) => v as String),
+          settings: $checkedConvert('settings', (v) => v as String),
         );
         return val;
       },
@@ -27,4 +28,5 @@ Map<String, dynamic> _$$_TabBarDictionaryToJson(_$_TabBarDictionary instance) =>
       'calendar': instance.calendar,
       'advices': instance.advices,
       'predictions': instance.predictions,
+      'settings': instance.settings,
     };

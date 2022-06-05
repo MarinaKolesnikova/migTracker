@@ -1,4 +1,4 @@
-const Map<String, dynamic> ru = {
+const Map<String, dynamic> ua = {
   'auth': {
     'log_in': 'LOG IN',
     'sign_up': 'SIGN UP',
@@ -28,6 +28,7 @@ const Map<String, dynamic> ru = {
       'calendar': 'Календар',
       'advices': 'Поради',
       'predictions': 'Передбачення',
+      'settings': 'Налаштування'
     },
     'attack': {
       'symptoms': 'Симптоми',
@@ -48,7 +49,14 @@ const Map<String, dynamic> ru = {
       'pressure': 'тиск',
       'next': 'наступне',
       'autofill': 'автозаповнення',
+      'start': 'Start',
     }
+  },
+  'advices': {
+    'advice': 'Advices',
+  },
+  'predictions': {
+    'prediction': 'Prediction',
   },
   'messages': {
     'account_exists': 'Аккаунт вже існує',
@@ -161,15 +169,6 @@ const Map<String, dynamic> ru = {
     'repeat_pass': 'Подтвердите пароль',
     'update_pass': 'Обновить пароль',
   },
-  'settings': {
-    'settings_label': 'Настройки',
-    'exit': 'Выход',
-    'main': 'Основные',
-    'color_theme': 'Цветовая тема',
-    'light': 'Light',
-    'dark': 'Dark',
-    'app_theme': 'Тема приложения',
-  },
   'albums': {
     'albums_label': 'Альбомы',
     'no_albums': 'Aльбомы еще не были загружены',
@@ -184,5 +183,12 @@ const Map<String, dynamic> ru = {
   },
   'no_internet': {
     'no_internet_connection': 'Нет интернет соединения...',
+  },
+  'settings': {
+    'settings_label': 'Settings',
+    'exit': 'Exit',
+    'ua': 'Ua',
+    'en': 'En',
+    'language': 'Language',
   },
 };

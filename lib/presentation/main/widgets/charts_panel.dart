@@ -21,7 +21,7 @@ class _ChartsPanelState extends State<ChartsPanel> with ChartPanelMixin, PagedVi
         bottom: 5.0,
       ),
       decoration: getDecoration(),
-      height: 150.0,
+      height: 220.0,
       child: Stack(
         children: <Widget>[
           buildPageView(

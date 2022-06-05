@@ -10,7 +10,7 @@ class AppState with _$AppState {
 
   factory AppState.initial() {
     return AppState(
-      locale: Locale('ru'),
+      locale: Locale('en'),
       appLoaded: Completer(),
       connectionTrigger: false,
     );

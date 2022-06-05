@@ -1,11 +1,13 @@
 import 'package:diplom_proj/resources/dictionary/data/main_dictionary/attack_dictionary/attack_dictionary.dart';
 import 'package:diplom_proj/resources/resources.dart';
+import 'package:diplom_proj/src/attack/domain/attack_bloc.dart';
+import 'package:diplom_proj/src/attack/domain/events/set_attack_parameters_event.dart';
 import 'package:flutter/material.dart';
 import 'package:numberpicker/numberpicker.dart';
 
 class SleepingTimePicker extends StatefulWidget {
   const SleepingTimePicker({required this.initialValue, Key? key}) : super(key: key);
-  final int initialValue;
+  final int? initialValue;
   @override
   State<SleepingTimePicker> createState() => _SleepingTimePickerState();
 }
@@ -17,7 +19,7 @@ class _SleepingTimePickerState extends State<SleepingTimePicker> {
   @override
   void initState() {
     super.initState();
-    currentValue = widget.initialValue;
+    currentValue = widget.initialValue ?? 0;
   }
 
   @override
@@ -38,7 +40,9 @@ class _SleepingTimePickerState extends State<SleepingTimePicker> {
           maxValue: 24,
           textStyle: LightTextStyles.poppinsS14W400(color: LightColors.text),
           selectedTextStyle: LightTextStyles.poppinsS18W500(color: LightColors.lightPurpleColor),
-          onChanged: (value) => setState(() => currentValue = value),
+          onChanged: (value) {
+            context.read<AttackBloc>().add(SetAttackParametersEvent(sleapingTime: value));
+          },
           //haptics: true,
           itemWidth: 52.0,
           decoration: BoxDecoration(

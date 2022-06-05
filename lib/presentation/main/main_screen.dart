@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:diplom_proj/config/app_router.gr.dart';
+import 'package:diplom_proj/presentation/main/widgets/active_attack.dart';
 import 'package:diplom_proj/presentation/main/widgets/attack_list.dart';
 import 'package:diplom_proj/presentation/main/widgets/charts_panel.dart';
 import 'package:diplom_proj/presentation/shared/widgets/non_animated_inkwell.dart/non_animated_inkwell.dart';
@@ -8,18 +9,24 @@ import 'package:diplom_proj/presentation/shared/widgets/search_field/search_sliv
 
 import 'package:diplom_proj/resources/resources.dart';
 import 'package:diplom_proj/src/attack/domain/attack_bloc.dart';
-import 'package:diplom_proj/src/attack/domain/events/fetch_tretments_event.dart';
-import 'package:diplom_proj/src/attack/domain/events/post_attack_event.dart';
+import 'package:diplom_proj/src/attack/domain/events/fetch_tretments_symptoms_event.dart';
+
+import 'package:diplom_proj/src/attack/domain/events/set_new_attack_event.dart';
 import 'package:diplom_proj/src/attack/entities/attack_model/attack_model.dart';
+
 import 'package:diplom_proj/src/shared/layouts/main_layout.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class MainScreen extends StatelessWidget {
   const MainScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Builder(builder: (context) {
+    return BlocBuilder<AttackBloc, AttackState>(builder: (context, state) {
+      final ongoingAttack = AttackModel.mock();
+      //state.ongoingAttack;
+      final additionalHeight = ongoingAttack != null ? 200.0 : 0;
       return MainLayout.withFocusLayout(
         floatingActionButton: getFloatingButton(context),
         child: Container(
@@ -28,7 +35,7 @@ class MainScreen extends StatelessWidget {
             slivers: [
               SliverAppBar(
                 backgroundColor: Colors.transparent,
-                expandedHeight: 300.0,
+                expandedHeight: 270.0 + additionalHeight,
                 bottom: PreferedSizeContainer(
                   isShadow: true,
                   height: 20.0,
@@ -42,7 +49,12 @@ class MainScreen extends StatelessWidget {
                         vertical: 8.0,
                         horizontal: 20.0,
                       ),
-                      child: ChartsPanel(),
+                      child: Column(
+                        children: [
+                          ChartsPanel(),
+                          if (ongoingAttack != null) ActiveAttack(ongoingAttack: ongoingAttack),
+                        ],
+                      ),
                     ),
                   ),
                 ),
@@ -66,20 +78,18 @@ class MainScreen extends StatelessWidget {
     return NonAnimatedInkWell(
       onTap: () {
         context.read<AttackBloc>().add(
-          FetchTreatmentsEvent(
+          FetchTreatmentsSymptomsEvent(
             onCompleted: (() {
-              context.pushRoute(AttackCreationRoute());
+              context.read<AttackBloc>().add(
+                SetNewAttackEvent(
+                  onCompleted: (() {
+                    context.pushRoute(AttackCreationRoute());
+                  }),
+                ),
+              );
             }),
           ),
         );
-        context.read<AttackBloc>().add(
-              PostAttackEvent(
-                model: AttackModel.mock(),
-                onCompleted: (() {
-                  context.pushRoute(AttackCreationRoute());
-                }),
-              ),
-            );
       },
       child: Container(
         height: 50.0,

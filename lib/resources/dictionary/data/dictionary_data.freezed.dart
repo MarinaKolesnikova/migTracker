@@ -28,7 +28,10 @@ class _$DictionaryDataTearOff {
       @JsonKey(name: 'validation') required ValidationDictionary validation,
       @JsonKey(name: 'messages') required MessagesDictionary messages,
       @JsonKey(name: 'home') required HomeDictionary home,
-      @JsonKey(name: 'calendar') required CalendarDictionary calendar}) {
+      @JsonKey(name: 'calendar') required CalendarDictionary calendar,
+      @JsonKey(name: 'advices') required AdvicesDictionary advice,
+      @JsonKey(name: 'predictions') required PredictionsDictionary predictions,
+      @JsonKey(name: 'settings') required SettingsDictionary settings}) {
     return _DictionaryData(
       auth: auth,
       main: main,
@@ -36,6 +39,9 @@ class _$DictionaryDataTearOff {
       messages: messages,
       home: home,
       calendar: calendar,
+      advice: advice,
+      predictions: predictions,
+      settings: settings,
     );
   }
 
@@ -61,6 +67,12 @@ mixin _$DictionaryData {
   HomeDictionary get home => throw _privateConstructorUsedError;
   @JsonKey(name: 'calendar')
   CalendarDictionary get calendar => throw _privateConstructorUsedError;
+  @JsonKey(name: 'advices')
+  AdvicesDictionary get advice => throw _privateConstructorUsedError;
+  @JsonKey(name: 'predictions')
+  PredictionsDictionary get predictions => throw _privateConstructorUsedError;
+  @JsonKey(name: 'settings')
+  SettingsDictionary get settings => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -79,7 +91,10 @@ abstract class $DictionaryDataCopyWith<$Res> {
       @JsonKey(name: 'validation') ValidationDictionary validation,
       @JsonKey(name: 'messages') MessagesDictionary messages,
       @JsonKey(name: 'home') HomeDictionary home,
-      @JsonKey(name: 'calendar') CalendarDictionary calendar});
+      @JsonKey(name: 'calendar') CalendarDictionary calendar,
+      @JsonKey(name: 'advices') AdvicesDictionary advice,
+      @JsonKey(name: 'predictions') PredictionsDictionary predictions,
+      @JsonKey(name: 'settings') SettingsDictionary settings});
 
   $AuthDictionaryCopyWith<$Res> get auth;
   $MainDictionaryCopyWith<$Res> get main;
@@ -87,6 +102,9 @@ abstract class $DictionaryDataCopyWith<$Res> {
   $MessagesDictionaryCopyWith<$Res> get messages;
   $HomeDictionaryCopyWith<$Res> get home;
   $CalendarDictionaryCopyWith<$Res> get calendar;
+  $AdvicesDictionaryCopyWith<$Res> get advice;
+  $PredictionsDictionaryCopyWith<$Res> get predictions;
+  $SettingsDictionaryCopyWith<$Res> get settings;
 }
 
 /// @nodoc
@@ -106,6 +124,9 @@ class _$DictionaryDataCopyWithImpl<$Res>
     Object? messages = freezed,
     Object? home = freezed,
     Object? calendar = freezed,
+    Object? advice = freezed,
+    Object? predictions = freezed,
+    Object? settings = freezed,
   }) {
     return _then(_value.copyWith(
       auth: auth == freezed
@@ -132,6 +153,18 @@ class _$DictionaryDataCopyWithImpl<$Res>
           ? _value.calendar
           : calendar // ignore: cast_nullable_to_non_nullable
               as CalendarDictionary,
+      advice: advice == freezed
+          ? _value.advice
+          : advice // ignore: cast_nullable_to_non_nullable
+              as AdvicesDictionary,
+      predictions: predictions == freezed
+          ? _value.predictions
+          : predictions // ignore: cast_nullable_to_non_nullable
+              as PredictionsDictionary,
+      settings: settings == freezed
+          ? _value.settings
+          : settings // ignore: cast_nullable_to_non_nullable
+              as SettingsDictionary,
     ));
   }
 
@@ -176,6 +209,27 @@ class _$DictionaryDataCopyWithImpl<$Res>
       return _then(_value.copyWith(calendar: value));
     });
   }
+
+  @override
+  $AdvicesDictionaryCopyWith<$Res> get advice {
+    return $AdvicesDictionaryCopyWith<$Res>(_value.advice, (value) {
+      return _then(_value.copyWith(advice: value));
+    });
+  }
+
+  @override
+  $PredictionsDictionaryCopyWith<$Res> get predictions {
+    return $PredictionsDictionaryCopyWith<$Res>(_value.predictions, (value) {
+      return _then(_value.copyWith(predictions: value));
+    });
+  }
+
+  @override
+  $SettingsDictionaryCopyWith<$Res> get settings {
+    return $SettingsDictionaryCopyWith<$Res>(_value.settings, (value) {
+      return _then(_value.copyWith(settings: value));
+    });
+  }
 }
 
 /// @nodoc
@@ -191,7 +245,10 @@ abstract class _$DictionaryDataCopyWith<$Res>
       @JsonKey(name: 'validation') ValidationDictionary validation,
       @JsonKey(name: 'messages') MessagesDictionary messages,
       @JsonKey(name: 'home') HomeDictionary home,
-      @JsonKey(name: 'calendar') CalendarDictionary calendar});
+      @JsonKey(name: 'calendar') CalendarDictionary calendar,
+      @JsonKey(name: 'advices') AdvicesDictionary advice,
+      @JsonKey(name: 'predictions') PredictionsDictionary predictions,
+      @JsonKey(name: 'settings') SettingsDictionary settings});
 
   @override
   $AuthDictionaryCopyWith<$Res> get auth;
@@ -205,6 +262,12 @@ abstract class _$DictionaryDataCopyWith<$Res>
   $HomeDictionaryCopyWith<$Res> get home;
   @override
   $CalendarDictionaryCopyWith<$Res> get calendar;
+  @override
+  $AdvicesDictionaryCopyWith<$Res> get advice;
+  @override
+  $PredictionsDictionaryCopyWith<$Res> get predictions;
+  @override
+  $SettingsDictionaryCopyWith<$Res> get settings;
 }
 
 /// @nodoc
@@ -226,6 +289,9 @@ class __$DictionaryDataCopyWithImpl<$Res>
     Object? messages = freezed,
     Object? home = freezed,
     Object? calendar = freezed,
+    Object? advice = freezed,
+    Object? predictions = freezed,
+    Object? settings = freezed,
   }) {
     return _then(_DictionaryData(
       auth: auth == freezed
@@ -252,6 +318,18 @@ class __$DictionaryDataCopyWithImpl<$Res>
           ? _value.calendar
           : calendar // ignore: cast_nullable_to_non_nullable
               as CalendarDictionary,
+      advice: advice == freezed
+          ? _value.advice
+          : advice // ignore: cast_nullable_to_non_nullable
+              as AdvicesDictionary,
+      predictions: predictions == freezed
+          ? _value.predictions
+          : predictions // ignore: cast_nullable_to_non_nullable
+              as PredictionsDictionary,
+      settings: settings == freezed
+          ? _value.settings
+          : settings // ignore: cast_nullable_to_non_nullable
+              as SettingsDictionary,
     ));
   }
 }
@@ -267,7 +345,10 @@ class _$_DictionaryData implements _DictionaryData {
       @JsonKey(name: 'validation') required this.validation,
       @JsonKey(name: 'messages') required this.messages,
       @JsonKey(name: 'home') required this.home,
-      @JsonKey(name: 'calendar') required this.calendar});
+      @JsonKey(name: 'calendar') required this.calendar,
+      @JsonKey(name: 'advices') required this.advice,
+      @JsonKey(name: 'predictions') required this.predictions,
+      @JsonKey(name: 'settings') required this.settings});
 
   factory _$_DictionaryData.fromJson(Map<String, dynamic> json) =>
       _$$_DictionaryDataFromJson(json);
@@ -290,10 +371,19 @@ class _$_DictionaryData implements _DictionaryData {
   @override
   @JsonKey(name: 'calendar')
   final CalendarDictionary calendar;
+  @override
+  @JsonKey(name: 'advices')
+  final AdvicesDictionary advice;
+  @override
+  @JsonKey(name: 'predictions')
+  final PredictionsDictionary predictions;
+  @override
+  @JsonKey(name: 'settings')
+  final SettingsDictionary settings;
 
   @override
   String toString() {
-    return 'DictionaryData(auth: $auth, main: $main, validation: $validation, messages: $messages, home: $home, calendar: $calendar)';
+    return 'DictionaryData(auth: $auth, main: $main, validation: $validation, messages: $messages, home: $home, calendar: $calendar, advice: $advice, predictions: $predictions, settings: $settings)';
   }
 
   @override
@@ -307,7 +397,11 @@ class _$_DictionaryData implements _DictionaryData {
                 .equals(other.validation, validation) &&
             const DeepCollectionEquality().equals(other.messages, messages) &&
             const DeepCollectionEquality().equals(other.home, home) &&
-            const DeepCollectionEquality().equals(other.calendar, calendar));
+            const DeepCollectionEquality().equals(other.calendar, calendar) &&
+            const DeepCollectionEquality().equals(other.advice, advice) &&
+            const DeepCollectionEquality()
+                .equals(other.predictions, predictions) &&
+            const DeepCollectionEquality().equals(other.settings, settings));
   }
 
   @override
@@ -318,7 +412,10 @@ class _$_DictionaryData implements _DictionaryData {
       const DeepCollectionEquality().hash(validation),
       const DeepCollectionEquality().hash(messages),
       const DeepCollectionEquality().hash(home),
-      const DeepCollectionEquality().hash(calendar));
+      const DeepCollectionEquality().hash(calendar),
+      const DeepCollectionEquality().hash(advice),
+      const DeepCollectionEquality().hash(predictions),
+      const DeepCollectionEquality().hash(settings));
 
   @JsonKey(ignore: true)
   @override
@@ -333,13 +430,24 @@ class _$_DictionaryData implements _DictionaryData {
 
 abstract class _DictionaryData implements DictionaryData {
   const factory _DictionaryData(
-          {@JsonKey(name: 'auth') required AuthDictionary auth,
-          @JsonKey(name: 'main') required MainDictionary main,
-          @JsonKey(name: 'validation') required ValidationDictionary validation,
-          @JsonKey(name: 'messages') required MessagesDictionary messages,
-          @JsonKey(name: 'home') required HomeDictionary home,
-          @JsonKey(name: 'calendar') required CalendarDictionary calendar}) =
-      _$_DictionaryData;
+      {@JsonKey(name: 'auth')
+          required AuthDictionary auth,
+      @JsonKey(name: 'main')
+          required MainDictionary main,
+      @JsonKey(name: 'validation')
+          required ValidationDictionary validation,
+      @JsonKey(name: 'messages')
+          required MessagesDictionary messages,
+      @JsonKey(name: 'home')
+          required HomeDictionary home,
+      @JsonKey(name: 'calendar')
+          required CalendarDictionary calendar,
+      @JsonKey(name: 'advices')
+          required AdvicesDictionary advice,
+      @JsonKey(name: 'predictions')
+          required PredictionsDictionary predictions,
+      @JsonKey(name: 'settings')
+          required SettingsDictionary settings}) = _$_DictionaryData;
 
   factory _DictionaryData.fromJson(Map<String, dynamic> json) =
       _$_DictionaryData.fromJson;
@@ -362,6 +470,15 @@ abstract class _DictionaryData implements DictionaryData {
   @override
   @JsonKey(name: 'calendar')
   CalendarDictionary get calendar;
+  @override
+  @JsonKey(name: 'advices')
+  AdvicesDictionary get advice;
+  @override
+  @JsonKey(name: 'predictions')
+  PredictionsDictionary get predictions;
+  @override
+  @JsonKey(name: 'settings')
+  SettingsDictionary get settings;
   @override
   @JsonKey(ignore: true)
   _$DictionaryDataCopyWith<_DictionaryData> get copyWith =>

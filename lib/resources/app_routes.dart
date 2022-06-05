@@ -9,6 +9,9 @@ class AppRoutes {
 
   static const String mainScreen = 'main_screen';
   static const String attackCreationScreen = 'attack_creation_screen';
+  static const String advicesScreen = 'advices_screen';
+  static const String predictionsScreen = 'predictions_screen';
+  static const String settingsScreen = 'settings_screen';
 
   static const String mainScreenName = 'MainScreenRouter';
 }

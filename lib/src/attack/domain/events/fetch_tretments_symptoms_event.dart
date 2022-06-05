@@ -5,8 +5,8 @@ import 'package:diplom_proj/src/shared/interfaces/i_bloc.dart';
 
 import '../attack_bloc.dart';
 
-class FetchTreatmentsEvent extends IBlocEvent<AttackState> {
-  const FetchTreatmentsEvent({
+class FetchTreatmentsSymptomsEvent extends IBlocEvent<AttackState> {
+  const FetchTreatmentsSymptomsEvent({
     required this.onCompleted,
   });
 
@@ -15,8 +15,13 @@ class FetchTreatmentsEvent extends IBlocEvent<AttackState> {
   @override
   Stream<AttackState> action(covariant AttackBloc bloc) async* {
     final treatmentsList = await bloc.attackService.fetchTreatments();
-    if (treatmentsList != null) {
-      yield bloc.state.copyWith(treatmentsGroup: treatmentsList);
+    final symptomsList = await bloc.attackService.fetchSymptoms();
+
+    if (treatmentsList != null && symptomsList != null) {
+      yield bloc.state.copyWith(
+        treatmentsGroup: treatmentsList,
+        symptomsGroup: symptomsList,
+      );
       onCompleted();
     }
   }

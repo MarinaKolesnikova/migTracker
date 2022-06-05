@@ -3,15 +3,18 @@ import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_sliders/sliders.dart';
 import 'package:syncfusion_flutter_core/theme.dart';
 
+import '../../../../src/attack/domain/attack_bloc.dart';
+import '../../../../src/attack/domain/events/set_attack_parameters_event.dart';
+
 class StressSlider extends StatefulWidget {
-  const StressSlider({Key? key}) : super(key: key);
+  const StressSlider({required this.value, Key? key}) : super(key: key);
+  final int? value;
 
   @override
   State<StressSlider> createState() => _StressSliderState();
 }
 
 class _StressSliderState extends State<StressSlider> {
-  double value = 0;
   @override
   Widget build(BuildContext context) {
     return SfSliderTheme(
@@ -21,7 +24,7 @@ class _StressSliderState extends State<StressSlider> {
         tooltipBackgroundColor: LightColors.mainItemsColor,
       ),
       child: SfSlider(
-        value: value,
+        value: widget.value,
         max: 5.0,
         interval: 1,
         stepSize: 1,
@@ -30,9 +33,7 @@ class _StressSliderState extends State<StressSlider> {
         showTicks: true,
         showLabels: true,
         onChanged: (dynamic val) {
-          setState(() {
-            value = val;
-          });
+          context.read<AttackBloc>().add(SetAttackParametersEvent(stressLevel: val));
         },
       ),
     );

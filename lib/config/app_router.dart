@@ -1,12 +1,15 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:diplom_proj/presentation/additional/screen_in_develop.dart';
 import 'package:diplom_proj/presentation/additional/splash_screen.dart';
+import 'package:diplom_proj/presentation/advices/advices_screen.dart';
 import 'package:diplom_proj/presentation/attack_creation/attack_creation.dart';
 import 'package:diplom_proj/presentation/authorization/authorization_screen.dart';
 import 'package:diplom_proj/presentation/calendar/calendar_screen.dart';
 
 import 'package:diplom_proj/presentation/home/home_screen.dart';
 import 'package:diplom_proj/presentation/main/main_screen.dart';
+import 'package:diplom_proj/presentation/predictions/prediction_screen.dart';
+import 'package:diplom_proj/presentation/settings/settings_screen.dart';
 import 'package:diplom_proj/resources/app_routes.dart';
 
 @MaterialAutoRouter(
@@ -40,7 +43,7 @@ import 'package:diplom_proj/resources/app_routes.dart';
             ),
             AutoRoute(
               page: AttackCreation,
-              path: AppRoutes.attackCreationScreen,
+              path: AppRoutes.advicesScreen,
             ),
           ],
         ),
@@ -51,8 +54,16 @@ import 'package:diplom_proj/resources/app_routes.dart';
           transitionsBuilder: TransitionsBuilders.fadeIn,
         ),
         AutoRoute(
-          page: ScreenInDevelop,
-          path: AppRoutes.screenInDevelop,
+          page: AdviceScreen,
+          path: AppRoutes.advicesScreen,
+        ),
+        AutoRoute(
+          page: PredictionScreen,
+          path: AppRoutes.predictionsScreen,
+        ),
+        AutoRoute(
+          page: SettingsScreen,
+          path: AppRoutes.settingsScreen,
         ),
       ],
     ),

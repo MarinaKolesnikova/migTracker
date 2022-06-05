@@ -26,12 +26,14 @@ class _$TabBarDictionaryTearOff {
       {@JsonKey(name: 'home') required String home,
       @JsonKey(name: 'calendar') required String calendar,
       @JsonKey(name: 'advices') required String advices,
-      @JsonKey(name: 'predictions') required String predictions}) {
+      @JsonKey(name: 'predictions') required String predictions,
+      @JsonKey(name: 'settings') required String settings}) {
     return _TabBarDictionary(
       home: home,
       calendar: calendar,
       advices: advices,
       predictions: predictions,
+      settings: settings,
     );
   }
 
@@ -53,6 +55,8 @@ mixin _$TabBarDictionary {
   String get advices => throw _privateConstructorUsedError;
   @JsonKey(name: 'predictions')
   String get predictions => throw _privateConstructorUsedError;
+  @JsonKey(name: 'settings')
+  String get settings => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -69,7 +73,8 @@ abstract class $TabBarDictionaryCopyWith<$Res> {
       {@JsonKey(name: 'home') String home,
       @JsonKey(name: 'calendar') String calendar,
       @JsonKey(name: 'advices') String advices,
-      @JsonKey(name: 'predictions') String predictions});
+      @JsonKey(name: 'predictions') String predictions,
+      @JsonKey(name: 'settings') String settings});
 }
 
 /// @nodoc
@@ -87,6 +92,7 @@ class _$TabBarDictionaryCopyWithImpl<$Res>
     Object? calendar = freezed,
     Object? advices = freezed,
     Object? predictions = freezed,
+    Object? settings = freezed,
   }) {
     return _then(_value.copyWith(
       home: home == freezed
@@ -105,6 +111,10 @@ class _$TabBarDictionaryCopyWithImpl<$Res>
           ? _value.predictions
           : predictions // ignore: cast_nullable_to_non_nullable
               as String,
+      settings: settings == freezed
+          ? _value.settings
+          : settings // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -120,7 +130,8 @@ abstract class _$TabBarDictionaryCopyWith<$Res>
       {@JsonKey(name: 'home') String home,
       @JsonKey(name: 'calendar') String calendar,
       @JsonKey(name: 'advices') String advices,
-      @JsonKey(name: 'predictions') String predictions});
+      @JsonKey(name: 'predictions') String predictions,
+      @JsonKey(name: 'settings') String settings});
 }
 
 /// @nodoc
@@ -140,6 +151,7 @@ class __$TabBarDictionaryCopyWithImpl<$Res>
     Object? calendar = freezed,
     Object? advices = freezed,
     Object? predictions = freezed,
+    Object? settings = freezed,
   }) {
     return _then(_TabBarDictionary(
       home: home == freezed
@@ -158,6 +170,10 @@ class __$TabBarDictionaryCopyWithImpl<$Res>
           ? _value.predictions
           : predictions // ignore: cast_nullable_to_non_nullable
               as String,
+      settings: settings == freezed
+          ? _value.settings
+          : settings // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -171,7 +187,8 @@ class _$_TabBarDictionary implements _TabBarDictionary {
       {@JsonKey(name: 'home') required this.home,
       @JsonKey(name: 'calendar') required this.calendar,
       @JsonKey(name: 'advices') required this.advices,
-      @JsonKey(name: 'predictions') required this.predictions});
+      @JsonKey(name: 'predictions') required this.predictions,
+      @JsonKey(name: 'settings') required this.settings});
 
   factory _$_TabBarDictionary.fromJson(Map<String, dynamic> json) =>
       _$$_TabBarDictionaryFromJson(json);
@@ -188,10 +205,13 @@ class _$_TabBarDictionary implements _TabBarDictionary {
   @override
   @JsonKey(name: 'predictions')
   final String predictions;
+  @override
+  @JsonKey(name: 'settings')
+  final String settings;
 
   @override
   String toString() {
-    return 'TabBarDictionary(home: $home, calendar: $calendar, advices: $advices, predictions: $predictions)';
+    return 'TabBarDictionary(home: $home, calendar: $calendar, advices: $advices, predictions: $predictions, settings: $settings)';
   }
 
   @override
@@ -203,7 +223,8 @@ class _$_TabBarDictionary implements _TabBarDictionary {
             const DeepCollectionEquality().equals(other.calendar, calendar) &&
             const DeepCollectionEquality().equals(other.advices, advices) &&
             const DeepCollectionEquality()
-                .equals(other.predictions, predictions));
+                .equals(other.predictions, predictions) &&
+            const DeepCollectionEquality().equals(other.settings, settings));
   }
 
   @override
@@ -212,7 +233,8 @@ class _$_TabBarDictionary implements _TabBarDictionary {
       const DeepCollectionEquality().hash(home),
       const DeepCollectionEquality().hash(calendar),
       const DeepCollectionEquality().hash(advices),
-      const DeepCollectionEquality().hash(predictions));
+      const DeepCollectionEquality().hash(predictions),
+      const DeepCollectionEquality().hash(settings));
 
   @JsonKey(ignore: true)
   @override
@@ -230,7 +252,8 @@ abstract class _TabBarDictionary implements TabBarDictionary {
           {@JsonKey(name: 'home') required String home,
           @JsonKey(name: 'calendar') required String calendar,
           @JsonKey(name: 'advices') required String advices,
-          @JsonKey(name: 'predictions') required String predictions}) =
+          @JsonKey(name: 'predictions') required String predictions,
+          @JsonKey(name: 'settings') required String settings}) =
       _$_TabBarDictionary;
 
   factory _TabBarDictionary.fromJson(Map<String, dynamic> json) =
@@ -248,6 +271,9 @@ abstract class _TabBarDictionary implements TabBarDictionary {
   @override
   @JsonKey(name: 'predictions')
   String get predictions;
+  @override
+  @JsonKey(name: 'settings')
+  String get settings;
   @override
   @JsonKey(ignore: true)
   _$TabBarDictionaryCopyWith<_TabBarDictionary> get copyWith =>

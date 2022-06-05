@@ -24,9 +24,16 @@ _$_DictionaryData _$$_DictionaryDataFromJson(Map<String, dynamic> json) =>
               (v) => HomeDictionary.fromJson(v as Map<String, dynamic>)),
           calendar: $checkedConvert('calendar',
               (v) => CalendarDictionary.fromJson(v as Map<String, dynamic>)),
+          advice: $checkedConvert('advices',
+              (v) => AdvicesDictionary.fromJson(v as Map<String, dynamic>)),
+          predictions: $checkedConvert('predictions',
+              (v) => PredictionsDictionary.fromJson(v as Map<String, dynamic>)),
+          settings: $checkedConvert('settings',
+              (v) => SettingsDictionary.fromJson(v as Map<String, dynamic>)),
         );
         return val;
       },
+      fieldKeyMap: const {'advice': 'advices'},
     );
 
 Map<String, dynamic> _$$_DictionaryDataToJson(_$_DictionaryData instance) =>
@@ -37,4 +44,7 @@ Map<String, dynamic> _$$_DictionaryDataToJson(_$_DictionaryData instance) =>
       'messages': instance.messages.toJson(),
       'home': instance.home.toJson(),
       'calendar': instance.calendar.toJson(),
+      'advices': instance.advice.toJson(),
+      'predictions': instance.predictions.toJson(),
+      'settings': instance.settings.toJson(),
     };

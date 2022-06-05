@@ -41,6 +41,11 @@ class LightTabBar extends StatelessWidget {
         activeIconPath: SvgPathPicker.info,
         text: bottomBarDictionary.predictions,
       ),
+      BottomTabBarModel(
+        iconPath: SvgPathPicker.settings,
+        activeIconPath: SvgPathPicker.settings,
+        text: bottomBarDictionary.settings,
+      ),
     ];
   }
 }

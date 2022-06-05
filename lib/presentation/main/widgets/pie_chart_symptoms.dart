@@ -1,4 +1,5 @@
 import 'package:diplom_proj/presentation/main/widgets/attack_item.dart';
+import 'package:diplom_proj/resources/resources.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
@@ -15,16 +16,27 @@ class PieChartSymptoms extends StatelessWidget {
 
     return Padding(
       padding: const EdgeInsets.only(bottom: 15.0),
-      child: BarChart(
-        BarChartData(
-          barTouchData: barTouchData,
-          titlesData: titlesData,
-          borderData: borderData,
-          barGroups: barGroups,
-          gridData: FlGridData(show: false),
-          alignment: BarChartAlignment.spaceAround,
-          maxY: 300,
-        ),
+      child: Column(
+        mainAxisSize: MainAxisSize.max,
+        children: [
+          Text(
+            'Attack frequency',
+            style: LightTextStyles.poppinsS14W400(color: LightColors.text),
+          ),
+          Expanded(
+            child: BarChart(
+              BarChartData(
+                barTouchData: barTouchData,
+                titlesData: titlesData,
+                borderData: borderData,
+                barGroups: barGroups,
+                gridData: FlGridData(show: false),
+                alignment: BarChartAlignment.spaceAround,
+                maxY: 24,
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
@@ -64,13 +76,13 @@ class PieChartSymptoms extends StatelessWidget {
         text = 'Mn';
         break;
       case 1:
-        text = 'Te';
+        text = 'Tu';
         break;
       case 2:
         text = 'Wd';
         break;
       case 3:
-        text = 'Tu';
+        text = 'Th';
         break;
       case 4:
         text = 'Fr';
@@ -127,7 +139,7 @@ class PieChartSymptoms extends StatelessWidget {
           x: 0,
           barRods: [
             BarChartRodData(
-              toY: 8,
+              toY: 1,
               gradient: barsGradient,
             )
           ],
@@ -137,7 +149,7 @@ class PieChartSymptoms extends StatelessWidget {
           x: 1,
           barRods: [
             BarChartRodData(
-              toY: 10,
+              toY: 1,
               gradient: barsGradient,
             )
           ],
@@ -147,7 +159,7 @@ class PieChartSymptoms extends StatelessWidget {
           x: 2,
           barRods: [
             BarChartRodData(
-              toY: 14,
+              toY: 0,
               gradient: barsGradient,
             )
           ],
@@ -157,7 +169,7 @@ class PieChartSymptoms extends StatelessWidget {
           x: 3,
           barRods: [
             BarChartRodData(
-              toY: 15,
+              toY: 2,
               gradient: barsGradient,
             )
           ],
@@ -167,7 +179,7 @@ class PieChartSymptoms extends StatelessWidget {
           x: 4,
           barRods: [
             BarChartRodData(
-              toY: 13,
+              toY: 1,
               gradient: barsGradient,
             )
           ],
@@ -177,7 +189,17 @@ class PieChartSymptoms extends StatelessWidget {
           x: 5,
           barRods: [
             BarChartRodData(
-              toY: 200,
+              toY: 3,
+              gradient: barsGradient,
+            )
+          ],
+          showingTooltipIndicators: [0],
+        ),
+        BarChartGroupData(
+          x: 6,
+          barRods: [
+            BarChartRodData(
+              toY: 2,
               gradient: barsGradient,
             )
           ],

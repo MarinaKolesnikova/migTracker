@@ -8,6 +8,7 @@ import 'package:diplom_proj/src/attack/domain/attack_bloc.dart';
 import 'package:diplom_proj/src/attack/domain/events/set_unset_symptoms_event.dart';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SecondCreationPage extends StatefulWidget {
   const SecondCreationPage({Key? key}) : super(key: key);
@@ -22,75 +23,79 @@ class _SecondCreationPageState extends State<SecondCreationPage> with PickerMixi
     final AttackDictionary dict = dictionaryManager.getSelectedData.main.attackDictionary;
     final state = context.read<AttackBloc>().state;
 
-    return SafeArea(
-      child: Padding(
-        padding: const EdgeInsets.only(top: 20.0, left: 20.0, right: 20.0),
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(bottom: 10.0),
-              child: Text(
-                dict.location,
-                style: LightTextStyles.poppinsS16W400(),
-              ),
-            ),
-            SizedBox(
-              height: 200.0,
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Expanded(
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          dict.tapToChoose,
-                          style: LightTextStyles.poppinsS14W400(color: LightColors.text),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Expanded(
-                    flex: 2,
-                    child: PainLocalization(),
-                  ),
-                ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(bottom: 3.0),
-              child: Text(
-                dict.painLevel,
-                style: LightTextStyles.poppinsS16W400(),
-              ),
-            ),
-            PainSlider(),
-            Text(
-              dict.symptoms,
-              style: LightTextStyles.poppinsS16W400(),
-            ),
-            Expanded(
-              child: Padding(
-                padding: const EdgeInsets.only(top: 8.0),
-                child: Container(
-                  padding: const EdgeInsets.all(10.0),
-                  decoration: decoration(),
-                  child: CustomPicker(
-                    searchFieldName: 'symptoms',
-                    pickedGroups: state.symptomsGroup,
-                    checkedSymtoms: state.currentModel?.toDTO().symptoms ?? [],
-                    searchController: searchController,
-                    scrollController: scrollController,
-                    onMark: onMark,
-                    onUnmark: onUnmark,
+    return BlocBuilder<AttackBloc, AttackState>(
+      builder: (context, state) {
+        return SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.only(top: 20.0, left: 20.0, right: 20.0),
+            child: Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 10.0),
+                  child: Text(
+                    dict.location,
+                    style: LightTextStyles.poppinsS16W400(),
                   ),
                 ),
-              ),
-            )
-          ],
-        ),
-      ),
+                SizedBox(
+                  height: 200.0,
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Expanded(
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              dict.tapToChoose,
+                              style: LightTextStyles.poppinsS14W400(color: LightColors.text),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Expanded(
+                        flex: 2,
+                        child: PainLocalization(),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 3.0),
+                  child: Text(
+                    dict.painLevel,
+                    style: LightTextStyles.poppinsS16W400(),
+                  ),
+                ),
+                PainSlider(value: state.currentModel?.painLevel ?? 3),
+                Text(
+                  dict.symptoms,
+                  style: LightTextStyles.poppinsS16W400(),
+                ),
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 8.0),
+                    child: Container(
+                      padding: const EdgeInsets.all(10.0),
+                      decoration: decoration(),
+                      child: CustomPicker(
+                        searchFieldName: 'symptoms',
+                        pickedGroups: state.symptomsGroup,
+                        checkedSymtoms: state.currentModel?.toDTO().symptoms ?? [],
+                        searchController: searchController,
+                        scrollController: scrollController,
+                        onMark: onMark,
+                        onUnmark: onUnmark,
+                      ),
+                    ),
+                  ),
+                )
+              ],
+            ),
+          ),
+        );
+      },
     );
   }
 

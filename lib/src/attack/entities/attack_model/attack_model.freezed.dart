@@ -34,7 +34,8 @@ class _$AttackModelTearOff {
       @JsonKey(name: 'sleaping_time') required int sleapingTime,
       @JsonKey(name: 'pain_level') required int painLevel,
       @JsonKey(name: 'symptoms') List<Symptom>? symptoms,
-      @JsonKey(name: 'treatments') List<Symptom>? treatments}) {
+      @JsonKey(name: 'treatments') List<Symptom>? treatments,
+      @JsonKey(name: 'weather') ForecastDTO? weather}) {
     return _AttackModel(
       date: date,
       duration: duration,
@@ -48,6 +49,7 @@ class _$AttackModelTearOff {
       painLevel: painLevel,
       symptoms: symptoms,
       treatments: treatments,
+      weather: weather,
     );
   }
 
@@ -85,6 +87,8 @@ mixin _$AttackModel {
   List<Symptom>? get symptoms => throw _privateConstructorUsedError;
   @JsonKey(name: 'treatments')
   List<Symptom>? get treatments => throw _privateConstructorUsedError;
+  @JsonKey(name: 'weather')
+  ForecastDTO? get weather => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -109,7 +113,10 @@ abstract class $AttackModelCopyWith<$Res> {
       @JsonKey(name: 'sleaping_time') int sleapingTime,
       @JsonKey(name: 'pain_level') int painLevel,
       @JsonKey(name: 'symptoms') List<Symptom>? symptoms,
-      @JsonKey(name: 'treatments') List<Symptom>? treatments});
+      @JsonKey(name: 'treatments') List<Symptom>? treatments,
+      @JsonKey(name: 'weather') ForecastDTO? weather});
+
+  $ForecastDTOCopyWith<$Res>? get weather;
 }
 
 /// @nodoc
@@ -134,6 +141,7 @@ class _$AttackModelCopyWithImpl<$Res> implements $AttackModelCopyWith<$Res> {
     Object? painLevel = freezed,
     Object? symptoms = freezed,
     Object? treatments = freezed,
+    Object? weather = freezed,
   }) {
     return _then(_value.copyWith(
       date: date == freezed
@@ -184,7 +192,22 @@ class _$AttackModelCopyWithImpl<$Res> implements $AttackModelCopyWith<$Res> {
           ? _value.treatments
           : treatments // ignore: cast_nullable_to_non_nullable
               as List<Symptom>?,
+      weather: weather == freezed
+          ? _value.weather
+          : weather // ignore: cast_nullable_to_non_nullable
+              as ForecastDTO?,
     ));
+  }
+
+  @override
+  $ForecastDTOCopyWith<$Res>? get weather {
+    if (_value.weather == null) {
+      return null;
+    }
+
+    return $ForecastDTOCopyWith<$Res>(_value.weather!, (value) {
+      return _then(_value.copyWith(weather: value));
+    });
   }
 }
 
@@ -207,7 +230,11 @@ abstract class _$AttackModelCopyWith<$Res>
       @JsonKey(name: 'sleaping_time') int sleapingTime,
       @JsonKey(name: 'pain_level') int painLevel,
       @JsonKey(name: 'symptoms') List<Symptom>? symptoms,
-      @JsonKey(name: 'treatments') List<Symptom>? treatments});
+      @JsonKey(name: 'treatments') List<Symptom>? treatments,
+      @JsonKey(name: 'weather') ForecastDTO? weather});
+
+  @override
+  $ForecastDTOCopyWith<$Res>? get weather;
 }
 
 /// @nodoc
@@ -234,6 +261,7 @@ class __$AttackModelCopyWithImpl<$Res> extends _$AttackModelCopyWithImpl<$Res>
     Object? painLevel = freezed,
     Object? symptoms = freezed,
     Object? treatments = freezed,
+    Object? weather = freezed,
   }) {
     return _then(_AttackModel(
       date: date == freezed
@@ -284,6 +312,10 @@ class __$AttackModelCopyWithImpl<$Res> extends _$AttackModelCopyWithImpl<$Res>
           ? _value.treatments
           : treatments // ignore: cast_nullable_to_non_nullable
               as List<Symptom>?,
+      weather: weather == freezed
+          ? _value.weather
+          : weather // ignore: cast_nullable_to_non_nullable
+              as ForecastDTO?,
     ));
   }
 }
@@ -305,7 +337,8 @@ class _$_AttackModel extends _AttackModel {
       @JsonKey(name: 'sleaping_time') required this.sleapingTime,
       @JsonKey(name: 'pain_level') required this.painLevel,
       @JsonKey(name: 'symptoms') this.symptoms,
-      @JsonKey(name: 'treatments') this.treatments})
+      @JsonKey(name: 'treatments') this.treatments,
+      @JsonKey(name: 'weather') this.weather})
       : super._();
 
   factory _$_AttackModel.fromJson(Map<String, dynamic> json) =>
@@ -347,10 +380,13 @@ class _$_AttackModel extends _AttackModel {
   @override
   @JsonKey(name: 'treatments')
   final List<Symptom>? treatments;
+  @override
+  @JsonKey(name: 'weather')
+  final ForecastDTO? weather;
 
   @override
   String toString() {
-    return 'AttackModel(date: $date, duration: $duration, description: $description, headInjuring: $headInjuring, noiseImpact: $noiseImpact, alcoholConsumption: $alcoholConsumption, suffocationEffect: $suffocationEffect, stressLevel: $stressLevel, sleapingTime: $sleapingTime, painLevel: $painLevel, symptoms: $symptoms, treatments: $treatments)';
+    return 'AttackModel(date: $date, duration: $duration, description: $description, headInjuring: $headInjuring, noiseImpact: $noiseImpact, alcoholConsumption: $alcoholConsumption, suffocationEffect: $suffocationEffect, stressLevel: $stressLevel, sleapingTime: $sleapingTime, painLevel: $painLevel, symptoms: $symptoms, treatments: $treatments, weather: $weather)';
   }
 
   @override
@@ -377,7 +413,8 @@ class _$_AttackModel extends _AttackModel {
             const DeepCollectionEquality().equals(other.painLevel, painLevel) &&
             const DeepCollectionEquality().equals(other.symptoms, symptoms) &&
             const DeepCollectionEquality()
-                .equals(other.treatments, treatments));
+                .equals(other.treatments, treatments) &&
+            const DeepCollectionEquality().equals(other.weather, weather));
   }
 
   @override
@@ -394,7 +431,8 @@ class _$_AttackModel extends _AttackModel {
       const DeepCollectionEquality().hash(sleapingTime),
       const DeepCollectionEquality().hash(painLevel),
       const DeepCollectionEquality().hash(symptoms),
-      const DeepCollectionEquality().hash(treatments));
+      const DeepCollectionEquality().hash(treatments),
+      const DeepCollectionEquality().hash(weather));
 
   @JsonKey(ignore: true)
   @override
@@ -420,7 +458,8 @@ abstract class _AttackModel extends AttackModel {
       @JsonKey(name: 'sleaping_time') required int sleapingTime,
       @JsonKey(name: 'pain_level') required int painLevel,
       @JsonKey(name: 'symptoms') List<Symptom>? symptoms,
-      @JsonKey(name: 'treatments') List<Symptom>? treatments}) = _$_AttackModel;
+      @JsonKey(name: 'treatments') List<Symptom>? treatments,
+      @JsonKey(name: 'weather') ForecastDTO? weather}) = _$_AttackModel;
   const _AttackModel._() : super._();
 
   factory _AttackModel.fromJson(Map<String, dynamic> json) =
@@ -462,6 +501,9 @@ abstract class _AttackModel extends AttackModel {
   @override
   @JsonKey(name: 'treatments')
   List<Symptom>? get treatments;
+  @override
+  @JsonKey(name: 'weather')
+  ForecastDTO? get weather;
   @override
   @JsonKey(ignore: true)
   _$AttackModelCopyWith<_AttackModel> get copyWith =>

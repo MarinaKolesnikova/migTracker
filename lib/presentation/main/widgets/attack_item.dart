@@ -49,8 +49,7 @@ class AttackItem extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 5.0),
                     child: Text(
-                      model.description +
-                          'bdyefwdy w erytwr terwyet ra yrewa r eewrt we ydefgcyug lfrehghresug ry teriuytu eruyt reigy itryw hythr ty h t uty h yt ht tyj try tyj tehetyyt  yjurttyrub uytru yur',
+                      model.description,
                       style: LightTextStyles.poppinsS12W400(
                         color: LightColors.text.withOpacity(0.75),
                       ),

@@ -9,10 +9,18 @@ class MigNumberPicker extends StatefulWidget {
     required this.assetName,
     required this.initialValue,
     required this.label,
+    required this.maxValue,
+    required this.minValue,
+    required this.step,
+    required this.onChange,
     Key? key,
   }) : super(key: key);
   final String assetName;
   final int initialValue;
+  final int minValue;
+  final int maxValue;
+  final int step;
+  final void Function(int) onChange;
   final String label;
   @override
   State<MigNumberPicker> createState() => _MigNumberPickerState();
@@ -56,11 +64,12 @@ class _MigNumberPickerState extends State<MigNumberPicker> {
               child: NumberPicker(
                 value: currentValue,
                 axis: Axis.horizontal,
-                minValue: -30,
-                maxValue: 40,
+                step: widget.step,
+                minValue: widget.minValue,
+                maxValue: widget.maxValue,
                 textStyle: LightTextStyles.poppinsS14W400(color: LightColors.text),
                 selectedTextStyle: LightTextStyles.poppinsS18W500(color: LightColors.lightPurpleColor),
-                onChanged: (value) => setState(() => currentValue = value),
+                onChanged: widget.onChange,
                 //haptics: true,
                 itemWidth: 52.0,
                 decoration: BoxDecoration(

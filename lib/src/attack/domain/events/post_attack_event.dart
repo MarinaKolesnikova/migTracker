@@ -24,6 +24,7 @@ class PostAttackEvent extends IBlocEvent<AttackState> {
       yield state.copyWith(
         attackList: state.attackList..add(model),
         isLoading: false,
+        currentModel: null,
       );
       onCompleted();
     }

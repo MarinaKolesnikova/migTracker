@@ -9,18 +9,19 @@ import '../attack_bloc.dart';
 class SetNewAttackEvent extends IBlocEvent<AttackState> {
   const SetNewAttackEvent({
     required this.onCompleted,
-    required this.notNewAttack,
+    this.notNewAttack,
   });
 
   final VoidCallback onCompleted;
-  final VoidCallback notNewAttack;
+  final VoidCallback? notNewAttack;
 
   @override
   Stream<AttackState> action(covariant AttackBloc bloc) async* {
     if (bloc.state.currentModel != null) {
-      notNewAttack();
+      notNewAttack?.call();
     } else {
       yield bloc.state.copyWith(currentModel: AttackModel.initial());
+      onCompleted.call();
     }
   }
 }

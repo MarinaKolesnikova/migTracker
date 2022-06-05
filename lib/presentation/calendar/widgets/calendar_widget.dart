@@ -62,6 +62,7 @@ class _CalendarWidgetState extends State<CalendarWidget> with CalendarWidgetMixi
           singleMarkerBuilder: singleMarkerBuilder,
           defaultBuilder: todayBuilder,
           holidayBuilder: holidayBuilder,
+          todayBuilder: todayBuilder,
         ),
         locale: context.read<AppBloc>().getLocale?.languageCode,
         startingDayOfWeek: StartingDayOfWeek.monday,

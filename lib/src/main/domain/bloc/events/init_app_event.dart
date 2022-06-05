@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:diplom_proj/src/main/domain/bloc/app_bloc.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:geolocator/geolocator.dart';
 
 enum CompleteStatus {
   hasToken,
@@ -18,6 +19,10 @@ class InitAppEvent extends AppEvent {
     await bloc.storage.init();
 
     final user = FirebaseAuth.instance.currentUser;
+    LocationPermission permission = await Geolocator.checkPermission();
+    if (permission == LocationPermission.denied) {
+      permission = await Geolocator.requestPermission();
+    }
     final settings = await bloc.settingStorage.take();
     if (settings != null) {
       //add here language changes

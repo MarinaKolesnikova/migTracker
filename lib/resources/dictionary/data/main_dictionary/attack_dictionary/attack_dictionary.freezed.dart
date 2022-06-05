@@ -47,7 +47,8 @@ class _$AttackDictionaryTearOff {
       @JsonKey(name: 'suffocation_effect') required String suffocationEffect,
       @JsonKey(name: 'submit') required String submit,
       @JsonKey(name: 'stop') required String stop,
-      @JsonKey(name: 'edit') required String edit}) {
+      @JsonKey(name: 'edit') required String edit,
+      @JsonKey(name: 'start') required String start}) {
     return _AttackDictionary(
       symptoms: symptoms,
       treatments: treatments,
@@ -74,6 +75,7 @@ class _$AttackDictionaryTearOff {
       submit: submit,
       stop: stop,
       edit: edit,
+      start: start,
     );
   }
 
@@ -137,6 +139,8 @@ mixin _$AttackDictionary {
   String get stop => throw _privateConstructorUsedError;
   @JsonKey(name: 'edit')
   String get edit => throw _privateConstructorUsedError;
+  @JsonKey(name: 'start')
+  String get start => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -174,7 +178,8 @@ abstract class $AttackDictionaryCopyWith<$Res> {
       @JsonKey(name: 'suffocation_effect') String suffocationEffect,
       @JsonKey(name: 'submit') String submit,
       @JsonKey(name: 'stop') String stop,
-      @JsonKey(name: 'edit') String edit});
+      @JsonKey(name: 'edit') String edit,
+      @JsonKey(name: 'start') String start});
 }
 
 /// @nodoc
@@ -213,6 +218,7 @@ class _$AttackDictionaryCopyWithImpl<$Res>
     Object? submit = freezed,
     Object? stop = freezed,
     Object? edit = freezed,
+    Object? start = freezed,
   }) {
     return _then(_value.copyWith(
       symptoms: symptoms == freezed
@@ -315,6 +321,10 @@ class _$AttackDictionaryCopyWithImpl<$Res>
           ? _value.edit
           : edit // ignore: cast_nullable_to_non_nullable
               as String,
+      start: start == freezed
+          ? _value.start
+          : start // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -351,7 +361,8 @@ abstract class _$AttackDictionaryCopyWith<$Res>
       @JsonKey(name: 'suffocation_effect') String suffocationEffect,
       @JsonKey(name: 'submit') String submit,
       @JsonKey(name: 'stop') String stop,
-      @JsonKey(name: 'edit') String edit});
+      @JsonKey(name: 'edit') String edit,
+      @JsonKey(name: 'start') String start});
 }
 
 /// @nodoc
@@ -392,6 +403,7 @@ class __$AttackDictionaryCopyWithImpl<$Res>
     Object? submit = freezed,
     Object? stop = freezed,
     Object? edit = freezed,
+    Object? start = freezed,
   }) {
     return _then(_AttackDictionary(
       symptoms: symptoms == freezed
@@ -494,6 +506,10 @@ class __$AttackDictionaryCopyWithImpl<$Res>
           ? _value.edit
           : edit // ignore: cast_nullable_to_non_nullable
               as String,
+      start: start == freezed
+          ? _value.start
+          : start // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -528,7 +544,8 @@ class _$_AttackDictionary implements _AttackDictionary {
       @JsonKey(name: 'suffocation_effect') required this.suffocationEffect,
       @JsonKey(name: 'submit') required this.submit,
       @JsonKey(name: 'stop') required this.stop,
-      @JsonKey(name: 'edit') required this.edit});
+      @JsonKey(name: 'edit') required this.edit,
+      @JsonKey(name: 'start') required this.start});
 
   factory _$_AttackDictionary.fromJson(Map<String, dynamic> json) =>
       _$$_AttackDictionaryFromJson(json);
@@ -608,10 +625,13 @@ class _$_AttackDictionary implements _AttackDictionary {
   @override
   @JsonKey(name: 'edit')
   final String edit;
+  @override
+  @JsonKey(name: 'start')
+  final String start;
 
   @override
   String toString() {
-    return 'AttackDictionary(symptoms: $symptoms, treatments: $treatments, date: $date, time: $time, duration: $duration, painLevel: $painLevel, location: $location, attackNote: $attackNote, stressLevel: $stressLevel, hoursOfSleep: $hoursOfSleep, weatherConditions: $weatherConditions, conditions: $conditions, tapToChoose: $tapToChoose, temperature: $temperature, humidity: $humidity, pressure: $pressure, next: $next, headInjuring: $headInjuring, alcoholConsumption: $alcoholConsumption, noiseImpact: $noiseImpact, autofill: $autofill, suffocationEffect: $suffocationEffect, submit: $submit, stop: $stop, edit: $edit)';
+    return 'AttackDictionary(symptoms: $symptoms, treatments: $treatments, date: $date, time: $time, duration: $duration, painLevel: $painLevel, location: $location, attackNote: $attackNote, stressLevel: $stressLevel, hoursOfSleep: $hoursOfSleep, weatherConditions: $weatherConditions, conditions: $conditions, tapToChoose: $tapToChoose, temperature: $temperature, humidity: $humidity, pressure: $pressure, next: $next, headInjuring: $headInjuring, alcoholConsumption: $alcoholConsumption, noiseImpact: $noiseImpact, autofill: $autofill, suffocationEffect: $suffocationEffect, submit: $submit, stop: $stop, edit: $edit, start: $start)';
   }
 
   @override
@@ -655,7 +675,8 @@ class _$_AttackDictionary implements _AttackDictionary {
                 .equals(other.suffocationEffect, suffocationEffect) &&
             const DeepCollectionEquality().equals(other.submit, submit) &&
             const DeepCollectionEquality().equals(other.stop, stop) &&
-            const DeepCollectionEquality().equals(other.edit, edit));
+            const DeepCollectionEquality().equals(other.edit, edit) &&
+            const DeepCollectionEquality().equals(other.start, start));
   }
 
   @override
@@ -685,7 +706,8 @@ class _$_AttackDictionary implements _AttackDictionary {
         const DeepCollectionEquality().hash(suffocationEffect),
         const DeepCollectionEquality().hash(submit),
         const DeepCollectionEquality().hash(stop),
-        const DeepCollectionEquality().hash(edit)
+        const DeepCollectionEquality().hash(edit),
+        const DeepCollectionEquality().hash(start)
       ]);
 
   @JsonKey(ignore: true)
@@ -725,7 +747,8 @@ abstract class _AttackDictionary implements AttackDictionary {
       @JsonKey(name: 'suffocation_effect') required String suffocationEffect,
       @JsonKey(name: 'submit') required String submit,
       @JsonKey(name: 'stop') required String stop,
-      @JsonKey(name: 'edit') required String edit}) = _$_AttackDictionary;
+      @JsonKey(name: 'edit') required String edit,
+      @JsonKey(name: 'start') required String start}) = _$_AttackDictionary;
 
   factory _AttackDictionary.fromJson(Map<String, dynamic> json) =
       _$_AttackDictionary.fromJson;
@@ -805,6 +828,9 @@ abstract class _AttackDictionary implements AttackDictionary {
   @override
   @JsonKey(name: 'edit')
   String get edit;
+  @override
+  @JsonKey(name: 'start')
+  String get start;
   @override
   @JsonKey(ignore: true)
   _$AttackDictionaryCopyWith<_AttackDictionary> get copyWith =>

@@ -39,7 +39,7 @@ class LightAppBar extends StatelessWidget implements PreferredSizeWidget {
     Widget appBar = getAppbar(context);
     if (bottom != null) {
       appBar = ColoredBox(
-        color: LightColors.accentColor,
+        color: LightColors.accentColor.withOpacity(0.9),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
@@ -82,7 +82,7 @@ class LightAppBar extends StatelessWidget implements PreferredSizeWidget {
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
                         style: LightTextStyles.poppinsW400(
-                          color: LightColors.white,
+                          color: LightColors.white.withOpacity(0.8),
                           fontSize: 16.0,
                           height: 1.6,
                           letterSpacing: 0.8,

@@ -81,8 +81,7 @@ class ListButtonDialogWidget extends StatelessWidget with ButtonDialogMixin {
     if (hasLayout == true) {
       return PopUpLayout(
         isAutoClosed: isAutoClosed,
-        backgroundFade: false,
-        dialogColor: LightColors.white.withOpacity(0.35),
+        dialogColor: LightColors.tileColor,
         child: child(),
       );
     }

@@ -22,7 +22,9 @@ class _$AttackStateTearOff {
       {required List<PickingGroupAbstract> treatmentsGroup,
       required List<PickingGroupAbstract> symptomsGroup,
       required List<AttackModel> attackList,
+      required List<AttackModel> calendarList,
       required AttackModel? currentModel,
+      required AttackModel? ongoingAttack,
       required bool isLoading,
       required DateTime? minDate,
       required bool fetchedNewData}) {
@@ -30,7 +32,9 @@ class _$AttackStateTearOff {
       treatmentsGroup: treatmentsGroup,
       symptomsGroup: symptomsGroup,
       attackList: attackList,
+      calendarList: calendarList,
       currentModel: currentModel,
+      ongoingAttack: ongoingAttack,
       isLoading: isLoading,
       minDate: minDate,
       fetchedNewData: fetchedNewData,
@@ -48,7 +52,9 @@ mixin _$AttackState {
   List<PickingGroupAbstract> get symptomsGroup =>
       throw _privateConstructorUsedError;
   List<AttackModel> get attackList => throw _privateConstructorUsedError;
+  List<AttackModel> get calendarList => throw _privateConstructorUsedError;
   AttackModel? get currentModel => throw _privateConstructorUsedError;
+  AttackModel? get ongoingAttack => throw _privateConstructorUsedError;
   bool get isLoading => throw _privateConstructorUsedError;
   DateTime? get minDate => throw _privateConstructorUsedError;
   bool get fetchedNewData => throw _privateConstructorUsedError;
@@ -67,12 +73,15 @@ abstract class $AttackStateCopyWith<$Res> {
       {List<PickingGroupAbstract> treatmentsGroup,
       List<PickingGroupAbstract> symptomsGroup,
       List<AttackModel> attackList,
+      List<AttackModel> calendarList,
       AttackModel? currentModel,
+      AttackModel? ongoingAttack,
       bool isLoading,
       DateTime? minDate,
       bool fetchedNewData});
 
   $AttackModelCopyWith<$Res>? get currentModel;
+  $AttackModelCopyWith<$Res>? get ongoingAttack;
 }
 
 /// @nodoc
@@ -88,7 +97,9 @@ class _$AttackStateCopyWithImpl<$Res> implements $AttackStateCopyWith<$Res> {
     Object? treatmentsGroup = freezed,
     Object? symptomsGroup = freezed,
     Object? attackList = freezed,
+    Object? calendarList = freezed,
     Object? currentModel = freezed,
+    Object? ongoingAttack = freezed,
     Object? isLoading = freezed,
     Object? minDate = freezed,
     Object? fetchedNewData = freezed,
@@ -106,9 +117,17 @@ class _$AttackStateCopyWithImpl<$Res> implements $AttackStateCopyWith<$Res> {
           ? _value.attackList
           : attackList // ignore: cast_nullable_to_non_nullable
               as List<AttackModel>,
+      calendarList: calendarList == freezed
+          ? _value.calendarList
+          : calendarList // ignore: cast_nullable_to_non_nullable
+              as List<AttackModel>,
       currentModel: currentModel == freezed
           ? _value.currentModel
           : currentModel // ignore: cast_nullable_to_non_nullable
+              as AttackModel?,
+      ongoingAttack: ongoingAttack == freezed
+          ? _value.ongoingAttack
+          : ongoingAttack // ignore: cast_nullable_to_non_nullable
               as AttackModel?,
       isLoading: isLoading == freezed
           ? _value.isLoading
@@ -135,6 +154,17 @@ class _$AttackStateCopyWithImpl<$Res> implements $AttackStateCopyWith<$Res> {
       return _then(_value.copyWith(currentModel: value));
     });
   }
+
+  @override
+  $AttackModelCopyWith<$Res>? get ongoingAttack {
+    if (_value.ongoingAttack == null) {
+      return null;
+    }
+
+    return $AttackModelCopyWith<$Res>(_value.ongoingAttack!, (value) {
+      return _then(_value.copyWith(ongoingAttack: value));
+    });
+  }
 }
 
 /// @nodoc
@@ -148,13 +178,17 @@ abstract class _$AttackStateCopyWith<$Res>
       {List<PickingGroupAbstract> treatmentsGroup,
       List<PickingGroupAbstract> symptomsGroup,
       List<AttackModel> attackList,
+      List<AttackModel> calendarList,
       AttackModel? currentModel,
+      AttackModel? ongoingAttack,
       bool isLoading,
       DateTime? minDate,
       bool fetchedNewData});
 
   @override
   $AttackModelCopyWith<$Res>? get currentModel;
+  @override
+  $AttackModelCopyWith<$Res>? get ongoingAttack;
 }
 
 /// @nodoc
@@ -172,7 +206,9 @@ class __$AttackStateCopyWithImpl<$Res> extends _$AttackStateCopyWithImpl<$Res>
     Object? treatmentsGroup = freezed,
     Object? symptomsGroup = freezed,
     Object? attackList = freezed,
+    Object? calendarList = freezed,
     Object? currentModel = freezed,
+    Object? ongoingAttack = freezed,
     Object? isLoading = freezed,
     Object? minDate = freezed,
     Object? fetchedNewData = freezed,
@@ -190,9 +226,17 @@ class __$AttackStateCopyWithImpl<$Res> extends _$AttackStateCopyWithImpl<$Res>
           ? _value.attackList
           : attackList // ignore: cast_nullable_to_non_nullable
               as List<AttackModel>,
+      calendarList: calendarList == freezed
+          ? _value.calendarList
+          : calendarList // ignore: cast_nullable_to_non_nullable
+              as List<AttackModel>,
       currentModel: currentModel == freezed
           ? _value.currentModel
           : currentModel // ignore: cast_nullable_to_non_nullable
+              as AttackModel?,
+      ongoingAttack: ongoingAttack == freezed
+          ? _value.ongoingAttack
+          : ongoingAttack // ignore: cast_nullable_to_non_nullable
               as AttackModel?,
       isLoading: isLoading == freezed
           ? _value.isLoading
@@ -217,7 +261,9 @@ class _$_AttackState implements _AttackState {
       {required this.treatmentsGroup,
       required this.symptomsGroup,
       required this.attackList,
+      required this.calendarList,
       required this.currentModel,
+      required this.ongoingAttack,
       required this.isLoading,
       required this.minDate,
       required this.fetchedNewData});
@@ -229,7 +275,11 @@ class _$_AttackState implements _AttackState {
   @override
   final List<AttackModel> attackList;
   @override
+  final List<AttackModel> calendarList;
+  @override
   final AttackModel? currentModel;
+  @override
+  final AttackModel? ongoingAttack;
   @override
   final bool isLoading;
   @override
@@ -239,7 +289,7 @@ class _$_AttackState implements _AttackState {
 
   @override
   String toString() {
-    return 'AttackState(treatmentsGroup: $treatmentsGroup, symptomsGroup: $symptomsGroup, attackList: $attackList, currentModel: $currentModel, isLoading: $isLoading, minDate: $minDate, fetchedNewData: $fetchedNewData)';
+    return 'AttackState(treatmentsGroup: $treatmentsGroup, symptomsGroup: $symptomsGroup, attackList: $attackList, calendarList: $calendarList, currentModel: $currentModel, ongoingAttack: $ongoingAttack, isLoading: $isLoading, minDate: $minDate, fetchedNewData: $fetchedNewData)';
   }
 
   @override
@@ -254,7 +304,11 @@ class _$_AttackState implements _AttackState {
             const DeepCollectionEquality()
                 .equals(other.attackList, attackList) &&
             const DeepCollectionEquality()
+                .equals(other.calendarList, calendarList) &&
+            const DeepCollectionEquality()
                 .equals(other.currentModel, currentModel) &&
+            const DeepCollectionEquality()
+                .equals(other.ongoingAttack, ongoingAttack) &&
             const DeepCollectionEquality().equals(other.isLoading, isLoading) &&
             const DeepCollectionEquality().equals(other.minDate, minDate) &&
             const DeepCollectionEquality()
@@ -267,7 +321,9 @@ class _$_AttackState implements _AttackState {
       const DeepCollectionEquality().hash(treatmentsGroup),
       const DeepCollectionEquality().hash(symptomsGroup),
       const DeepCollectionEquality().hash(attackList),
+      const DeepCollectionEquality().hash(calendarList),
       const DeepCollectionEquality().hash(currentModel),
+      const DeepCollectionEquality().hash(ongoingAttack),
       const DeepCollectionEquality().hash(isLoading),
       const DeepCollectionEquality().hash(minDate),
       const DeepCollectionEquality().hash(fetchedNewData));
@@ -283,7 +339,9 @@ abstract class _AttackState implements AttackState {
       {required List<PickingGroupAbstract> treatmentsGroup,
       required List<PickingGroupAbstract> symptomsGroup,
       required List<AttackModel> attackList,
+      required List<AttackModel> calendarList,
       required AttackModel? currentModel,
+      required AttackModel? ongoingAttack,
       required bool isLoading,
       required DateTime? minDate,
       required bool fetchedNewData}) = _$_AttackState;
@@ -295,7 +353,11 @@ abstract class _AttackState implements AttackState {
   @override
   List<AttackModel> get attackList;
   @override
+  List<AttackModel> get calendarList;
+  @override
   AttackModel? get currentModel;
+  @override
+  AttackModel? get ongoingAttack;
   @override
   bool get isLoading;
   @override

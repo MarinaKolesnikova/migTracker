@@ -1,5 +1,7 @@
 import 'package:diplom_proj/presentation/calendar/widgets/calendar_widget.dart';
 import 'package:diplom_proj/resources/resources.dart';
+import 'package:diplom_proj/src/attack/domain/attack_bloc.dart';
+import 'package:diplom_proj/src/attack/domain/events/set_current_date_event.dart';
 import 'package:diplom_proj/src/attack/entities/attack_model/attack_model.dart';
 import 'package:flutter/material.dart';
 import 'package:diplom_proj/presentation/shared/extensions/datetime_extension.dart';
@@ -12,9 +14,9 @@ mixin CalendarWidgetMixin<T extends CalendarWidget> on State<T> {
   late DateTime minDate;
   late DateTime maxDate;
 
-  TextStyle get defaultTextStyle => LightTextStyles.poppinsS14W400(color: LightColors.text);
-  TextStyle get highlitedTextStyle => LightTextStyles.nunitoS14W700(color: LightColors.text);
-  TextStyle get daysStyle => LightTextStyles.nunitoS14W700(color: LightColors.linkBlue);
+  TextStyle get defaultTextStyle => LightTextStyles.poppinsS14W400(color: LightColors.text.withOpacity(0.9));
+  TextStyle get highlitedTextStyle => LightTextStyles.nunitoS14W700(color: LightColors.accentColor.withOpacity(0.9));
+  TextStyle get daysStyle => LightTextStyles.nunitoS14W700(color: LightColors.linkBlue.withOpacity(0.9));
 
   Widget get leftIcon => Icon(
         Icons.chevron_left,
@@ -66,9 +68,6 @@ mixin CalendarWidgetMixin<T extends CalendarWidget> on State<T> {
   }
 
   Widget? singleMarkerBuilder(context, day, event) {
-    if (event.isHoliday == true) {
-      return SizedBox.shrink();
-    }
     return Padding(
       padding: const EdgeInsets.only(top: 3.0),
       child: Container(
@@ -83,7 +82,6 @@ mixin CalendarWidgetMixin<T extends CalendarWidget> on State<T> {
     if (DateTimeComparable(day).isTheSameDate(DateTime.now())) {
       return todayBuilder(context, day, event);
     }
-    return holidayWidget(day);
   }
 
   bool holidayPredecate(DateTime day) {
@@ -126,7 +124,7 @@ mixin CalendarWidgetMixin<T extends CalendarWidget> on State<T> {
   }
 
   void onDaySelected(DateTime selected, DateTime focusedDay) {
-    //   context.read<CalendarBloc>().add(SetCurrentDateEvent(selectedDate: focusedDay));
+    context.read<AttackBloc>().add(SetCurrentDateEvent(selectedDate: focusedDay));
     setState(() {
       selectedDay = selected;
       focusDate = focusedDay;
@@ -140,29 +138,10 @@ mixin CalendarWidgetMixin<T extends CalendarWidget> on State<T> {
         width: 40.0,
         decoration: BoxDecoration(
           shape: BoxShape.circle,
-          color: isHoliday ? LightColors.errorColor : Colors.transparent,
+          color: Colors.transparent,
           border: Border.all(
             color: LightColors.text.withOpacity(0.7),
           ),
-        ),
-        child: Center(
-          child: Text(
-            day.day.toString(),
-            style: LightTextStyles.nunitoS14W700(color: LightColors.text),
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget holidayWidget(DateTime day) {
-    return Center(
-      child: Container(
-        height: 40.0,
-        width: 40.0,
-        decoration: BoxDecoration(
-          color: LightColors.errorColor,
-          shape: BoxShape.circle,
         ),
         child: Center(
           child: Text(

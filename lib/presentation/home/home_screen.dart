@@ -1,6 +1,8 @@
 import 'package:diplom_proj/presentation/home/widgets/light_tab_bar.dart';
+import 'package:diplom_proj/presentation/settings/settings_screen.dart';
 import 'package:diplom_proj/resources/resources.dart';
 import 'package:diplom_proj/src/attack/domain/attack_bloc.dart';
+import 'package:diplom_proj/src/attack/domain/events/set_current_date_event.dart';
 import 'package:diplom_proj/src/main/domain/bloc/app_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -25,14 +27,15 @@ class _HomePageScreenState extends State<HomePageScreen> {
     return BlocBuilder<AppBloc, AppState>(
       builder: (appContext, appState) {
         return BlocProvider(
-          create: (context) => AttackBloc.byGetIt(),
+          create: (context) => initAttack(),
           child: AutoTabsScaffold(
             backgroundColor: LightColors.backgroundColor,
             routes: [
               MainScreenRouter(),
               CalendarScreenRoute(),
-              ScreenInDevelopRoute(),
-              ScreenInDevelopRoute(),
+              AdviceScreenRoute(),
+              PredictionScreenRoute(),
+              SettingsScreenRoute(),
             ],
             bottomNavigationBuilder: (_, tabsRouter) {
               return LightTabBar(tabsRouter: tabsRouter);
@@ -41,5 +44,9 @@ class _HomePageScreenState extends State<HomePageScreen> {
         );
       },
     );
+  }
+
+  AttackBloc initAttack() {
+    return AttackBloc.byGetIt()..add(SetCurrentDateEvent(selectedDate: DateTime.now()));
   }
 }

@@ -1,5 +1,7 @@
 import 'package:diplom_proj/src/attack/entities/attack_dto/attack_dto.dart';
+import 'package:diplom_proj/src/attack/entities/forecast_dto/forecast_dto.dart';
 import 'package:diplom_proj/src/attack/entities/symptoms/symptom_model/symptom.dart';
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'attack_model.freezed.dart';
@@ -27,15 +29,16 @@ class AttackModel with _$AttackModel {
     @JsonKey(name: 'pain_level') required int painLevel,
     @JsonKey(name: 'symptoms') List<Symptom>? symptoms,
     @JsonKey(name: 'treatments') List<Symptom>? treatments,
+    @JsonKey(name: 'weather') ForecastDTO? weather,
   }) = _AttackModel;
 
   factory AttackModel.mock() {
     return AttackModel(
       date: DateTime.now(),
-      duration: Duration(hours: 1),
-      description: '_',
+      duration: Duration(),
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
       symptoms: [
-        Symptom.mock(),
+        Symptom(id: 0, name: 'Aura'),
       ],
       treatments: [
         Symptom.mock(),
@@ -43,10 +46,10 @@ class AttackModel with _$AttackModel {
       noiseImpact: false,
       suffocationEffect: false,
       painLevel: 2,
-      sleapingTime: 7,
-      headInjuring: true,
-      alcoholConsumption: true,
-      stressLevel: 3,
+      sleapingTime: 0,
+      headInjuring: false,
+      alcoholConsumption: false,
+      stressLevel: 0,
     );
   }
 
@@ -58,7 +61,7 @@ class AttackModel with _$AttackModel {
       symptoms: [],
       treatments: [],
       stressLevel: 0,
-      painLevel: 0,
+      painLevel: 2,
       sleapingTime: 8,
       headInjuring: false,
       alcoholConsumption: false,

@@ -11,18 +11,21 @@
 // ignore_for_file: type=lint
 
 import 'package:auto_route/auto_route.dart' as _i5;
-import 'package:flutter/material.dart' as _i9;
+import 'package:flutter/material.dart' as _i12;
 
 import '../presentation/additional/screen_in_develop.dart' as _i3;
 import '../presentation/additional/splash_screen.dart' as _i1;
-import '../presentation/attack_creation/attack_creation.dart' as _i8;
+import '../presentation/advices/advices_screen.dart' as _i7;
+import '../presentation/attack_creation/attack_creation.dart' as _i11;
 import '../presentation/authorization/authorization_screen.dart' as _i2;
 import '../presentation/calendar/calendar_screen.dart' as _i6;
 import '../presentation/home/home_screen.dart' as _i4;
-import '../presentation/main/main_screen.dart' as _i7;
+import '../presentation/main/main_screen.dart' as _i10;
+import '../presentation/predictions/prediction_screen.dart' as _i8;
+import '../presentation/settings/settings_screen.dart' as _i9;
 
 class AppRouter extends _i5.RootStackRouter {
-  AppRouter([_i9.GlobalKey<_i9.NavigatorState>? navigatorKey])
+  AppRouter([_i12.GlobalKey<_i12.NavigatorState>? navigatorKey])
       : super(navigatorKey);
 
   @override
@@ -56,13 +59,29 @@ class AppRouter extends _i5.RootStackRouter {
           opaque: true,
           barrierDismissible: false);
     },
+    AdviceScreenRoute.name: (routeData) {
+      final args = routeData.argsAs<AdviceScreenRouteArgs>(
+          orElse: () => const AdviceScreenRouteArgs());
+      return _i5.MaterialPageX<dynamic>(
+          routeData: routeData, child: _i7.AdviceScreen(key: args.key));
+    },
+    PredictionScreenRoute.name: (routeData) {
+      final args = routeData.argsAs<PredictionScreenRouteArgs>(
+          orElse: () => const PredictionScreenRouteArgs());
+      return _i5.MaterialPageX<dynamic>(
+          routeData: routeData, child: _i8.PredictionScreen(key: args.key));
+    },
+    SettingsScreenRoute.name: (routeData) {
+      return _i5.MaterialPageX<dynamic>(
+          routeData: routeData, child: const _i9.SettingsScreen());
+    },
     MainScreenRoute.name: (routeData) {
       return _i5.MaterialPageX<dynamic>(
-          routeData: routeData, child: const _i7.MainScreen());
+          routeData: routeData, child: const _i10.MainScreen());
     },
     AttackCreationRoute.name: (routeData) {
       return _i5.MaterialPageX<dynamic>(
-          routeData: routeData, child: const _i8.AttackCreation());
+          routeData: routeData, child: const _i11.AttackCreation());
     }
   };
 
@@ -83,13 +102,16 @@ class AppRouter extends _i5.RootStackRouter {
                     _i5.RouteConfig(MainScreenRoute.name,
                         path: '', parent: MainScreenRouter.name),
                     _i5.RouteConfig(AttackCreationRoute.name,
-                        path: 'attack_creation_screen',
-                        parent: MainScreenRouter.name)
+                        path: 'advices_screen', parent: MainScreenRouter.name)
                   ]),
               _i5.RouteConfig(CalendarScreenRoute.name,
                   path: 'calendar_screen', parent: HomePageScreenRoute.name),
-              _i5.RouteConfig(ScreenInDevelopRoute.name,
-                  path: 'screen_in_develop', parent: HomePageScreenRoute.name)
+              _i5.RouteConfig(AdviceScreenRoute.name,
+                  path: 'advices_screen', parent: HomePageScreenRoute.name),
+              _i5.RouteConfig(PredictionScreenRoute.name,
+                  path: 'predictions_screen', parent: HomePageScreenRoute.name),
+              _i5.RouteConfig(SettingsScreenRoute.name,
+                  path: 'settings_screen', parent: HomePageScreenRoute.name)
             ])
       ];
 }
@@ -151,7 +173,60 @@ class CalendarScreenRoute extends _i5.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i7.MainScreen]
+/// [_i7.AdviceScreen]
+class AdviceScreenRoute extends _i5.PageRouteInfo<AdviceScreenRouteArgs> {
+  AdviceScreenRoute({_i12.Key? key})
+      : super(AdviceScreenRoute.name,
+            path: 'advices_screen', args: AdviceScreenRouteArgs(key: key));
+
+  static const String name = 'AdviceScreenRoute';
+}
+
+class AdviceScreenRouteArgs {
+  const AdviceScreenRouteArgs({this.key});
+
+  final _i12.Key? key;
+
+  @override
+  String toString() {
+    return 'AdviceScreenRouteArgs{key: $key}';
+  }
+}
+
+/// generated route for
+/// [_i8.PredictionScreen]
+class PredictionScreenRoute
+    extends _i5.PageRouteInfo<PredictionScreenRouteArgs> {
+  PredictionScreenRoute({_i12.Key? key})
+      : super(PredictionScreenRoute.name,
+            path: 'predictions_screen',
+            args: PredictionScreenRouteArgs(key: key));
+
+  static const String name = 'PredictionScreenRoute';
+}
+
+class PredictionScreenRouteArgs {
+  const PredictionScreenRouteArgs({this.key});
+
+  final _i12.Key? key;
+
+  @override
+  String toString() {
+    return 'PredictionScreenRouteArgs{key: $key}';
+  }
+}
+
+/// generated route for
+/// [_i9.SettingsScreen]
+class SettingsScreenRoute extends _i5.PageRouteInfo<void> {
+  const SettingsScreenRoute()
+      : super(SettingsScreenRoute.name, path: 'settings_screen');
+
+  static const String name = 'SettingsScreenRoute';
+}
+
+/// generated route for
+/// [_i10.MainScreen]
 class MainScreenRoute extends _i5.PageRouteInfo<void> {
   const MainScreenRoute() : super(MainScreenRoute.name, path: '');
 
@@ -159,10 +234,10 @@ class MainScreenRoute extends _i5.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i8.AttackCreation]
+/// [_i11.AttackCreation]
 class AttackCreationRoute extends _i5.PageRouteInfo<void> {
   const AttackCreationRoute()
-      : super(AttackCreationRoute.name, path: 'attack_creation_screen');
+      : super(AttackCreationRoute.name, path: 'advices_screen');
 
   static const String name = 'AttackCreationRoute';
 }

@@ -40,6 +40,7 @@ _$_AttackDictionary _$$_AttackDictionaryFromJson(Map<String, dynamic> json) =>
           submit: $checkedConvert('submit', (v) => v as String),
           stop: $checkedConvert('stop', (v) => v as String),
           edit: $checkedConvert('edit', (v) => v as String),
+          start: $checkedConvert('start', (v) => v as String),
         );
         return val;
       },
@@ -84,4 +85,5 @@ Map<String, dynamic> _$$_AttackDictionaryToJson(_$_AttackDictionary instance) =>
       'submit': instance.submit,
       'stop': instance.stop,
       'edit': instance.edit,
+      'start': instance.start,
     };

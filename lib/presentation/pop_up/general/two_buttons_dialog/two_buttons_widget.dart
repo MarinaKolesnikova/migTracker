@@ -9,16 +9,6 @@ import 'package:diplom_proj/presentation/shared/widgets/buttons/pop_up_text_butt
 
 import 'package:diplom_proj/src/shared/interfaces/i_dialog.dart';
 
-class ListButtonActionModel {
-  const ListButtonActionModel({
-    required this.title,
-    required this.action,
-  });
-
-  final String title;
-  final VoidCallback action;
-}
-
 class TwoButtonDialog implements IDialog {
   const TwoButtonDialog({
     required this.title,
@@ -103,8 +93,7 @@ class TwoButtonDialogWidget extends StatelessWidget with ButtonDialogMixin {
     if (hasLayout == true) {
       return PopUpLayout(
         isAutoClosed: isAutoClosed,
-        backgroundFade: false,
-        dialogColor: LightColors.white.withOpacity(0.35),
+        dialogColor: LightColors.tileColor,
         child: child(),
       );
     }

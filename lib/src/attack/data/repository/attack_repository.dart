@@ -10,7 +10,9 @@ import 'package:diplom_proj/src/attack/entities/symptoms/picking_group_abstract/
 import 'package:diplom_proj/src/attack/entities/symptoms/skills_group/symptoms_group.dart';
 import 'package:diplom_proj/src/attack/entities/symptoms/symptom_model/symptom.dart';
 import 'package:diplom_proj/src/attack/entities/weather_dto/weather_dto.dart';
+import 'package:diplom_proj/src/predictions/entities/prediction_dto/prediction_dto.dart';
 import 'package:diplom_proj/src/shared/interfaces/i_base_repository.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:injectable/injectable.dart';
 
 @lazySingleton
@@ -48,6 +50,11 @@ class AttackRepository extends IBaseRepository<WeatherApi> {
 
   Future<List<PickingGroupAbstract>?> fetchTreatments() async {
     try {
+      // final rem = await FirebaseFirestore.instance
+      //     .collection('predictions')
+      //     .doc(FirebaseAuth.instance.currentUser!.uid)
+      //     .set(PredictionDto.mock().toJson());
+
       final List<PickingGroupAbstract> groups = [];
       final medicinesMap = await FirebaseFirestore.instance.collection('medicines').get();
       final List<Symptom> group = [];
@@ -65,6 +72,37 @@ class AttackRepository extends IBaseRepository<WeatherApi> {
       groups.add(
         SymptomsGroup(id: 'physical_exercise', items: [...group], groupName: 'physical exercise'),
       );
+
+      return groups;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  Future<List<PickingGroupAbstract>?> fetchSymptoms() async {
+    try {
+      // final rem = await FirebaseFirestore.instance
+      //     .collection('predictions')
+      //     .doc(FirebaseAuth.instance.currentUser!.uid)
+      //     .set(PredictionDto.mock().toJson());
+
+      final List<PickingGroupAbstract> groups = [];
+      final symptomsMap = await FirebaseFirestore.instance.collection('symptoms').get();
+      final List<Symptom> group = [];
+      print(symptomsMap.docs.length);
+      final toList = (element) {
+        group.add(Symptom.fromJson(element.data()));
+      };
+      symptomsMap.docs.forEach(toList);
+      groups.add(
+        SymptomsGroup(id: 'symptoms', items: [...group], groupName: 'symptoms'),
+      );
+      // final exercisesMap = await FirebaseFirestore.instance.collection('physical_exercise').get();
+      // group.clear();
+      // exercisesMap.docs.forEach(toList);
+      // groups.add(
+      //   SymptomsGroup(id: 'physical_exercise', items: [...group], groupName: 'physical exercise'),
+      // );
 
       return groups;
     } catch (e) {

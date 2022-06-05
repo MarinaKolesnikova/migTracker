@@ -27,14 +27,15 @@ class PopUpLayout extends StatelessWidget {
     final BorderRadius borderRadius = BorderRadius.circular(10.0);
     return Material(
       borderRadius: borderRadius,
-      color: backgroundFade ? LightColors.white.withOpacity(0.75) : Colors.transparent,
+      color: backgroundFade ? LightColors.black.withOpacity(0.7) : Colors.transparent,
       child: NonAnimatedInkWell(
         onTap: () {
           if (isAutoClosed) context.popRoute();
         },
         child: Center(
           child: Padding(
-            padding: verticalPadding ?? EdgeInsets.symmetric(vertical: 70.0).add(horizontalPadding ?? EdgeInsets.symmetric(horizontal: 53.0)),
+            padding: verticalPadding ??
+                EdgeInsets.symmetric(vertical: 70.0).add(horizontalPadding ?? EdgeInsets.symmetric(horizontal: 53.0)),
             child: Container(
               width: double.infinity,
               padding: const EdgeInsets.symmetric(vertical: 10.0),

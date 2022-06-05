@@ -16,6 +16,7 @@ class TabBarDictionary with _$TabBarDictionary {
     @JsonKey(name: 'calendar') required String calendar,
     @JsonKey(name: 'advices') required String advices,
     @JsonKey(name: 'predictions') required String predictions,
+    @JsonKey(name: 'settings') required String settings,
   }) = _TabBarDictionary;
 
   factory TabBarDictionary.fromJson(Map<String, dynamic> json) => _$TabBarDictionaryFromJson(json);

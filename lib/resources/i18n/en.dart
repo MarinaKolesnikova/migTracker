@@ -28,6 +28,7 @@ const Map<String, dynamic> ru = {
       'calendar': 'Calendar',
       'advices': 'Advices',
       'predictions': 'Predictions',
+      'settings': 'Settings'
     },
     'attack': {
       'symptoms': 'Symptoms',
@@ -55,7 +56,24 @@ const Map<String, dynamic> ru = {
       'alcohol_consumption': 'Alcohol consumption',
       'stop': 'Stop',
       'edit': 'Edit',
+      'start': 'Start',
     }
+  },
+  'advices': {
+    'advice': 'Advices',
+  },
+  'predictions': {
+    'prediction': 'Prediction',
+    'today': 'today',
+    'yesterday': 'yesterday',
+    'temperature': 'temperature',
+    'humidity': 'humidity',
+    'pressure': 'pressure',
+    'risk_exist': 'Migraine attack risk exist',
+    'increased_risk_exist': 'Increased migraine attack risk exist',
+    'no_risk': 'No migraine attacks which can be caused weather conditions predicted',
+    'not_relevant': 'Not relevant',
+    'relevant': 'Relevant'
   },
   'messages': {
     'account_exists': 'The account already exists with a different credential.',
@@ -138,29 +156,6 @@ const Map<String, dynamic> ru = {
     'about': 'О компании',
     'more': 'More',
   },
-  'gratitudes': {
-    'all': 'Все',
-    'most_popular': 'Самая популярная',
-    'most_unpopular': 'Самая непопулярная',
-    'liders': 'Лидеры',
-    'my_gratitudes': 'Мои благодарочки',
-    'top_gratitudes': 'Топ благодарочек',
-    'no_gratitudes': 'У вас еще нет благодарочек',
-  },
-  'camera': {
-    'importing_image': 'Импорт изображения',
-    'invalid_image_size': 'Размер изображения должен быть < 10MB',
-    'invalid_image_extension':
-        'Неподдерживаемый формат файла. Поддерживаются только файлы JPEG, JPG, JPE, PNG и HEIC/HEIF',
-    'image_source_message': 'Выбрать изображение из',
-    'camera': 'Камера',
-    'gallery': 'Галерея',
-    'ok': 'OK',
-    'gallery_permision_permanently_denied':
-        'Приложение не может получить доступ к галерее так как разрешение было отклонено.',
-    'camera_permision_permanently_denied':
-        'Приложение не может получить доступ к камере так как разрешение было отклонено.',
-  },
   'change_password': {
     'pass_changing': 'Смена пароля',
     'current_pass': 'Текущий пароль',
@@ -169,13 +164,11 @@ const Map<String, dynamic> ru = {
     'update_pass': 'Обновить пароль',
   },
   'settings': {
-    'settings_label': 'Настройки',
-    'exit': 'Выход',
-    'main': 'Основные',
-    'color_theme': 'Цветовая тема',
-    'light': 'Light',
-    'dark': 'Dark',
-    'app_theme': 'Тема приложения',
+    'settings_label': 'Settings',
+    'exit': 'Exit',
+    'ua': 'Ua',
+    'en': 'En',
+    'language': 'Language',
   },
   'albums': {
     'albums_label': 'Альбомы',
